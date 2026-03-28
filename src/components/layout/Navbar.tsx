@@ -8,16 +8,7 @@ import { useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { MobileMenu } from '@/components/layout/MobileMenu';
-
-const navLinks = [
-  { key: 'home', href: '/' },
-  { key: 'about', href: '/about' },
-  { key: 'services', href: '/services' },
-  { key: 'team', href: '/team' },
-  { key: 'insights', href: '/insights' },
-  { key: 'newsroom', href: '/newsroom' },
-  { key: 'contact', href: '/contact' },
-] as const;
+import { navLinks } from '@/lib/navigation';
 
 export function Navbar() {
   const t = useTranslations('nav');
@@ -52,7 +43,7 @@ export function Navbar() {
           navBg,
         ].join(' ')}
       >
-        <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between overflow-visible" style={{ height: '88px' }}>
+        <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between overflow-visible h-[var(--navbar-h)]">
           {/* Logo — left */}
           <Link href="/" aria-label="SH Metal Commodities — Home" className="shrink-0">
             <Image

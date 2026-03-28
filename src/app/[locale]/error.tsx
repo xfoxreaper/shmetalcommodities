@@ -9,7 +9,7 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <Section background="navy" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
+    <Section background="navy" className="min-h-[60vh] flex items-center">
       <Container>
         <div className="text-center">
           <Typography variant="h1" className="text-warm-white mb-4">Something went wrong</Typography>

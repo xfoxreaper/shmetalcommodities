@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <Section background="navy" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
+    <Section background="navy" className="min-h-[60vh] flex items-center">
       <Container>
         <div className="text-center">
           <Typography variant="display" className="text-gold mb-6">404</Typography>

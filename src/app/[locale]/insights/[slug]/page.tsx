@@ -74,7 +74,7 @@ export default async function InsightDetailPage({ params }: Props) {
     <>
       <PageHeader title={post.title} locale={locale} compact />
 
-      <Section background="ivory" style={{ paddingTop: '48px', paddingBottom: '80px' }}>
+      <Section background="ivory" padding="compact">
         <Container className="max-w-3xl">
           <FadeIn>
             {/* Meta labels */}

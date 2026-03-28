@@ -7,21 +7,12 @@ import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { navLinks } from '@/lib/navigation';
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
-const navLinks = [
-  { key: 'home', href: '/' },
-  { key: 'about', href: '/about' },
-  { key: 'services', href: '/services' },
-  { key: 'team', href: '/team' },
-  { key: 'insights', href: '/insights' },
-  { key: 'newsroom', href: '/newsroom' },
-  { key: 'contact', href: '/contact' },
-] as const;
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const t = useTranslations('nav');

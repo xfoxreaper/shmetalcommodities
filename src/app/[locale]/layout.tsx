@@ -66,7 +66,7 @@ export default async function LocaleLayout({
             {t('skipToContent')}
           </a>
           <Navbar />
-          <main id="main-content" className="flex-1" style={{ paddingTop: '88px' }}>
+          <main id="main-content" className="flex-1 pt-[var(--navbar-h)]">
             {children}
           </main>
           <Footer />

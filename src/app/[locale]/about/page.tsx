@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { generatePageMetadata } from '@/lib/metadata';
@@ -9,9 +8,14 @@ import {
   Container,
   Typography,
   GoldDivider,
-  NoiseTexture,
   PageHeader,
   FadeIn,
+  StatsBar,
+  QuoteBand,
+  NumberedPillar,
+  ImageBand,
+  SectionLabel,
+  Button,
 } from '@/components/ui';
 
 type Props = {
@@ -76,59 +80,25 @@ export default async function AboutPage({ params }: Props) {
       </Section>
 
       {/* Hamburg image */}
-      <div className="relative h-[300px] md:h-[400px]">
-        <Image
-          src="/images/hamburg-city.jpg"
-          alt="Hamburg HafenCity — home of SH Metal Commodities since 1873"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-navy/30" />
-      </div>
+      <ImageBand
+        src="/images/hamburg-city.jpg"
+        alt="Hamburg HafenCity — home of SH Metal Commodities since 1873"
+        height="h-[300px] md:h-[400px]"
+        overlayOpacity="bg-navy/30"
+      />
 
       {/* Section 3: Pull Quote Band */}
-      <section className="relative bg-navy py-20 md:py-28 overflow-hidden">
-        <NoiseTexture opacity={0.06} />
-        <Container className="relative z-10">
-          <FadeIn>
-            <div className="flex flex-col items-center text-center">
-              <span
-                aria-hidden="true"
-                className="font-display text-gold text-7xl md:text-8xl leading-none select-none -mb-4"
-              >
-                &ldquo;
-              </span>
-              <blockquote className="font-display text-3xl sm:text-4xl italic font-light leading-relaxed text-ivory max-w-3xl">
-                {t('pullQuote')}
-              </blockquote>
-            </div>
-          </FadeIn>
-        </Container>
-      </section>
+      <QuoteBand quote={t('pullQuote')} />
 
       {/* Section 4: Key Figures */}
       <Section background="ivory">
         <Container>
-          <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="font-display text-4xl md:text-5xl text-navy mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="font-ui text-xs uppercase tracking-widest text-charcoal/60">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
+          <StatsBar stats={stats} />
         </Container>
       </Section>
 
       {/* Latest from Our Newsroom teaser */}
-      <Section background="ivory" style={{ paddingTop: 0, paddingBottom: '40px' }}>
+      <Section background="ivory" padding="none" className="pb-8 md:pb-10">
         <Container>
           <FadeIn>
             <div className="mb-8">
@@ -154,32 +124,22 @@ export default async function AboutPage({ params }: Props) {
       </Section>
 
       {/* Section 5: Values + CTA */}
-      <Section background="ivory" style={{ paddingTop: 0 }}>
+      <Section background="ivory" padding="none" className="pb-18 md:pb-26">
         <Container>
           {/* Values label */}
-          <div className="mb-12">
-            <Typography variant="label" className="text-charcoal/60 mb-4 block">
-              {t('valuesLabel')}
-            </Typography>
-            <GoldDivider />
-          </div>
+          <SectionLabel align="left" variant="dark">
+            {t('valuesLabel')}
+          </SectionLabel>
 
           {/* Values grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
             {valueKeys.map((key, i) => (
               <FadeIn key={key} delay={i * 150}>
-                <div>
-                  <span className="font-ui text-xs text-gold tracking-widest">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <Typography variant="h3" className="mt-3 mb-4">
-                    {t(`values.${key}.title`)}
-                  </Typography>
-                  <GoldDivider width="40px" className="mb-4" />
-                  <Typography variant="body" className="text-charcoal/80">
-                    {t(`values.${key}.description`)}
-                  </Typography>
-                </div>
+                <NumberedPillar
+                  number={i + 1}
+                  title={t(`values.${key}.title`)}
+                  description={t(`values.${key}.description`)}
+                />
               </FadeIn>
             ))}
           </div>
@@ -187,11 +147,8 @@ export default async function AboutPage({ params }: Props) {
           {/* CTA */}
           <FadeIn>
             <div className="text-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center font-ui text-xs uppercase tracking-widest px-8 py-3.5 bg-navy text-warm-white border border-gold hover:bg-gold hover:text-navy transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
-              >
-                {t('ctaButton')}
+              <Link href="/contact">
+                <Button>{t('ctaButton')}</Button>
               </Link>
             </div>
           </FadeIn>

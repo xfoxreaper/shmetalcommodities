@@ -5,16 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { contact } from '../../../content/contact';
-
-const navLinks = [
-  { key: 'home' as const, href: '/' },
-  { key: 'about' as const, href: '/about' },
-  { key: 'services' as const, href: '/services' },
-  { key: 'team' as const, href: '/team' },
-  { key: 'insights' as const, href: '/insights' },
-  { key: 'newsroom' as const, href: '/newsroom' },
-  { key: 'contact' as const, href: '/contact' },
-];
+import { navLinks } from '@/lib/navigation';
 
 export async function Footer() {
   const t = await getTranslations();

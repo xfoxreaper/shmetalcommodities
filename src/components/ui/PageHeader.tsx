@@ -20,7 +20,7 @@ export function PageHeader({ title, subtitle, locale, compact }: PageHeaderProps
           ? 'pt-10 pb-10 md:pt-[72px] md:pb-[72px]'
           : 'pt-14 pb-14 md:pt-24 md:pb-24',
       ].join(' ')}
-      style={{ background: 'linear-gradient(180deg, #0A1628, #0E1D35)' }}
+      style={{ background: 'linear-gradient(180deg, var(--color-navy), #0E1D35)' }}
     >
       <NoiseTexture />
       <Container className="relative z-10">

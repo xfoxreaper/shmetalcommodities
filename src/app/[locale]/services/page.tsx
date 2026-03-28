@@ -1,11 +1,20 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
 import { generatePageMetadata } from '@/lib/metadata';
 import { locales } from '@/lib/locales';
 import { contact } from '../../../../content/contact';
-import { PageHeader, Container, Section, MetalCard, Button, Typography, GoldDivider, PullQuote, FadeIn } from '@/components/ui';
+import {
+  PageHeader,
+  Container,
+  Section,
+  MetalCard,
+  Typography,
+  GoldDivider,
+  FadeIn,
+  ImageBand,
+  QuoteBand,
+  CTASection,
+} from '@/components/ui';
 import type { MetalTexture } from '../../../../content/services';
 
 type Props = {
@@ -54,7 +63,7 @@ export default async function ServicesPage({ params }: Props) {
       />
 
       {/* The three metals */}
-      <Section background="ivory" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+      <Section background="ivory" padding="compact">
         <Container>
           <div className="mb-10 flex items-center gap-6">
             <GoldDivider width="40px" />
@@ -78,19 +87,14 @@ export default async function ServicesPage({ params }: Props) {
       </Section>
 
       {/* Port logistics image divider */}
-      <div className="relative h-[250px] md:h-[350px]">
-        <Image
-          src="/images/port-logistics.jpg"
-          alt="Container port — metals logistics and global delivery"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-navy/40" />
-      </div>
+      <ImageBand
+        src="/images/port-logistics.jpg"
+        alt="Container port — metals logistics and global delivery"
+        overlayOpacity="bg-navy/40"
+      />
 
       {/* How we trade */}
-      <Section background="ivory" style={{ paddingTop: '0px', paddingBottom: '60px' }}>
+      <Section background="ivory" padding="none" className="pb-12 md:pb-16">
         <Container>
           <div className="mb-10 flex items-center gap-6">
             <GoldDivider width="40px" />
@@ -118,39 +122,17 @@ export default async function ServicesPage({ params }: Props) {
       </Section>
 
       {/* Principal model pull quote */}
-      <Section background="navy" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
-        <Container>
-          <FadeIn>
-            <div className="max-w-3xl mx-auto text-center">
-              <PullQuote className="text-warm-white/90 border-gold text-center border-s-0 border-t-[3px] pt-8 ps-0">
-                {t('brokerageModel')}
-              </PullQuote>
-            </div>
-          </FadeIn>
-        </Container>
-      </Section>
+      <QuoteBand quote={t('brokerageModel')} />
 
       {/* CTA section */}
-      <Section background="navy" style={{ paddingTop: '0px', paddingBottom: '80px' }}>
-        <Container>
-          <FadeIn>
-            <div className="max-w-2xl mx-auto text-center">
-              <Typography variant="h2" className="text-warm-white mb-6">
-                {t('ctaHeading')}
-              </Typography>
-              <Typography variant="body" className="text-warm-white/75 mb-10">
-                {t('ctaBody')}
-              </Typography>
-              <Link href="/contact" locale={locale}>
-                <Button variant="ghost">{t('cta')}</Button>
-              </Link>
-              <p className="mt-6 font-ui text-xs text-warm-white/50">
-                {contact.email}
-              </p>
-            </div>
-          </FadeIn>
-        </Container>
-      </Section>
+      <CTASection
+        heading={t('ctaHeading')}
+        body={t('ctaBody')}
+        buttonText={t('cta')}
+        buttonHref="/contact"
+        email={contact.email}
+        locale={locale}
+      />
     </>
   );
 }
