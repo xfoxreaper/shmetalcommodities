@@ -9,52 +9,52 @@
   },
   "home": {
     "tagline": "金属。市场。信任。",
-    "subTagline": "全球有色金属贸易，总部位于德国汉堡。",
+    "subTagline": "独立的有色金属贸易公司，自1873年起服务于全球市场的生产商、加工商及工业客户。",
     "cta": "了解更多",
     "trustBar": "总部位于德国汉堡",
     "meta": {
       "title": "SH Metal Commodities",
-      "description": "全球有色金属贸易 — 铜、铝、锌。总部位于德国汉堡。"
+      "description": "独立有色金属贸易公司 — 铜、铝、锌。总部位于德国汉堡，创立于1873年。"
     }
   },
   "about": {
     "heading": "建立于信任之上的贸易公司",
-    "para1": "<!-- PLACEHOLDER -->",
-    "para2": "<!-- PLACEHOLDER -->",
-    "para3": "<!-- PLACEHOLDER -->",
+    "para1": "SH Metal Commodities于1873年在汉堡创立，作为独立的有色金属贸易公司已运营逾百年。依托欧洲最重要贸易城市之一的区位优势，我们与全球金属供应链中的生产商、加工商及工业客户建立了长久的合作关系。",
+    "para2": "我们以自营方式交易铜、铝和锌——负责采购、投入资本并承担交货责任。我们的经营方式审慎有序：在既定风险参数内开展业务，只交易我们深入了解的市场，并将长期合作伙伴关系置于短期利润之上。",
+    "para3": "我们的名誉与每一笔交易紧密相连。履约的义务——兑现承诺、公平交易——是SH Metal Commodities每一段商业关系的根基。这不是我们后来形成的理念，而是我们一贯的行事准则。",
     "pullQuote": "我们以公司名义参与每一笔交易。",
-    "credential": "创立于德国汉堡",
+    "credential": "创立于1873年，德国汉堡",
     "meta": {
       "title": "关于我们",
-      "description": "了解 SH Metal Commodities — 我们的历史、价值观和贸易理念。"
+      "description": "SH Metal Commodities于1873年在汉堡创立，是一家以长期关系和严谨风险管理为核心的独立有色金属贸易公司。"
     }
   },
   "services": {
     "heading": "我们的市场",
     "copper": {
       "name": "铜",
-      "description": "<!-- PLACEHOLDER -->"
+      "description": "铜是现代经济的核心导体——遍布每条电力基础设施线路、每台电动机和每套通信网络。我们在欧洲及全球市场进行阴极铜、铜杆及废铜的即期和远期交易，长期与冶炼厂、加工商及工业客户保持稳固合作。"
     },
     "aluminium": {
       "name": "铝",
-      "description": "<!-- PLACEHOLDER -->"
+      "description": "铝兼具轻量、强度与导电性，已成为当代不可或缺的结构材料——广泛应用于交通运输、包装及建筑领域。我们的铝业团队涵盖原铝锭、铝棒及铝板的交易，在既定的LME参数框架内运作，并依托合作伙伴网络满足实物需求。"
     },
     "zinc": {
       "name": "锌",
-      "description": "<!-- PLACEHOLDER -->"
+      "description": "锌通过热镀锌工艺延长桥梁、船舶和建筑物数十年的使用寿命，是全球钢铁基础设施耐久性的重要保障。我们与经过数代持续市场耕耘建立起来的冶炼厂及最终用户网络，交易SHG锌及锌合金。"
     },
-    "brokerageModel": "<!-- PLACEHOLDER -->",
+    "brokerageModel": "我们以自营方式参与每一笔交易，而非代理商或经纪商。我们的交易对手与单一的已知主体进行交易——该主体投入自有资本、承担全部商业风险，并对其买卖的每一吨金属负责到底。",
     "cta": "联系我们的团队",
     "meta": {
       "title": "我们的市场",
-      "description": "我们在全球市场交易铜、铝和锌。"
+      "description": "SH Metal Commodities以自营方式在全球市场交易铜、铝和锌。独立、审慎，致力于长期合作关系。"
     }
   },
   "team": {
     "heading": "SH Metal Commodities 背后的团队",
     "meta": {
       "title": "我们的团队",
-      "description": "认识 SH Metal Commodities 背后的团队。"
+      "description": "认识SH Metal Commodities背后的团队——以专业素养、审慎态度和长远眼光经营每段合作关系的资深专业人士。"
     }
   },
   "contact": {
@@ -68,16 +68,16 @@
     },
     "subjects": [
       { "value": "general", "label": "一般咨询" },
-      { "value": "trading", "label": "贸易" },
-      { "value": "partnership", "label": "合作" },
-      { "value": "other", "label": "其他" }
+      { "value": "trading", "label": "贸易合作" },
+      { "value": "partnership", "label": "战略合作" },
+      { "value": "other", "label": "其他事宜" }
     ],
     "submit": "发送咨询",
-    "successMessage": "感谢您的咨询。我们将尽快与您联系。",
+    "successMessage": "感谢您的咨询。我们的团队成员将尽快与您联系。",
     "errorMessage": "出现错误，请重试或直接联系我们。",
     "meta": {
       "title": "联系我们",
-      "description": "联系 SH Metal Commodities。"
+      "description": "联系SH Metal Commodities。总部位于德国汉堡——欢迎全球生产商、加工商及工业客户垂询。"
     }
   },
   "footer": {

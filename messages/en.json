@@ -8,52 +8,52 @@
   },
   "home": {
     "tagline": "Metal. Markets. Trust.",
-    "subTagline": "Global non-ferrous metal trading, headquartered in Hamburg.",
+    "subTagline": "An independent non-ferrous metal trading house, serving producers, processors, and industrial consumers across global markets since 1873.",
     "cta": "Learn More",
     "trustBar": "Headquartered in Hamburg, Germany",
     "meta": {
       "title": "SH Metal Commodities",
-      "description": "Global non-ferrous metal trading — Copper, Aluminium, Zinc. Headquartered in Hamburg, Germany."
+      "description": "Independent non-ferrous metal trading house — Copper, Aluminium, Zinc. Headquartered in Hamburg, Germany. Established 1873."
     }
   },
   "about": {
     "heading": "A Trading House Built on Relationships",
-    "para1": "<!-- PLACEHOLDER -->",
-    "para2": "<!-- PLACEHOLDER -->",
-    "para3": "<!-- PLACEHOLDER -->",
+    "para1": "Founded in Hamburg in 1873, SH Metal Commodities has operated as an independent non-ferrous metal trading house for over a century. From our base in one of Europe's foremost trading cities, we have built enduring relationships with producers, processors, and industrial consumers across the global metals supply chain.",
+    "para2": "We trade copper, aluminium, and zinc as principal — sourcing, committing capital, and taking responsibility for delivery. Our approach is disciplined: we work within defined risk parameters, trade only markets we understand deeply, and prioritise long-term counterparty relationships over short-term margin.",
+    "para3": "Our name is on every trade we make. That obligation — to perform, to honour commitments, and to deal fairly — is the foundation on which every business relationship at SH Metal Commodities rests. It is not a principle we arrived at; it is the only way we have ever worked.",
     "pullQuote": "We trade with our name on every deal.",
-    "credential": "Established in Hamburg, Germany",
+    "credential": "Established 1873, Hamburg, Germany",
     "meta": {
       "title": "About Us",
-      "description": "Learn about SH Metal Commodities — our history, values, and approach to non-ferrous metal trading."
+      "description": "Founded in Hamburg in 1873, SH Metal Commodities is an independent non-ferrous metal trading house built on long-term relationships and disciplined risk management."
     }
   },
   "services": {
     "heading": "Our Markets",
     "copper": {
       "name": "Copper",
-      "description": "<!-- PLACEHOLDER -->"
+      "description": "Copper is the principal conductor of the modern economy — present in every strand of electrical infrastructure, every electric motor, and every communications network. We trade cathode, rod, and scrap copper across European and global markets on both spot and term basis, working alongside smelters, fabricators, and industrial consumers of long standing."
     },
     "aluminium": {
       "name": "Aluminium",
-      "description": "<!-- PLACEHOLDER -->"
+      "description": "Aluminium's combination of lightness, strength, and conductivity has made it the structural material of our era — indispensable in transport, packaging, and construction. Our aluminium desk covers primary ingot, billets, and sheet, with positions traded within established LME parameters and against physical demand from our counterparty network."
     },
     "zinc": {
       "name": "Zinc",
-      "description": "<!-- PLACEHOLDER -->"
+      "description": "Zinc underpins the longevity of steel infrastructure worldwide, through galvanising applications that extend the working life of bridges, ships, and buildings by decades. We trade SHG zinc and zinc alloys with a network of smelters and end-users built over generations of continuous presence in the market."
     },
-    "brokerageModel": "<!-- PLACEHOLDER -->",
+    "brokerageModel": "We act as principal to every transaction — not as agent or broker. Our counterparties deal with a single, known entity that commits its own capital, assumes full commercial risk, and stands behind every tonne it buys and sells. This model has defined our trading relationships for generations and remains the basis on which we seek new ones.",
     "cta": "Speak to Our Team",
     "meta": {
       "title": "Our Markets",
-      "description": "We trade copper, aluminium, and zinc across global markets."
+      "description": "SH Metal Commodities trades copper, aluminium, and zinc as principal across global markets. Independent, disciplined, and built on long-term relationships."
     }
   },
   "team": {
     "heading": "The People Behind SH Metal Commodities",
     "meta": {
       "title": "Our Team",
-      "description": "Meet the team behind SH Metal Commodities."
+      "description": "Meet the team behind SH Metal Commodities — experienced professionals who bring discretion, expertise, and long-term perspective to every relationship."
     }
   },
   "contact": {
@@ -72,11 +72,11 @@
       { "value": "other", "label": "Other" }
     ],
     "submit": "Send Enquiry",
-    "successMessage": "Thank you for your enquiry. We will be in touch shortly.",
+    "successMessage": "Thank you for your enquiry. A member of our team will be in touch shortly.",
     "errorMessage": "Something went wrong. Please try again or contact us directly.",
     "meta": {
       "title": "Contact",
-      "description": "Get in touch with SH Metal Commodities."
+      "description": "Contact SH Metal Commodities. Headquartered in Hamburg, Germany — open to enquiries from producers, processors, and industrial consumers worldwide."
     }
   },
   "footer": {

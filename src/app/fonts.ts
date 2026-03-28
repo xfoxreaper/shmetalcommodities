@@ -30,7 +30,7 @@ export const uiFont = Josefin_Sans({
 
 export const cjkFont = Noto_Serif_SC({
   variable: "--font-cjk",
-  subsets: ["chinese-simplified"],
+  subsets: ["latin"],
   weight: ["400", "500", "700"],
   display: "swap",
 });

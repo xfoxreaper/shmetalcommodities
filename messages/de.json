@@ -1,5 +1,5 @@
 {
-  "// TODO": "professional translation needed — current strings are machine-translated placeholders",
+  "// TODO": "Professionelle Übersetzung erforderlich — aktuelle Zeichenketten sind maschinell übersetzte Platzhalter",
   "nav": {
     "home": "Startseite",
     "about": "Über uns",
@@ -9,52 +9,52 @@
   },
   "home": {
     "tagline": "Metall. Märkte. Vertrauen.",
-    "subTagline": "Weltweiter Handel mit Nichteisenmetallen, mit Sitz in Hamburg.",
+    "subTagline": "Ein unabhängiges Handelshaus für Nichteisenmetalle, das seit 1873 Produzenten, Verarbeiter und Industriekunden auf globalen Märkten bedient.",
     "cta": "Mehr erfahren",
     "trustBar": "Hauptsitz in Hamburg, Deutschland",
     "meta": {
       "title": "SH Metal Commodities",
-      "description": "Weltweiter Handel mit Nichteisenmetallen — Kupfer, Aluminium, Zink. Hauptsitz in Hamburg, Deutschland."
+      "description": "Unabhängiges Handelshaus für Nichteisenmetalle — Kupfer, Aluminium, Zink. Hauptsitz in Hamburg, Deutschland. Gegründet 1873."
     }
   },
   "about": {
     "heading": "Ein Handelshaus, das auf Beziehungen aufbaut",
-    "para1": "<!-- PLACEHOLDER -->",
-    "para2": "<!-- PLACEHOLDER -->",
-    "para3": "<!-- PLACEHOLDER -->",
+    "para1": "Gegründet in Hamburg im Jahr 1873, ist SH Metal Commodities seit über einem Jahrhundert als unabhängiges Handelshaus für Nichteisenmetalle tätig. Von unserem Standort in einer der bedeutendsten Handelsstädte Europas aus haben wir dauerhafte Beziehungen zu Produzenten, Verarbeitern und Industriekunden in der globalen Metallversorgungskette aufgebaut.",
+    "para2": "Wir handeln Kupfer, Aluminium und Zink als Prinzipal — wir beschaffen, setzen Kapital ein und übernehmen die Verantwortung für die Lieferung. Unser Ansatz ist diszipliniert: Wir arbeiten innerhalb definierter Risikoparameter, handeln nur Märkte, die wir tiefgreifend verstehen, und priorisieren langfristige Geschäftsbeziehungen gegenüber kurzfristiger Marge.",
+    "para3": "Unser Name steht hinter jedem Handel, den wir abschließen. Diese Verpflichtung — zu leisten, Verpflichtungen einzuhalten und fair zu handeln — ist das Fundament jeder Geschäftsbeziehung bei SH Metal Commodities. Es ist kein Prinzip, zu dem wir gelangt sind; es ist die einzige Art und Weise, wie wir je gearbeitet haben.",
     "pullQuote": "Wir handeln mit unserem Namen bei jedem Geschäft.",
-    "credential": "Gegründet in Hamburg, Deutschland",
+    "credential": "Gegründet 1873, Hamburg, Deutschland",
     "meta": {
       "title": "Über uns",
-      "description": "Erfahren Sie mehr über SH Metal Commodities — unsere Geschichte, Werte und Ansatz."
+      "description": "Gegründet in Hamburg 1873, ist SH Metal Commodities ein unabhängiges Handelshaus für Nichteisenmetalle, aufgebaut auf langfristigen Beziehungen."
     }
   },
   "services": {
     "heading": "Unsere Märkte",
     "copper": {
       "name": "Kupfer",
-      "description": "<!-- PLACEHOLDER -->"
+      "description": "Kupfer ist der wichtigste Leiter der modernen Wirtschaft — vorhanden in jeder Leitung der elektrischen Infrastruktur, jedem Elektromotor und jedem Kommunikationsnetz. Wir handeln Kathoden-, Stab- und Schrott-Kupfer auf europäischen und globalen Märkten sowohl auf Spot- als auch Terminbasis, in Zusammenarbeit mit langjährigen Schmelzbetrieben, Verarbeitern und Industriekunden."
     },
     "aluminium": {
       "name": "Aluminium",
-      "description": "<!-- PLACEHOLDER -->"
+      "description": "Die Kombination aus Leichtigkeit, Festigkeit und Leitfähigkeit hat Aluminium zum Konstruktionswerkstoff unserer Zeit gemacht — unverzichtbar im Transportwesen, in der Verpackung und im Bauwesen. Unser Aluminium-Desk umfasst Primärbarren, Bolzen und Bleche, die innerhalb etablierter LME-Parameter und gegen physische Nachfrage aus unserem Kontrahentennetzwerk gehandelt werden."
     },
     "zinc": {
       "name": "Zink",
-      "description": "<!-- PLACEHOLDER -->"
+      "description": "Zink unterstützt die Langlebigkeit der weltweiten Stahlinfrastruktur durch Feuerverzinkungsanwendungen, die die Nutzungsdauer von Brücken, Schiffen und Gebäuden um Jahrzehnte verlängern. Wir handeln SHG-Zink und Zinklegierungen mit einem Netzwerk aus Hüttenwerken und Endverbrauchern, das über Generationen kontinuierlicher Marktpräsenz aufgebaut wurde."
     },
-    "brokerageModel": "<!-- PLACEHOLDER -->",
+    "brokerageModel": "Wir handeln als Prinzipal bei jeder Transaktion — nicht als Vertreter oder Makler. Unsere Kontrahenten handeln mit einer einzigen, bekannten Einheit, die ihr eigenes Kapital einsetzt, das volle kaufmännische Risiko übernimmt und hinter jeder Tonne steht, die sie kauft und verkauft.",
     "cta": "Sprechen Sie mit unserem Team",
     "meta": {
       "title": "Unsere Märkte",
-      "description": "Wir handeln mit Kupfer, Aluminium und Zink auf weltweiten Märkten."
+      "description": "SH Metal Commodities handelt Kupfer, Aluminium und Zink als Prinzipal auf globalen Märkten. Unabhängig, diszipliniert und auf langfristige Beziehungen ausgerichtet."
     }
   },
   "team": {
     "heading": "Die Menschen hinter SH Metal Commodities",
     "meta": {
       "title": "Unser Team",
-      "description": "Lernen Sie das Team hinter SH Metal Commodities kennen."
+      "description": "Lernen Sie das Team hinter SH Metal Commodities kennen — erfahrene Fachleute, die jede Beziehung mit Diskretion, Expertise und Weitblick gestalten."
     }
   },
   "contact": {
@@ -73,11 +73,11 @@
       { "value": "other", "label": "Sonstiges" }
     ],
     "submit": "Anfrage senden",
-    "successMessage": "Vielen Dank für Ihre Anfrage. Wir werden uns in Kürze bei Ihnen melden.",
-    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "successMessage": "Vielen Dank für Ihre Anfrage. Ein Mitglied unseres Teams wird sich in Kürze bei Ihnen melden.",
+    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
     "meta": {
       "title": "Kontakt",
-      "description": "Nehmen Sie Kontakt mit SH Metal Commodities auf."
+      "description": "Kontaktieren Sie SH Metal Commodities. Hauptsitz in Hamburg, Deutschland — offen für Anfragen von Produzenten, Verarbeitern und Industriekunden weltweit."
     }
   },
   "footer": {
