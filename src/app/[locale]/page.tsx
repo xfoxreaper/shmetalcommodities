@@ -10,11 +10,9 @@ import {
   Typography,
   Container,
   Section,
-  GoldDivider,
   NoiseTexture,
   MetalCard,
   FadeIn,
-  WorldMap,
   Button,
   SectionLabel,
   StatsBar,
@@ -51,7 +49,6 @@ export default async function HomePage({ params }: Props) {
   const tServices = await getTranslations({ locale, namespace: 'services' });
   const tAbout = await getTranslations({ locale, namespace: 'about' });
 
-  const pillars = ['independent', 'experienced', 'trusted'] as const;
   const metals = [
     { id: 'copper', texture: 'copper' as const },
     { id: 'aluminium', texture: 'aluminium' as const },
@@ -142,32 +139,6 @@ export default async function HomePage({ params }: Props) {
         </Container>
       </Section>
 
-      {/* ── Our Approach ── */}
-      <Section background="ivory">
-        <Container>
-          <SectionLabel align="center">{t('ourApproach')}</SectionLabel>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-4xl mx-auto text-center">
-            {pillars.map((key, i) => (
-              <FadeIn key={key} delay={i * 150}>
-                <div className="flex flex-col items-center">
-                  <span className="font-display text-3xl font-light text-gold mb-3">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <Typography variant="h3" className="text-navy mb-2">
-                    {t(`approach.${key}.title`)}
-                  </Typography>
-                  <GoldDivider width="40px" className="mb-3" />
-                  <Typography variant="body" className="text-charcoal/80">
-                    {t(`approach.${key}.description`)}
-                  </Typography>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       {/* ── Heritage Quote ── */}
       <QuoteBand quote={tAbout('pullQuote')} attribution={t('quoteAttribution')} />
 
@@ -201,8 +172,25 @@ export default async function HomePage({ params }: Props) {
       <Section background="navy" padding="compact">
         <Container>
           <FadeIn>
-            <SectionLabel align="center" variant="light">{t('globalPresence')}</SectionLabel>
-            <WorldMap />
+            <div className="text-center">
+              <Typography variant="label" className="text-gold mb-8 block">
+                {t('globalPresence')}
+              </Typography>
+              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                {['Hamburg', 'London', 'Rotterdam', 'Dubai', 'Shanghai', 'New York'].map((city, i) => (
+                  <span key={city} className="flex items-center gap-2.5">
+                    <span className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-gold' : 'bg-gold/50'}`} />
+                    <span className={`font-ui text-xs uppercase tracking-widest ${i === 0 ? 'text-gold' : 'text-ivory/70'}`}>
+                      {city}
+                    </span>
+                  </span>
+                ))}
+              </div>
+              {/* Hamburg HQ callout */}
+              <p className="mt-6 font-ui text-[11px] tracking-wider text-ivory/40">
+                Headquarters: Hamburg, Germany
+              </p>
+            </div>
           </FadeIn>
         </Container>
       </Section>
