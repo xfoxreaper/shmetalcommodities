@@ -40,7 +40,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       {/* Hero — full viewport, extends behind transparent navbar */}
-      <div className="relative min-h-[100dvh] bg-navy flex items-center justify-center animate-fade-in" style={{ marginTop: '-88px', paddingTop: '88px', paddingBottom: '60px' }}>
+      <div className="relative bg-navy flex items-center justify-center animate-fade-in" style={{ marginTop: '-88px', minHeight: '70vh', paddingTop: '140px', paddingBottom: '80px' }}>
         <NoiseTexture opacity={0.06} />
         <Container className="relative z-10 flex flex-col items-center text-center gap-8" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
           <Typography
