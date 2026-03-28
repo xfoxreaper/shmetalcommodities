@@ -9,7 +9,7 @@ interface SectionLabelProps {
 }
 
 export function SectionLabel({ children, align = 'left', variant = 'dark', className = '' }: SectionLabelProps) {
-  const textColor = variant === 'light' ? 'text-gold' : 'text-navy/60';
+  const textColor = variant === 'light' ? 'text-gold' : 'text-gold-text';
 
   if (align === 'center') {
     return (

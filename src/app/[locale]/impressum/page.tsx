@@ -26,7 +26,7 @@ export default async function ImpressumPage({ params }: Props) {
 
   return (
     <div className="animate-fade-in">
-      <PageHeader title="Impressum" locale={locale} compact />
+      <PageHeader title="Impressum" locale={locale} />
 
       <Section background="ivory">
         <Container>

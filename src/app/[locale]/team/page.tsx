@@ -1,11 +1,10 @@
 // Leadership page — SH Metal Commodities
-// Single-founder profile layout replacing the previous team grid.
+// Single-founder editorial profile layout.
 
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { team } from '../../../../content/team';
 import { generatePageMetadata } from '@/lib/metadata';
-import { Link } from '@/i18n/navigation';
 import {
   PageHeader,
   Container,
@@ -13,7 +12,6 @@ import {
   Typography,
   GoldDivider,
   PlaceholderAvatar,
-  Button,
   FadeIn,
 } from '@/components/ui';
 
@@ -64,74 +62,56 @@ export default async function TeamPage({ params }: Props) {
         locale={locale}
       />
 
-      {/* Founder Profile */}
-      <Section background="ivory">
+      {/* Founder Profile — centered editorial layout */}
+      <Section background="ivory" padding="large">
         <Container>
           <FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-12 items-start">
-            {/* Left column — avatar, name, title */}
-            <div className="flex flex-col items-center md:items-start">
-              <PlaceholderAvatar initials={founder.initials} size={200} />
+            <div className="max-w-3xl mx-auto">
+              {/* Avatar + identity */}
+              <div className="flex flex-col items-center text-center mb-10">
+                <PlaceholderAvatar initials={founder.initials} size={128} />
 
-              <Typography
-                variant="h2"
-                locale={locale}
-                className="mt-6 text-navy text-center md:text-left"
-              >
-                {founder.name}
-              </Typography>
+                <Typography
+                  variant="h2"
+                  locale={locale}
+                  className="mt-6 text-navy"
+                >
+                  {founder.name}
+                </Typography>
 
-              <Typography
-                variant="label"
-                className="mt-2 text-charcoal/70 text-center md:text-left"
-              >
-                {founder.title}
-              </Typography>
+                <Typography
+                  variant="label"
+                  className="mt-2 text-gold-text"
+                >
+                  {founder.title}
+                </Typography>
 
-              <div className="mt-4 w-full max-w-[200px]">
-                <GoldDivider />
+                <div className="mt-4 w-16">
+                  <GoldDivider width="64px" />
+                </div>
+
+                {founder.linkedIn && (
+                  <a
+                    href={founder.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 font-ui text-xs uppercase tracking-widest text-gold hover:text-navy transition-colors duration-200"
+                  >
+                    LinkedIn &rarr;
+                  </a>
+                )}
               </div>
 
-              {founder.linkedIn && (
-                <a
-                  href={founder.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 font-ui text-xs uppercase tracking-widest text-gold hover:text-navy transition-colors duration-200"
-                >
-                  LinkedIn
-                </a>
-              )}
-            </div>
-
-            {/* Right column — bio */}
-            <div className="space-y-6">
-              <Typography variant="body" className="text-charcoal">
-                {bioParagraph1}
-              </Typography>
-              {bioParagraph2 && (
+              {/* Bio */}
+              <div className="max-w-2xl mx-auto space-y-5">
                 <Typography variant="body" className="text-charcoal">
-                  {bioParagraph2}
+                  {bioParagraph1}
                 </Typography>
-              )}
-            </div>
-          </div>
-          </FadeIn>
-        </Container>
-      </Section>
-
-      {/* CTA */}
-      <Section background="ivory">
-        <Container>
-          <FadeIn>
-            <div className="text-center">
-              <Typography variant="h3" className="text-navy">
-                {t('ctaHeading')}
-              </Typography>
-              <div className="mt-6">
-                <Link href="/contact">
-                  <Button>{t('ctaButton')}</Button>
-                </Link>
+                {bioParagraph2 && (
+                  <Typography variant="body" className="text-charcoal">
+                    {bioParagraph2}
+                  </Typography>
+                )}
               </div>
             </div>
           </FadeIn>

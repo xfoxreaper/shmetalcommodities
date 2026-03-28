@@ -23,15 +23,15 @@ export function CTASection({
   locale,
 }: CTASectionProps) {
   return (
-    <Section background="navy" padding="none" className="pb-16 md:pb-20">
+    <Section background="navy" padding="compact">
       <Container>
         <FadeIn>
           <div className="max-w-2xl mx-auto text-center">
-            <Typography variant="h2" className="text-warm-white mb-6">
+            <Typography variant="h3" className="text-ivory mb-6">
               {heading}
             </Typography>
             {body && (
-              <Typography variant="body" className="text-warm-white/75 mb-10">
+              <Typography variant="body" className="text-ivory/75 mb-6">
                 {body}
               </Typography>
             )}
@@ -39,7 +39,7 @@ export function CTASection({
               <Button variant="ghost">{buttonText}</Button>
             </Link>
             {email && (
-              <p className="mt-6 font-ui text-xs text-warm-white/50">
+              <p className="mt-4 font-ui text-xs text-ivory/40">
                 {email}
               </p>
             )}

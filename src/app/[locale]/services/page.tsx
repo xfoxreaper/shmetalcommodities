@@ -2,17 +2,16 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import { locales } from '@/lib/locales';
-import { contact } from '../../../../content/contact';
 import {
   PageHeader,
   Container,
   Section,
   MetalCard,
   Typography,
-  GoldDivider,
   FadeIn,
   ImageBand,
   QuoteBand,
+  SectionLabel,
   CTASection,
 } from '@/components/ui';
 import type { MetalTexture } from '../../../../content/services';
@@ -59,18 +58,12 @@ export default async function ServicesPage({ params }: Props) {
         title={t('heading')}
         subtitle={t('subtitle')}
         locale={locale}
-        compact
       />
 
       {/* The three metals */}
-      <Section background="ivory" padding="compact">
+      <Section background="navy" padding="large">
         <Container>
-          <div className="mb-10 flex items-center gap-6">
-            <GoldDivider width="40px" />
-            <Typography variant="label" className="text-navy/60">
-              {t('marketsLabel')}
-            </Typography>
-          </div>
+          <SectionLabel align="center" variant="light">{t('marketsLabel')}</SectionLabel>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {metalKeys.map(({ key, texture }, i) => (
               <FadeIn key={key} delay={i * 150}>
@@ -79,6 +72,7 @@ export default async function ServicesPage({ params }: Props) {
                   grades={t(`${key}.grades`)}
                   description={t(`${key}.description`)}
                   texture={texture}
+                  expanded
                 />
               </FadeIn>
             ))}
@@ -94,24 +88,18 @@ export default async function ServicesPage({ params }: Props) {
       />
 
       {/* How we trade */}
-      <Section background="ivory" padding="none" className="pb-12 md:pb-16">
+      <Section background="ivory">
         <Container>
-          <div className="mb-10 flex items-center gap-6">
-            <GoldDivider width="40px" />
-            <Typography variant="label" className="text-navy/60">
-              {t('howWeTradeLabel')}
-            </Typography>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <SectionLabel align="left">{t('howWeTradeLabel')}</SectionLabel>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {tradingServiceKeys.map((key, i) => (
               <FadeIn key={key} delay={i * 150}>
                 <div>
-                  <Typography variant="h3" className="text-navy mb-4">
+                  <Typography variant="h3" className="text-navy mb-3">
                     {t(`${key}.name`)}
                   </Typography>
-                  <div className="w-10 h-px bg-gold mb-6" aria-hidden="true" />
-                  <Typography variant="body" className="text-charcoal">
+                  <div className="w-10 h-px bg-gold mb-4" aria-hidden="true" />
+                  <Typography variant="body" className="text-charcoal/80">
                     {t(`${key}.description`)}
                   </Typography>
                 </div>
@@ -124,14 +112,11 @@ export default async function ServicesPage({ params }: Props) {
       {/* Principal model pull quote */}
       <QuoteBand quote={t('brokerageModel')} />
 
-      {/* CTA section */}
+      {/* Closing CTA */}
       <CTASection
         heading={t('ctaHeading')}
-        body={t('ctaBody')}
         buttonText={t('cta')}
         buttonHref="/contact"
-        email={contact.email}
-        locale={locale}
       />
     </>
   );

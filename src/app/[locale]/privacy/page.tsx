@@ -26,7 +26,7 @@ export default async function PrivacyPage({ params }: Props) {
 
   return (
     <div className="animate-fade-in">
-      <PageHeader title="Datenschutzerklärung" locale={locale} compact />
+      <PageHeader title="Datenschutzerklärung" locale={locale} />
 
       <Section background="ivory">
         <Container>

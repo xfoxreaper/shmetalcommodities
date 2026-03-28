@@ -42,9 +42,9 @@ export default async function InsightsPage({ params }: Props) {
 
   return (
     <>
-      <PageHeader title={t('heading')} locale={locale} compact />
+      <PageHeader title={t('heading')} locale={locale} />
 
-      <Section background="ivory" padding="compact">
+      <Section background="ivory">
         <Container>
           {blogPosts.length === 0 ? (
             <FadeIn>

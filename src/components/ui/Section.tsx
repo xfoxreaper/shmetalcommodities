@@ -1,7 +1,7 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
 type SectionBackground = 'navy' | 'ivory' | 'transparent';
-type SectionPadding = 'default' | 'compact' | 'tight' | 'none';
+type SectionPadding = 'large' | 'default' | 'compact' | 'tight' | 'none';
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
@@ -17,9 +17,10 @@ const backgroundClasses: Record<SectionBackground, string> = {
 };
 
 const paddingClasses: Record<SectionPadding, string> = {
-  default: 'py-18 md:py-26',
-  compact: 'py-12 md:py-16',
-  tight: 'py-8 md:py-12',
+  large: 'py-20 md:py-28',
+  default: 'py-14 md:py-20',
+  compact: 'py-10 md:py-14',
+  tight: 'py-6 md:py-10',
   none: '',
 };
 

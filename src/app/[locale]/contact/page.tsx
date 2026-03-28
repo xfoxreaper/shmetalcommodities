@@ -62,13 +62,12 @@ export default async function ContactPage({ params }: Props) {
       <PageHeader
         title={t('heading')}
         locale={locale}
-        compact
       />
 
       <Section background="ivory">
         <Container>
           <FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 max-w-4xl mx-auto">
 
             {/* LEFT COLUMN — contact details */}
             <div className="space-y-8">

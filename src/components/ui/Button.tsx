@@ -68,7 +68,7 @@ export function Button({
       className={[
         'inline-flex items-center justify-center gap-2',
         'font-ui text-xs uppercase tracking-[0.15em]',
-        'px-10 py-4',
+        'px-7 py-3',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4',
         'disabled:opacity-50 disabled:cursor-not-allowed',
         variantClasses[variant],

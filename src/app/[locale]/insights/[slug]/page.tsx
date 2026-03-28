@@ -72,7 +72,7 @@ export default async function InsightDetailPage({ params }: Props) {
 
   return (
     <>
-      <PageHeader title={post.title} locale={locale} compact />
+      <PageHeader title={post.title} locale={locale} />
 
       <Section background="ivory" padding="compact">
         <Container className="max-w-3xl">

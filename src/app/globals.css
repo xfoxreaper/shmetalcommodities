@@ -11,6 +11,7 @@
   /* Extended palette */
   --color-gold-light: #D4BC82;
   --color-gold-dark: #8C7340;
+  --color-gold-text: #8B7332;  /* WCAG AA compliant gold for text on ivory */
   --color-slate: #2A3A52;
   --color-success: #3D7A5F;
   --color-error: #9B3B3B;
@@ -33,7 +34,7 @@
   color-scheme: light;
   --background: var(--color-warm-white);
   --foreground: var(--color-charcoal);
-  --navbar-h: 88px;
+  --navbar-h: 72px;
 }
 
 body {

@@ -1,22 +1,18 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
 import { generatePageMetadata } from '@/lib/metadata';
-import { pressReleases } from '../../../../content/newsroom';
 import {
   Section,
   Container,
   Typography,
-  GoldDivider,
   PageHeader,
   FadeIn,
   StatsBar,
   QuoteBand,
   NumberedPillar,
-  ImageBand,
   SectionLabel,
-  Button,
+  CTASection,
 } from '@/components/ui';
 
 type Props = {
@@ -67,41 +63,31 @@ export default async function AboutPage({ params }: Props) {
         locale={locale}
       />
 
-      {/* Section 2: Heritage Narrative */}
+      {/* Section 2: Heritage Narrative + Stats */}
       <Section background="ivory">
         <Container>
           <FadeIn>
-            <div className="space-y-6 max-w-3xl">
+            <div className="max-w-2xl mx-auto space-y-5 text-center">
               <Typography variant="body">{t('para1')}</Typography>
               <Typography variant="body">{t('para2')}</Typography>
               <Typography variant="body">{t('para3')}</Typography>
             </div>
           </FadeIn>
+          <div className="mt-14 pt-14 border-t border-gold/20">
+            <StatsBar stats={stats} />
+          </div>
         </Container>
       </Section>
 
-      {/* Company office photograph */}
-      <ImageBand
-        src="/images/history-office.jpg"
-        alt="The original SH Metal Commodities office, Hamburg, circa 1912"
-        height="h-[300px] md:h-[400px]"
-        overlayOpacity="bg-navy/30"
-      />
-      <div className="bg-ivory text-center py-3">
-        <span className="font-ui text-[11px] uppercase tracking-widest text-charcoal/50">
-          The original SH Metal Commodities office, Hamburg — circa 1912
-        </span>
-      </div>
-
-      {/* Section 3: Pull Quote Band */}
+      {/* Section 3: Pull Quote */}
       <QuoteBand quote={t('pullQuote')} />
 
-      {/* Heritage Timeline */}
-      <Section background="navy">
+      {/* Section 4: Heritage Timeline */}
+      <Section background="ivory" padding="compact">
         <Container>
-          <SectionLabel align="center" variant="light">{t('historyLabel')}</SectionLabel>
+          <SectionLabel align="center">{t('historyLabel')}</SectionLabel>
 
-          <div className="space-y-16 md:space-y-24">
+          <div className="space-y-12 md:space-y-16">
             {/* 1873: Founded in Hamburg */}
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -115,11 +101,11 @@ export default async function AboutPage({ params }: Props) {
                   />
                 </div>
                 <div>
-                  <span className="font-display text-5xl md:text-6xl font-light text-gold">{t('timeline.founded.year')}</span>
-                  <Typography variant="h3" className="text-ivory mt-4 mb-4">
+                  <span className="font-display text-4xl md:text-5xl font-light text-gold">{t('timeline.founded.year')}</span>
+                  <Typography variant="h3" className="text-navy mt-3 mb-3">
                     {t('timeline.founded.title')}
                   </Typography>
-                  <Typography variant="body" className="text-ivory/80">
+                  <Typography variant="body" className="text-charcoal/80">
                     {t('timeline.founded.description')}
                   </Typography>
                 </div>
@@ -130,11 +116,11 @@ export default async function AboutPage({ params }: Props) {
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div className="order-2 md:order-1">
-                  <span className="font-display text-5xl md:text-6xl font-light text-gold">{t('timeline.hamburg.year')}</span>
-                  <Typography variant="h3" className="text-ivory mt-4 mb-4">
+                  <span className="font-display text-4xl md:text-5xl font-light text-gold">{t('timeline.hamburg.year')}</span>
+                  <Typography variant="h3" className="text-navy mt-3 mb-3">
                     {t('timeline.hamburg.title')}
                   </Typography>
-                  <Typography variant="body" className="text-ivory/80">
+                  <Typography variant="body" className="text-charcoal/80">
                     {t('timeline.hamburg.description')}
                   </Typography>
                 </div>
@@ -163,11 +149,11 @@ export default async function AboutPage({ params }: Props) {
                   />
                 </div>
                 <div>
-                  <span className="font-display text-5xl md:text-6xl font-light text-gold">{t('timeline.dubai.year')}</span>
-                  <Typography variant="h3" className="text-ivory mt-4 mb-4">
+                  <span className="font-display text-4xl md:text-5xl font-light text-gold">{t('timeline.dubai.year')}</span>
+                  <Typography variant="h3" className="text-navy mt-3 mb-3">
                     {t('timeline.dubai.title')}
                   </Typography>
-                  <Typography variant="body" className="text-ivory/80">
+                  <Typography variant="body" className="text-charcoal/80">
                     {t('timeline.dubai.description')}
                   </Typography>
                 </div>
@@ -177,70 +163,40 @@ export default async function AboutPage({ params }: Props) {
         </Container>
       </Section>
 
-      {/* Section 4: Key Figures */}
-      <Section background="ivory">
+      {/* Section 5: Values */}
+      <Section background="navy">
         <Container>
-          <StatsBar stats={stats} />
-        </Container>
-      </Section>
-
-      {/* Latest from Our Newsroom teaser */}
-      <Section background="ivory" padding="none" className="pb-8 md:pb-10">
-        <Container>
-          <FadeIn>
-            <div className="mb-8">
-              <Typography variant="label" className="text-charcoal/60 mb-4 block">
-                Latest News
-              </Typography>
-              <GoldDivider />
-            </div>
-            <div className="space-y-6 max-w-3xl">
-              {pressReleases.slice(0, 2).map((release) => (
-                <Link key={release.slug} href={`/newsroom/${release.slug}`} className="block group">
-                  <Typography variant="label" className="text-gold mb-1">
-                    {new Date(release.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}
-                  </Typography>
-                  <Typography variant="h3" className="text-navy group-hover:text-gold transition-colors">
-                    {release.title}
-                  </Typography>
-                </Link>
-              ))}
-            </div>
-          </FadeIn>
-        </Container>
-      </Section>
-
-      {/* Section 5: Values + CTA */}
-      <Section background="ivory" padding="none" className="pb-18 md:pb-26">
-        <Container>
-          {/* Values label */}
-          <SectionLabel align="left" variant="dark">
+          <SectionLabel align="center" variant="light">
             {t('valuesLabel')}
           </SectionLabel>
-
-          {/* Values grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+          <div className="max-w-2xl mx-auto space-y-10">
             {valueKeys.map((key, i) => (
-              <FadeIn key={key} delay={i * 150}>
-                <NumberedPillar
-                  number={i + 1}
-                  title={t(`values.${key}.title`)}
-                  description={t(`values.${key}.description`)}
-                />
+              <FadeIn key={key} delay={i * 100}>
+                <div className="flex gap-6 items-start">
+                  <span className="font-display text-4xl font-light text-gold shrink-0 w-12">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <Typography variant="h3" className="text-ivory mb-2">
+                      {t(`values.${key}.title`)}
+                    </Typography>
+                    <Typography variant="body" className="text-ivory/85">
+                      {t(`values.${key}.description`)}
+                    </Typography>
+                  </div>
+                </div>
               </FadeIn>
             ))}
           </div>
-
-          {/* CTA */}
-          <FadeIn>
-            <div className="text-center">
-              <Link href="/contact">
-                <Button>{t('ctaButton')}</Button>
-              </Link>
-            </div>
-          </FadeIn>
         </Container>
       </Section>
+
+      {/* Closing CTA */}
+      <CTASection
+        heading={t('ctaButton')}
+        buttonText={t('ctaButton')}
+        buttonHref="/contact"
+      />
     </div>
   );
 }

@@ -11,15 +11,10 @@ interface PageHeaderProps {
   compact?: boolean;
 }
 
-export function PageHeader({ title, subtitle, locale, compact }: PageHeaderProps) {
+export function PageHeader({ title, subtitle, locale }: PageHeaderProps) {
   return (
     <header
-      className={[
-        'relative text-warm-white',
-        compact
-          ? 'pt-10 pb-10 md:pt-[72px] md:pb-[72px]'
-          : 'pt-14 pb-14 md:pt-24 md:pb-24',
-      ].join(' ')}
+      className="relative text-warm-white pt-16 pb-16 md:pt-24 md:pb-24"
       style={{ background: 'linear-gradient(180deg, var(--color-navy), #0E1D35)' }}
     >
       <NoiseTexture />
@@ -27,11 +22,11 @@ export function PageHeader({ title, subtitle, locale, compact }: PageHeaderProps
         <Typography variant="h1" locale={locale} className="text-warm-white">
           {title}
         </Typography>
-        <div className="mt-6">
-          <GoldDivider />
+        <div className="mt-4 w-16">
+          <GoldDivider width="64px" />
         </div>
         {subtitle && (
-          <Typography variant="body" className="text-warm-white/80 mt-6 max-w-2xl">
+          <Typography variant="body" className="text-warm-white/85 mt-5 max-w-2xl">
             {subtitle}
           </Typography>
         )}

@@ -33,7 +33,7 @@ export function InsightCard({
     <Link
       href={`/insights/${slug}`}
       locale={locale as 'en' | 'de' | 'zh' | 'ar'}
-      className="group block bg-warm-white overflow-hidden transition-transform duration-300 hover:-translate-y-1 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+      className="group flex flex-col bg-warm-white overflow-hidden h-full transition-transform duration-300 hover:-translate-y-1 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
     >
       {/* Image */}
       <div className="relative aspect-[16/9] bg-navy overflow-hidden">
@@ -51,7 +51,7 @@ export function InsightCard({
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         <div className="flex items-center gap-3 mb-3">
           <Typography variant="caption" className="text-charcoal/50">
             {formatDate(date)}
@@ -66,15 +66,15 @@ export function InsightCard({
           )}
         </div>
 
-        <Typography variant="h3" as="h2" className="text-navy mb-3 text-xl sm:text-xl md:text-2xl">
+        <Typography variant="h3" as="h2" className="text-navy mb-3 line-clamp-2">
           {title}
         </Typography>
 
-        <Typography variant="body" className="text-charcoal/70 text-base sm:text-base md:text-base leading-relaxed mb-4 line-clamp-3">
+        <Typography variant="body" className="text-charcoal/70 mb-4 line-clamp-3">
           {excerpt}
         </Typography>
 
-        <span className="font-ui text-xs uppercase tracking-widest text-gold group-hover:text-navy transition-colors duration-200">
+        <span className="mt-auto font-ui text-xs uppercase tracking-widest text-gold group-hover:text-navy transition-colors duration-200">
           {readMoreLabel} &rarr;
         </span>
       </div>

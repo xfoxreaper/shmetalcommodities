@@ -43,7 +43,7 @@ export function Navbar() {
           navBg,
         ].join(' ')}
       >
-        <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between overflow-visible h-[var(--navbar-h)]">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10 flex items-center justify-between overflow-visible h-[var(--navbar-h)]">
           {/* Logo — left */}
           <Link href="/" aria-label="SH Metal Commodities — Home" className="shrink-0">
             <Image
@@ -52,7 +52,7 @@ export function Navbar() {
               height={152}
               alt="SH Metal Commodities"
               priority
-              className="w-[120px] sm:w-[140px] md:w-[160px] h-auto"
+              className="w-[100px] sm:w-[110px] md:w-[120px] h-auto"
             />
           </Link>
 

@@ -18,7 +18,6 @@ import {
   Button,
   SectionLabel,
   StatsBar,
-  NumberedPillar,
   InsightCard,
   QuoteBand,
   CTASection,
@@ -62,30 +61,30 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       {/* ── Hero ── */}
-      <div className="relative bg-navy animate-fade-in flex flex-col items-center justify-center min-h-dvh -mt-[var(--navbar-h)] pt-[120px] pb-[60px]">
+      <div className="relative bg-navy animate-fade-in flex flex-col items-center justify-center min-h-[90vh] -mt-[var(--navbar-h)] pt-[120px] pb-[60px]">
         <Image src="/images/hamburg-port.jpg" alt="" fill priority className="object-cover opacity-20" sizes="100vw" />
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none bg-[url('/images/hero-skyline.svg')] bg-bottom bg-no-repeat bg-cover opacity-40" />
         <NoiseTexture opacity={0.06} />
-        <Container className="relative z-10 flex flex-col items-center text-center gap-8 flex-1 justify-center">
+        <Container className="relative z-10 flex flex-col items-center text-center gap-6 flex-1 justify-center">
           <Typography variant="label" className="text-gold tracking-[0.25em]">
             {t('established')}
           </Typography>
           <Typography variant="display" className="text-ivory" locale={locale}>
             {t('tagline')}
           </Typography>
-          <Typography variant="body" className="text-ivory max-w-2xl text-center opacity-90">
+          <Typography variant="body" className="text-ivory max-w-lg text-center opacity-90 [text-wrap:balance]">
             {t('subTagline')}
           </Typography>
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
             <Link href="/contact">
-              <Button variant="primary" className="bg-gold text-navy border-gold hover:bg-gold/90 hover:text-navy">
+              <Button variant="primary" className="bg-gold text-navy border-gold hover:bg-gold-light hover:text-navy px-8 py-3.5">
                 {t('ctaPrimary')}
               </Button>
             </Link>
             <Link href="/about">
-              <Button variant="ghost" className="text-ivory border-ivory/60 hover:bg-ivory/10 hover:text-ivory">
-                {t('ctaSecondary')}
-              </Button>
+              <button className="font-ui text-xs uppercase tracking-widest text-ivory/70 hover:text-ivory transition-colors px-4 py-2">
+                {t('ctaSecondary')} &rarr;
+              </button>
             </Link>
           </div>
         </Container>
@@ -98,7 +97,7 @@ export default async function HomePage({ params }: Props) {
       </div>
 
       {/* ── Stats ── */}
-      <Section background="ivory" padding="tight">
+      <Section background="ivory" padding="compact">
         <Container>
           <FadeIn>
             <StatsBar stats={[
@@ -112,7 +111,7 @@ export default async function HomePage({ params }: Props) {
       </Section>
 
       {/* ── Our Metals ── */}
-      <Section background="navy">
+      <Section background="navy" padding="large">
         <Container>
           <FadeIn>
             <SectionLabel align="center" variant="light">{t('ourMarkets')}</SectionLabel>
@@ -148,30 +147,35 @@ export default async function HomePage({ params }: Props) {
         <Container>
           <SectionLabel align="center">{t('ourApproach')}</SectionLabel>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-4xl mx-auto text-center">
             {pillars.map((key, i) => (
               <FadeIn key={key} delay={i * 150}>
-                <NumberedPillar
-                  number={i + 1}
-                  title={t(`approach.${key}.title`)}
-                  description={t(`approach.${key}.description`)}
-                />
+                <div className="flex flex-col items-center">
+                  <span className="font-display text-3xl font-light text-gold mb-3">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <Typography variant="h3" className="text-navy mb-2">
+                    {t(`approach.${key}.title`)}
+                  </Typography>
+                  <GoldDivider width="40px" className="mb-3" />
+                  <Typography variant="body" className="text-charcoal/80">
+                    {t(`approach.${key}.description`)}
+                  </Typography>
+                </div>
               </FadeIn>
             ))}
           </div>
         </Container>
       </Section>
 
+      {/* ── Heritage Quote ── */}
+      <QuoteBand quote={tAbout('pullQuote')} attribution={t('quoteAttribution')} />
+
       {/* ── Latest Insights ── */}
-      <Section background="ivory" padding="compact">
+      <Section background="ivory">
         <Container>
           <FadeIn>
-            <div className="mb-10 flex items-center gap-6">
-              <GoldDivider width="40px" />
-              <Typography variant="label" className="text-navy/60">
-                {t('latestInsights')}
-              </Typography>
-            </div>
+            <SectionLabel align="left">{t('latestInsights')}</SectionLabel>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.slice(0, 3).map((post, i) => (
@@ -181,10 +185,10 @@ export default async function HomePage({ params }: Props) {
             ))}
           </div>
           <FadeIn>
-            <div className="mt-10 text-center">
+            <div className="mt-8 text-center">
               <Link
                 href="/insights"
-                className="font-ui text-sm uppercase tracking-widest text-navy hover:text-gold transition-colors"
+                className="font-ui text-xs uppercase tracking-widest text-gold-text hover:text-navy transition-colors"
               >
                 {t('viewAllInsights')} →
               </Link>
@@ -197,20 +201,11 @@ export default async function HomePage({ params }: Props) {
       <Section background="navy" padding="compact">
         <Container>
           <FadeIn>
-            <div className="mb-8 flex items-center justify-center gap-6">
-              <GoldDivider width="40px" />
-              <Typography variant="label" className="text-ivory/60">
-                {t('globalPresence')}
-              </Typography>
-              <GoldDivider width="40px" />
-            </div>
+            <SectionLabel align="center" variant="light">{t('globalPresence')}</SectionLabel>
             <WorldMap />
           </FadeIn>
         </Container>
       </Section>
-
-      {/* ── Heritage Quote ── */}
-      <QuoteBand quote={tAbout('pullQuote')} attribution={t('quoteAttribution')} />
 
       {/* ── Contact CTA ── */}
       <CTASection

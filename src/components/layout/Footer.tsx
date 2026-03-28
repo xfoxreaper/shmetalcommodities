@@ -16,7 +16,7 @@ export async function Footer() {
   return (
     <footer className="bg-navy text-warm-white">
       {/* Top section: Logo + descriptor, centered */}
-      <div className="max-w-[1100px] mx-auto px-6 pt-20 pb-12">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 pt-14 pb-10">
         <div className="flex flex-col items-center text-center gap-4">
           <Link href="/" aria-label="SH Metal Commodities — Home">
             <Image
@@ -37,12 +37,12 @@ export async function Footer() {
       </div>
 
       {/* Gold divider */}
-      <div className="max-w-[1100px] mx-auto px-6">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <GoldDivider />
       </div>
 
       {/* Middle section: 3-column grid */}
-      <div className="max-w-[1100px] mx-auto px-6 py-12">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-8">
           {/* Column 1: Navigation */}
           <div>
@@ -118,12 +118,12 @@ export async function Footer() {
       </div>
 
       {/* Gold divider */}
-      <div className="max-w-[1100px] mx-auto px-6">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <GoldDivider />
       </div>
 
       {/* Bottom bar: copyright */}
-      <div className="max-w-[1100px] mx-auto px-6 py-8 pb-safe">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8 pb-safe">
         <p className="font-ui text-xs uppercase tracking-widest text-ivory/70 text-center">
           {copyright}
         </p>

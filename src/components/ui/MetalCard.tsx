@@ -9,21 +9,22 @@ interface MetalCardProps {
   grades?: string;
   description: string;
   texture: MetalTexture;
+  expanded?: boolean;
   children?: ReactNode;
 }
 
 const textureStyles: Record<MetalTexture, React.CSSProperties> = {
   copper: {
     background:
-      'linear-gradient(135deg, hsl(12,45%,25%) 0%, hsl(12,40%,19%) 50%, hsl(16,43%,27%) 100%)',
+      'linear-gradient(135deg, hsl(15,32%,38%) 0%, hsl(12,28%,30%) 50%, hsl(18,30%,36%) 100%)',
   },
   aluminium: {
     background:
-      'linear-gradient(135deg, hsl(205,6%,42%) 0%, hsl(205,5%,34%) 50%, hsl(210,8%,40%) 100%)',
+      'linear-gradient(135deg, hsl(200,5%,52%) 0%, hsl(200,4%,44%) 50%, hsl(205,5%,50%) 100%)',
   },
   zinc: {
     background:
-      'linear-gradient(135deg, hsl(235,15%,22%) 0%, hsl(235,12%,17%) 50%, hsl(238,14%,20%) 100%)',
+      'linear-gradient(135deg, hsl(230,8%,46%) 0%, hsl(230,6%,38%) 50%, hsl(235,8%,44%) 100%)',
   },
 };
 
@@ -48,10 +49,10 @@ const metalTextureDataUris: Record<MetalTexture, string> = {
   zinc: `url("data:image/svg+xml,${encodeURIComponent(zincTextureSvg)}")`,
 };
 
-export function MetalCard({ name, grades, description, texture }: MetalCardProps) {
+export function MetalCard({ name, grades, description, texture, expanded }: MetalCardProps) {
   return (
     <article
-      className="relative overflow-hidden text-warm-white p-6 sm:p-8 flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+      className="relative overflow-hidden text-warm-white p-6 sm:p-8 flex flex-col h-full border border-gold/20 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
       style={textureStyles[texture]}
     >
       {/* Photo texture background */}
@@ -91,7 +92,7 @@ export function MetalCard({ name, grades, description, texture }: MetalCardProps
           <p className="font-ui text-xs uppercase tracking-widest text-gold/80 mb-4">{grades}</p>
         )}
         <div className="w-12 h-px bg-gold mb-6" aria-hidden="true" />
-        <Typography variant="body" className="text-warm-white/85">
+        <Typography variant="body" className={`text-warm-white/85 ${expanded ? '' : 'line-clamp-4'}`}>
           {description}
         </Typography>
       </div>
