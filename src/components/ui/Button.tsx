@@ -10,19 +10,19 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: [
-    'bg-navy text-warm-white border border-gold',
-    'hover:bg-gold hover:text-navy',
-    'transition-colors duration-200',
+    'bg-navy text-warm-white border-2 border-gold',
+    'hover:bg-gold hover:text-navy hover:scale-[1.02]',
+    'transition-all duration-200',
   ].join(' '),
   secondary: [
-    'bg-navy text-warm-white border border-navy',
-    'hover:bg-charcoal',
-    'transition-colors duration-200',
+    'bg-navy text-warm-white border-2 border-navy',
+    'hover:bg-charcoal hover:scale-[1.02]',
+    'transition-all duration-200',
   ].join(' '),
   ghost: [
-    'bg-transparent text-gold border border-gold',
-    'hover:bg-gold hover:text-navy',
-    'transition-colors duration-200',
+    'bg-transparent text-gold border-2 border-gold',
+    'hover:bg-gold hover:text-navy hover:scale-[1.02]',
+    'transition-all duration-200',
   ].join(' '),
 };
 
@@ -67,9 +67,9 @@ export function Button({
       disabled={isDisabled}
       className={[
         'inline-flex items-center justify-center gap-2',
-        'font-ui text-xs uppercase tracking-widest',
-        'px-8 py-3.5',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2',
+        'font-ui text-xs uppercase tracking-[0.15em]',
+        'px-10 py-4',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4',
         'disabled:opacity-50 disabled:cursor-not-allowed',
         variantClasses[variant],
         className,

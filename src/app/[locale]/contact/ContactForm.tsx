@@ -30,6 +30,7 @@ export interface ContactFormTranslations {
   subject: string;
   message: string;
   submit: string;
+  sending: string;
   successMessage: string;
   errorMessage: string;
   subjects: SubjectOption[];
@@ -135,15 +136,23 @@ export function ContactForm({ translations }: ContactFormProps) {
         {...messageRegister}
       />
 
-      {/* T-429: loading state — Button has built-in loading prop with spinner */}
       <Button
         type="submit"
         variant="primary"
         loading={status === 'loading'}
         disabled={status === 'loading'}
+        className="w-full sm:w-auto"
       >
-        {status === 'loading' ? 'Sending…' : translations.submit}
+        {status === 'loading' ? translations.sending : translations.submit}
       </Button>
+
+      <p className="font-ui text-[11px] tracking-wide text-charcoal/60 mt-4">
+        By submitting this form, you agree to our{' '}
+        <a href="/privacy" className="underline hover:text-gold transition-colors">
+          Privacy Policy
+        </a>
+        . Your data will be used solely to respond to your enquiry.
+      </p>
     </form>
   );
 }

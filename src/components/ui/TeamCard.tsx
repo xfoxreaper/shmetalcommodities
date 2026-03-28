@@ -68,7 +68,7 @@ export function TeamCard({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${name} LinkedIn profile`}
-          className="mt-5 text-charcoal/50 hover:text-gold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+          className="mt-4 -ms-2.5 p-2.5 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-charcoal/50 hover:text-gold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
         >
           <LinkedInIcon />
         </a>

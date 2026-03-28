@@ -13,6 +13,6 @@ export const localeNames: Record<Locale, string> = {
 export const localeLabels: Record<Locale, string> = {
   en: 'EN',
   de: 'DE',
-  zh: 'ZH',
-  ar: 'AR',
+  zh: '中文',
+  ar: 'عربي',
 };

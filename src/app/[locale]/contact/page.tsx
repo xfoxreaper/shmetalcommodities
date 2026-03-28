@@ -3,19 +3,20 @@ import { getTranslations } from 'next-intl/server';
 import { contact } from '../../../../content/contact';
 import { generatePageMetadata } from '@/lib/metadata';
 import {
+  PageHeader,
   Section,
   Container,
   Typography,
-  GoldDivider,
+  FadeIn,
 } from '@/components/ui';
 import { ContactForm } from './ContactForm';
 import type { SubjectOption, ContactFormTranslations } from './ContactForm';
 
-export async function generateMetadata({
-  params,
-}: {
+type Props = {
   params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const base = await generatePageMetadata(locale, 'contact');
 
@@ -37,8 +38,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function ContactPage() {
-  const t = await getTranslations('contact');
+export default async function ContactPage({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'contact' });
 
   const subjectsRaw = t.raw('subjects') as SubjectOption[];
 
@@ -49,6 +51,7 @@ export default async function ContactPage() {
     subject: t('formLabels.subject'),
     message: t('formLabels.message'),
     submit: t('submit'),
+    sending: t('sending'),
     successMessage: t('successMessage'),
     errorMessage: t('errorMessage'),
     subjects: subjectsRaw,
@@ -56,63 +59,51 @@ export default async function ContactPage() {
 
   return (
     <div className="animate-fade-in">
+      <PageHeader
+        title={t('heading')}
+        locale={locale}
+        compact
+      />
+
       <Section background="ivory">
         <Container>
-          {/* Page heading */}
-          <Typography variant="h1" className="mb-6">
-            {t('heading')}
-          </Typography>
-          <GoldDivider className="mb-12" />
-
-          {/* T-421: two-column layout */}
+          <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
 
-            {/* LEFT COLUMN — T-422: contact details */}
+            {/* LEFT COLUMN — contact details */}
             <div className="space-y-8">
-              <Typography variant="h2">{t('heading')}</Typography>
-
               {/* Address block */}
               <div className="space-y-1">
                 <Typography variant="label" className="text-navy mb-3 block">
-                  Address
+                  {t('labels.address')}
                 </Typography>
-                {/* PLACEHOLDER */}
                 <Typography variant="body">{contact.address.street}</Typography>
-                {/* PLACEHOLDER */}
                 <Typography variant="body">
                   {contact.address.postcode} {contact.address.city}
                 </Typography>
-                {/* PLACEHOLDER */}
                 <Typography variant="body">{contact.address.country}</Typography>
-              </div>
-
-              {/* Phone */}
-              <div>
-                <Typography variant="label" className="text-navy mb-2 block">
-                  Phone
-                </Typography>
-                {/* PLACEHOLDER */}
-                <Typography variant="body">{contact.phone}</Typography>
               </div>
 
               {/* Email */}
               <div>
                 <Typography variant="label" className="text-navy mb-2 block">
-                  Email
+                  {t('labels.email')}
                 </Typography>
-                {/* PLACEHOLDER */}
-                <Typography variant="body">{contact.email}</Typography>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="font-body text-base sm:text-lg leading-relaxed text-navy hover:text-gold transition-colors duration-150"
+                >
+                  {contact.email}
+                </a>
               </div>
-
-              {/* T-423 */}
-              {/* TODO: add Google Maps embed here */}
             </div>
 
-            {/* RIGHT COLUMN — T-424 to T-431: contact form */}
+            {/* RIGHT COLUMN — contact form */}
             <div>
               <ContactForm translations={translations} />
             </div>
           </div>
+          </FadeIn>
         </Container>
       </Section>
     </div>

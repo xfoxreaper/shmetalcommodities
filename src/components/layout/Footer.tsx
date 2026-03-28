@@ -33,10 +33,10 @@ export async function Footer() {
                 width={110}
                 height={140}
                 alt="SH Metal Commodities"
-                style={{ width: '110px', height: 'auto' }}
+                className="w-[80px] sm:w-[95px] md:w-[110px] h-auto"
               />
             </Link>
-            <p className="font-ui text-xs uppercase tracking-widest text-ivory/60">
+            <p className="font-ui text-xs uppercase tracking-widest text-ivory/80">
               {t('footer.descriptor')}
             </p>
           </div>
@@ -51,7 +51,7 @@ export async function Footer() {
                 key={key}
                 href={href}
                 locale={locale as 'en' | 'de' | 'zh' | 'ar'}
-                className="font-ui text-xs uppercase tracking-widest text-ivory/60 hover:text-ivory transition-colors duration-150 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                className="font-ui text-xs uppercase tracking-widest text-ivory/80 hover:text-ivory transition-colors duration-150 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
               >
                 {t(`nav.${key}`)}
               </Link>
@@ -60,15 +60,15 @@ export async function Footer() {
 
           {/* Column 3: Contact + LanguageSwitcher */}
           <div className="flex flex-col gap-4 md:items-end">
-            <address className="not-italic flex flex-col gap-1 text-end">
+            <address className="not-italic flex flex-col gap-1 text-start md:text-end">
               <a
                 href={`mailto:${contact.email}`}
-                className="font-ui text-xs uppercase tracking-widest text-ivory/60 hover:text-ivory transition-colors duration-150 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                className="font-ui text-xs uppercase tracking-widest text-ivory/80 hover:text-ivory transition-colors duration-150 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
               >
                 {contact.email}
               </a>
-              <span className="font-ui text-xs uppercase tracking-widest text-ivory/40">
-                Hamburg, Germany
+              <span className="font-ui text-xs uppercase tracking-widest text-ivory/70">
+                {t('footer.location')}
               </span>
             </address>
             <LanguageSwitcher variant="footer" />
@@ -77,9 +77,26 @@ export async function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="max-w-[1100px] mx-auto px-6 pb-8">
+      <div className="max-w-[1100px] mx-auto px-6 pb-8 pb-safe">
         <GoldDivider className="mb-6" />
-        <p className="font-ui text-xs uppercase tracking-widest text-ivory/40 text-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-4">
+          <Link
+            href="/impressum"
+            locale={locale as 'en' | 'de' | 'zh' | 'ar'}
+            className="font-ui text-xs uppercase tracking-widest text-ivory/70 hover:text-ivory transition-colors duration-150"
+          >
+            Impressum
+          </Link>
+          <span aria-hidden="true" className="hidden sm:inline text-ivory/30 text-xs">·</span>
+          <Link
+            href="/privacy"
+            locale={locale as 'en' | 'de' | 'zh' | 'ar'}
+            className="font-ui text-xs uppercase tracking-widest text-ivory/70 hover:text-ivory transition-colors duration-150"
+          >
+            Datenschutz
+          </Link>
+        </div>
+        <p className="font-ui text-xs uppercase tracking-widest text-ivory/70 text-center">
           {copyright}
         </p>
       </div>

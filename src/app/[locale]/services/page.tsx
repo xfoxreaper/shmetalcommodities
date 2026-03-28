@@ -1,14 +1,23 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { metals, tradingServices, principalModel } from '../../../../content/services';
 import { generatePageMetadata } from '@/lib/metadata';
 import { locales } from '@/lib/locales';
-import { PageHeader, Container, Section, MetalCard, Button, Typography, GoldDivider } from '@/components/ui';
+import { contact } from '../../../../content/contact';
+import { PageHeader, Container, Section, MetalCard, Button, Typography, GoldDivider, PullQuote, FadeIn } from '@/components/ui';
+import type { MetalTexture } from '../../../../content/services';
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
+
+const metalKeys = [
+  { key: 'copper', texture: 'copper' as MetalTexture },
+  { key: 'aluminium', texture: 'aluminium' as MetalTexture },
+  { key: 'zinc', texture: 'zinc' as MetalTexture },
+] as const;
+
+const tradingServiceKeys = ['priceRiskManagement', 'logistics'] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -38,7 +47,7 @@ export default async function ServicesPage({ params }: Props) {
     <>
       <PageHeader
         title={t('heading')}
-        subtitle={principalModel}
+        subtitle={t('subtitle')}
         locale={locale}
         compact
       />
@@ -49,12 +58,19 @@ export default async function ServicesPage({ params }: Props) {
           <div className="mb-10 flex items-center gap-6">
             <GoldDivider width="40px" />
             <Typography variant="label" className="text-navy/60">
-              Markets We Trade
+              {t('marketsLabel')}
             </Typography>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {metals.map((metal) => (
-              <MetalCard key={metal.id} {...metal} />
+            {metalKeys.map(({ key, texture }, i) => (
+              <FadeIn key={key} delay={i * 150}>
+                <MetalCard
+                  name={t(`${key}.name`)}
+                  grades={t(`${key}.grades`)}
+                  description={t(`${key}.description`)}
+                  texture={texture}
+                />
+              </FadeIn>
             ))}
           </div>
         </Container>
@@ -66,29 +82,60 @@ export default async function ServicesPage({ params }: Props) {
           <div className="mb-10 flex items-center gap-6">
             <GoldDivider width="40px" />
             <Typography variant="label" className="text-navy/60">
-              How We Trade
+              {t('howWeTradeLabel')}
             </Typography>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {tradingServices.map((service) => (
-              <div key={service.id}>
-                <Typography variant="h3" className="text-navy mb-4">
-                  {service.name}
-                </Typography>
-                <div className="w-10 h-px bg-gold mb-6" aria-hidden="true" />
-                <Typography variant="body" className="text-charcoal">
-                  {service.description}
-                </Typography>
-              </div>
+            {tradingServiceKeys.map((key, i) => (
+              <FadeIn key={key} delay={i * 150}>
+                <div>
+                  <Typography variant="h3" className="text-navy mb-4">
+                    {t(`${key}.name`)}
+                  </Typography>
+                  <div className="w-10 h-px bg-gold mb-6" aria-hidden="true" />
+                  <Typography variant="body" className="text-charcoal">
+                    {t(`${key}.description`)}
+                  </Typography>
+                </div>
+              </FadeIn>
             ))}
           </div>
+        </Container>
+      </Section>
 
-          <div className="mt-14 flex justify-center">
-            <Link href="/contact" locale={locale}>
-              <Button variant="secondary">{t('cta')}</Button>
-            </Link>
-          </div>
+      {/* Principal model pull quote */}
+      <Section background="navy" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+        <Container>
+          <FadeIn>
+            <div className="max-w-3xl mx-auto text-center">
+              <PullQuote className="text-warm-white/90 border-gold text-center border-s-0 border-t-[3px] pt-8 ps-0">
+                {t('brokerageModel')}
+              </PullQuote>
+            </div>
+          </FadeIn>
+        </Container>
+      </Section>
+
+      {/* CTA section */}
+      <Section background="navy" style={{ paddingTop: '0px', paddingBottom: '80px' }}>
+        <Container>
+          <FadeIn>
+            <div className="max-w-2xl mx-auto text-center">
+              <Typography variant="h2" className="text-warm-white mb-6">
+                {t('ctaHeading')}
+              </Typography>
+              <Typography variant="body" className="text-warm-white/75 mb-10">
+                {t('ctaBody')}
+              </Typography>
+              <Link href="/contact" locale={locale}>
+                <Button variant="ghost">{t('cta')}</Button>
+              </Link>
+              <p className="mt-6 font-ui text-xs text-warm-white/50">
+                {contact.email}
+              </p>
+            </div>
+          </FadeIn>
         </Container>
       </Section>
     </>

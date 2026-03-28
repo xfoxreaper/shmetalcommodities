@@ -50,16 +50,16 @@ export function Navbar() {
           navBg,
         ].join(' ')}
       >
-        <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between" style={{ height: '88px' }}>
+        <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between overflow-visible" style={{ height: '88px' }}>
           {/* Logo — left */}
-          <Link href="/" aria-label="SH Metal Commodities — Home">
+          <Link href="/" aria-label="SH Metal Commodities — Home" className="shrink-0">
             <Image
               src="/images/logo.png"
               width={110}
               height={140}
               alt="SH Metal Commodities"
               priority
-              style={{ width: '110px', height: 'auto' }}
+              className="w-[80px] sm:w-[95px] md:w-[110px] h-auto"
             />
           </Link>
 
@@ -78,11 +78,13 @@ export function Navbar() {
                   locale={locale as 'en' | 'de' | 'zh' | 'ar'}
                   aria-current={isActive ? 'page' : undefined}
                   className={[
-                    'font-ui text-xs uppercase tracking-widest transition-colors duration-150',
+                    'font-ui text-sm uppercase tracking-widest transition-colors duration-150',
                     'focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold',
-                    isActive
-                      ? 'text-gold border-b border-gold pb-0.5'
-                      : 'text-ivory/80 hover:text-ivory',
+                    key === 'contact'
+                      ? 'border border-gold px-4 py-1.5 hover:bg-gold hover:text-navy text-ivory/80'
+                      : isActive
+                        ? 'text-gold border-b border-gold pb-0.5'
+                        : 'text-ivory/80 hover:text-ivory',
                   ].join(' ')}
                 >
                   {t(key)}
@@ -98,7 +100,7 @@ export function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-ivory focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+            className="md:hidden p-2 -me-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-ivory focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
             aria-label="Open navigation menu"

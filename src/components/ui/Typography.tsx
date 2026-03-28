@@ -6,6 +6,8 @@ type TypographyVariant =
   | 'h2'
   | 'h3'
   | 'body'
+  | 'bodyLarge'
+  | 'caption'
   | 'label'
   | 'pullquote';
 
@@ -32,17 +34,23 @@ const variantDefaults: Record<TypographyVariant, TypographyElement> = {
   h2: 'h2',
   h3: 'h3',
   body: 'p',
+  bodyLarge: 'p',
+  caption: 'span',
   label: 'span',
   pullquote: 'blockquote',
 };
 
 const variantClasses: Record<TypographyVariant, string> = {
   display:
-    'font-display text-5xl sm:text-7xl md:text-8xl font-light tracking-widest leading-none',
-  h1: 'font-display text-4xl sm:text-5xl md:text-6xl font-light tracking-wide leading-tight',
-  h2: 'font-display text-3xl sm:text-4xl font-light tracking-wide leading-snug',
-  h3: 'font-display text-2xl sm:text-3xl font-light tracking-wide leading-snug',
-  body: 'font-body text-base sm:text-lg leading-relaxed',
+    'font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider leading-none break-words',
+  h1: 'font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide leading-tight break-words',
+  h2: 'font-display text-2xl sm:text-3xl md:text-4xl font-light tracking-wide leading-snug',
+  h3: 'font-display text-xl sm:text-2xl md:text-3xl font-light tracking-wide leading-snug',
+  body: 'font-body text-base sm:text-lg md:text-xl leading-relaxed md:leading-loose',
+  bodyLarge:
+    'font-body text-lg sm:text-xl md:text-2xl leading-relaxed font-light',
+  caption:
+    'font-ui text-[11px] uppercase tracking-widest text-current/50',
   label:
     'font-ui text-xs uppercase tracking-widest font-semibold',
   pullquote:

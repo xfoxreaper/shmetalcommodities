@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+  <g stroke="#F5F0E8" opacity="0.06" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Elbphilharmonie wave roof -->
+    <path d="M620 790 Q660 750 700 770 Q740 790 780 760 Q820 730 860 755 Q900 780 940 760"/>
+    <line x1="620" y1="790" x2="620" y2="850"/>
+    <line x1="940" y1="760" x2="940" y2="850"/>
+    <!-- Speicherstadt gabled rooflines -->
+    <polyline points="1020,830 1050,800 1080,830"/>
+    <polyline points="1090,830 1130,790 1170,830"/>
+    <polyline points="1180,830 1210,805 1240,830"/>
+    <!-- Warehouse walls -->
+    <line x1="1020" y1="830" x2="1020" y2="870"/>
+    <line x1="1080" y1="830" x2="1080" y2="870"/>
+    <line x1="1090" y1="830" x2="1090" y2="870"/>
+    <line x1="1170" y1="830" x2="1170" y2="870"/>
+    <line x1="1180" y1="830" x2="1180" y2="870"/>
+    <line x1="1240" y1="830" x2="1240" y2="870"/>
+    <!-- Cranes -->
+    <line x1="480" y1="850" x2="480" y2="740"/>
+    <line x1="480" y1="740" x2="530" y2="740"/>
+    <line x1="480" y1="740" x2="450" y2="750"/>
+    <line x1="1380" y1="850" x2="1380" y2="770"/>
+    <line x1="1380" y1="770" x2="1420" y2="770"/>
+    <line x1="1380" y1="770" x2="1355" y2="778"/>
+    <!-- Water line -->
+    <line x1="300" y1="870" x2="1600" y2="870"/>
+    <!-- Subtle water reflection -->
+    <line x1="620" y1="890" x2="940" y2="890" opacity="0.4"/>
+    <line x1="1020" y1="890" x2="1240" y2="890" opacity="0.3"/>
+  </g>
+</svg>

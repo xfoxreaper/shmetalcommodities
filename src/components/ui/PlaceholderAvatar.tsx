@@ -13,25 +13,40 @@ export function PlaceholderAvatar({
     <svg
       width={size}
       height={size}
-      viewBox="0 0 80 80"
+      viewBox="0 0 200 200"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       className={['rounded-full flex-shrink-0', className].filter(Boolean).join(' ')}
     >
-      <circle cx="40" cy="40" r="40" fill="#4A5568" />
+      {/* Navy background */}
+      <circle cx="100" cy="100" r="100" fill="#0A1628" />
+
+      {/* Outer ring — thin gold circle */}
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#B89A5A" strokeWidth="0.75" />
+
+      {/* Inner ring — thinner gold circle */}
+      <circle cx="100" cy="100" r="78" fill="none" stroke="#B89A5A" strokeWidth="0.5" opacity="0.5" />
+
+      {/* Small decorative diamond at top */}
+      <path d="M100 16 L103 20 L100 24 L97 20 Z" fill="#B89A5A" opacity="0.6" />
+
+      {/* Initials */}
       <text
-        x="40"
-        y="40"
+        x="100"
+        y="100"
         dominantBaseline="central"
         textAnchor="middle"
-        fill="#FFFFFF"
-        fontSize={size * 0.35}
-        fontFamily="Josefin Sans, sans-serif"
-        fontWeight="600"
-        letterSpacing="1"
+        fill="#B89A5A"
+        fontSize="42"
+        fontFamily="'Cormorant Garamond', 'Georgia', serif"
+        fontWeight="300"
+        letterSpacing="4"
       >
-        {initials.slice(0, 2).toUpperCase()}
+        {initials.slice(0, 3).toUpperCase()}
       </text>
+
+      {/* Thin line below initials */}
+      <line x1="70" y1="122" x2="130" y2="122" stroke="#B89A5A" strokeWidth="0.5" opacity="0.4" />
     </svg>
   );
 }

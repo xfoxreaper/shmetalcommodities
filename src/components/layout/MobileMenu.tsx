@@ -52,20 +52,20 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation menu"
-        className="fixed inset-0 z-50 bg-navy flex flex-col items-center justify-center animate-fade-in"
+        className="fixed inset-0 z-50 bg-navy flex flex-col items-center justify-center overflow-y-auto py-20 animate-fade-in"
       >
         {/* Close button */}
         <button
           onClick={onClose}
           aria-label="Close navigation menu"
-          className="absolute top-6 end-6 text-ivory/70 hover:text-ivory transition-colors duration-150 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+          className="absolute top-4 end-4 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-ivory/70 hover:text-ivory transition-colors duration-150 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
         >
           <XMarkIcon className="w-8 h-8" aria-hidden="true" />
         </button>
 
         {/* Nav links */}
         <nav aria-label="Mobile navigation">
-          <ul className="flex flex-col items-center gap-8">
+          <ul className="flex flex-col items-center gap-6 sm:gap-8">
             {navLinks.map(({ key, href }) => {
               const isHome = href === '/';
               const isActive = isHome
@@ -79,7 +79,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     onClick={onClose}
                     locale={locale as 'en' | 'de' | 'zh' | 'ar'}
                     className={[
-                      'font-display text-4xl tracking-wide transition-colors duration-150',
+                      'font-display text-3xl sm:text-4xl tracking-wide transition-colors duration-150',
                       'focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold',
                       isActive
                         ? 'text-gold'
@@ -96,7 +96,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         </nav>
 
         {/* Language switcher */}
-        <div className="absolute bottom-12">
+        <div className="mt-10 pb-safe">
           <LanguageSwitcher variant="footer" />
         </div>
       </div>

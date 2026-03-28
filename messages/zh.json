@@ -12,6 +12,41 @@
     "subTagline": "独立的有色金属贸易公司，自1873年起服务于全球市场的生产商、加工商及工业客户。",
     "cta": "了解更多",
     "trustBar": "总部位于德国汉堡",
+    "established": "创立于1873年",
+    "ctaPrimary": "联系交易部门",
+    "ctaSecondary": "我们的历史",
+    "stats": {
+      "founded": "1873",
+      "foundedLabel": "创立年份",
+      "years": "150+",
+      "yearsLabel": "年贸易历史",
+      "metals": "3",
+      "metalsLabel": "核心金属",
+      "reach": "全球",
+      "reachLabel": "市场覆盖"
+    },
+    "ourMarkets": "我们的市场",
+    "exploreMarkets": "探索我们的市场",
+    "ourApproach": "我们的工作方式",
+    "approach": {
+      "independent": {
+        "title": "独立经营",
+        "description": "没有母公司，没有利益冲突。我们以自有资本参与每笔交易。"
+      },
+      "experienced": {
+        "title": "经验丰富",
+        "description": "逾150年金属市场专业知识，历经数代持续交易而日臻完善。"
+      },
+      "trusted": {
+        "title": "值得信赖",
+        "description": "与全球生产商和消费者建立的长期合作关系，以履约能力和公平交易为基石。"
+      }
+    },
+    "quoteAttribution": "SH Metal Commodities每笔交易背后的信念",
+    "readOurStory": "阅读我们的故事",
+    "ctaHeading": "准备好讨论您的需求了吗？",
+    "ctaBody": "我们的交易部门随时准备就铜、铝和锌的采购、定价和物流进行沟通。",
+    "ctaButton": "联系我们",
     "meta": {
       "title": "SH Metal Commodities",
       "description": "独立有色金属贸易公司 — 铜、铝、锌。总部位于德国汉堡，创立于1873年。"
@@ -24,6 +59,22 @@
     "para3": "我们的名誉与每一笔交易紧密相连。履约的义务——兑现承诺、公平交易——是SH Metal Commodities每一段商业关系的根基。这不是我们后来形成的理念，而是我们一贯的行事准则。",
     "pullQuote": "我们以公司名义参与每一笔交易。",
     "credential": "创立于1873年，德国汉堡",
+    "valuesLabel": "我们的价值观",
+    "values": {
+      "integrity": {
+        "title": "诚信",
+        "description": "我们的名誉与每一笔交易紧密相连。履约的义务——兑现承诺、公平交易——是每段合作关系的根基。"
+      },
+      "discipline": {
+        "title": "纪律",
+        "description": "我们在既定风险参数内运营，只交易深入了解的市场，绝不过度扩张头寸。"
+      },
+      "relationships": {
+        "title": "关系",
+        "description": "我们将长期合作伙伴关系置于短期利润之上。信任一旦建立，便会跨越世代不断积累。"
+      }
+    },
+    "ctaButton": "联系我们的团队",
     "meta": {
       "title": "关于我们",
       "description": "SH Metal Commodities于1873年在汉堡创立，是一家以长期关系和严谨风险管理为核心的独立有色金属贸易公司。"
@@ -31,19 +82,35 @@
   },
   "services": {
     "heading": "我们的市场",
+    "marketsLabel": "我们交易的市场",
+    "howWeTradeLabel": "我们的交易方式",
     "copper": {
       "name": "铜",
+      "grades": "阴极铜 · 铜杆 · 废铜",
       "description": "铜是现代经济的核心导体——遍布每条电力基础设施线路、每台电动机和每套通信网络。我们在欧洲及全球市场进行阴极铜、铜杆及废铜的即期和远期交易，长期与冶炼厂、加工商及工业客户保持稳固合作。"
     },
     "aluminium": {
       "name": "铝",
+      "grades": "原铝锭 · 铝棒 · T型铝锭",
       "description": "铝兼具轻量、强度与导电性，已成为当代不可或缺的结构材料——广泛应用于交通运输、包装及建筑领域。我们的铝业团队涵盖原铝锭、铝棒及铝板的交易，在既定的LME参数框架内运作，并依托合作伙伴网络满足实物需求。"
     },
     "zinc": {
       "name": "锌",
+      "grades": "高纯锌 · 锌合金",
       "description": "锌通过热镀锌工艺延长桥梁、船舶和建筑物数十年的使用寿命，是全球钢铁基础设施耐久性的重要保障。我们与经过数代持续市场耕耘建立起来的冶炼厂及最终用户网络，交易SHG锌及锌合金。"
     },
+    "priceRiskManagement": {
+      "name": "价格风险管理",
+      "description": "金属价格持续波动，敞口价格风险必须主动管理。我们利用LME期货和远期合约对冲头寸，并在适当时为偏好价格确定性的生产商或消费者提供固定价格结构。"
+    },
+    "logistics": {
+      "name": "物流",
+      "description": "交易在金属交付后才算完成。我们管理完整的物流链——协调运输、货运保险、仓库收发、LME仓单处理及海关文件。"
+    },
     "brokerageModel": "我们以自营方式参与每一笔交易，而非代理商或经纪商。我们的交易对手与单一的已知主体进行交易——该主体投入自有资本、承担全部商业风险，并对其买卖的每一吨金属负责到底。",
+    "subtitle": "自1873年起的铜、铝、锌自营贸易商。",
+    "ctaHeading": "让我们讨论您的需求",
+    "ctaBody": "我们的交易台可就铜、铝和锌的采购、定价和物流进行讨论。",
     "cta": "联系我们的团队",
     "meta": {
       "title": "我们的市场",
@@ -51,7 +118,10 @@
     }
   },
   "team": {
-    "heading": "SH Metal Commodities 背后的团队",
+    "heading": "领导层",
+    "subtitle": "由在全球有色金属市场拥有丰富实践经验的从业者领导。",
+    "ctaHeading": "有兴趣与我们合作吗？",
+    "ctaButton": "联系我们",
     "meta": {
       "title": "我们的团队",
       "description": "认识SH Metal Commodities背后的团队——以专业素养、审慎态度和长远眼光经营每段合作关系的资深专业人士。"
@@ -72,6 +142,12 @@
       { "value": "partnership", "label": "战略合作" },
       { "value": "other", "label": "其他事宜" }
     ],
+    "labels": {
+      "address": "地址",
+      "phone": "电话",
+      "email": "电子邮件"
+    },
+    "sending": "发送中…",
     "submit": "发送咨询",
     "successMessage": "感谢您的咨询。我们的团队成员将尽快与您联系。",
     "errorMessage": "出现错误，请重试或直接联系我们。",
@@ -82,10 +158,12 @@
   },
   "footer": {
     "descriptor": "全球有色金属贸易",
+    "location": "德国汉堡",
     "copyright": "© {year} SH Metal Commodities. 保留所有权利。"
   },
   "common": {
     "loading": "加载中…",
-    "backToTop": "返回顶部"
+    "backToTop": "返回顶部",
+    "skipToContent": "跳转到内容"
   }
 }

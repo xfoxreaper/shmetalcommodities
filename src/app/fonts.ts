@@ -8,7 +8,7 @@ import {
 export const displayFont = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "600"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -16,7 +16,7 @@ export const displayFont = Cormorant_Garamond({
 export const bodyFont = Lora({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -24,7 +24,7 @@ export const bodyFont = Lora({
 export const uiFont = Josefin_Sans({
   variable: "--font-ui",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
+  weight: ["300", "400", "600"],
   display: "swap",
 });
 

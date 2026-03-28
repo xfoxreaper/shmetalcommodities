@@ -23,10 +23,10 @@ const inputClasses = [
   'w-full',
   'bg-transparent border-b border-charcoal/30',
   'font-body text-base text-charcoal',
-  'py-2 ps-0 pe-0',
+  'py-3 ps-0 pe-0 min-h-[44px]',
   'focus:outline-none focus:border-gold focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2',
   'transition-colors duration-200',
-  'placeholder:text-charcoal/40',
+  'placeholder:text-charcoal/60',
 ].join(' ');
 
 export const FormField = forwardRef<
