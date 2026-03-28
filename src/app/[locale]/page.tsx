@@ -38,7 +38,6 @@ export default async function HomePage({ params }: Props) {
   const t = await getTranslations({ locale, namespace: 'home' });
 
   return (
-    {/* Outer wrapper fills exactly one viewport — hero grows, trust bar pinned to bottom */}
     <div style={{ marginTop: '-88px', minHeight: '100dvh', display: 'flex', flexDirection: 'column' }}>
       {/* Hero */}
       <div className="relative bg-navy animate-fade-in" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '140px', paddingBottom: '60px' }}>
