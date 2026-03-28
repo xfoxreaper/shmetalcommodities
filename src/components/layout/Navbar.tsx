@@ -55,11 +55,11 @@ export function Navbar() {
           <Link href="/" aria-label="SH Metal Commodities — Home">
             <Image
               src="/images/logo.png"
-              width={70}
-              height={90}
+              width={110}
+              height={140}
               alt="SH Metal Commodities"
               priority
-              style={{ width: '70px', height: 'auto' }}
+              style={{ width: '110px', height: 'auto' }}
             />
           </Link>
 
