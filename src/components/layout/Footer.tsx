@@ -26,7 +26,7 @@ export async function Footer() {
         {/* 3-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Logo + descriptor */}
-          <div className="flex flex-col gap-4 items-center md:items-center">
+          <div className="flex flex-col gap-4" style={{ alignItems: 'center' }}>
             <Link href="/" aria-label="SH Metal Commodities — Home">
               <Image
                 src="/images/logo.png"
