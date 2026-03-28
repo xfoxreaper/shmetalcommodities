@@ -26,7 +26,7 @@ export async function Footer() {
         {/* 3-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Logo + descriptor */}
-          <div className="flex flex-col gap-4 items-start md:items-start">
+          <div className="flex flex-col gap-4 items-center md:items-center">
             <Link href="/" aria-label="SH Metal Commodities — Home">
               <Image
                 src="/images/logo.png"
@@ -36,7 +36,7 @@ export async function Footer() {
                 style={{ width: '80px', height: '80px' }}
               />
             </Link>
-            <p className="font-ui text-xs uppercase tracking-widest text-ivory/60">
+            <p className="font-ui text-xs uppercase tracking-widest text-ivory/60 text-center">
               {t('footer.descriptor')}
             </p>
           </div>
