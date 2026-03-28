@@ -19,12 +19,12 @@ export const company: CompanyConfig = {
   },
   about: {
     paragraphs: [
-      "Founded in Hamburg in 1873, SH Metal Commodities built its reputation across more than a century of direct participation in the non-ferrous metals industry — owning and operating smelting assets, trading physical metal, and maintaining long-standing relationships with producers and industrial consumers throughout Europe and beyond.",
-      "In the late 2000s, the business underwent a fundamental restructuring. Rising energy costs, intensifying global competition, and the pressures of the economic crisis had rendered domestic smelting operations unviable. Previously held assets in smelting and processing were divested as Germany ceased to be competitive in primary metals production. Rather than exit the industry, Herr Wolf Rudiger Harms — the company's Managing Director — took the decision to continue the business in the form it takes today: a focused, independent trading and brokerage house.",
-      "That decision reflected a clear-eyed assessment of where the company's enduring strengths lay — not in fixed assets, but in market knowledge, counterparty relationships, and the ability to source, price, and deliver metal across borders. Today, SH Metal Commodities operates as a lean principal trader, committing its own capital to every transaction and drawing on over 150 years of accumulated expertise in the markets it serves.",
-      "Our name is on every trade we make. That obligation — to perform, to honour commitments, and to deal fairly — is the foundation on which every business relationship at SH Metal Commodities rests. It is not a principle we arrived at; it is the only way we have ever worked.",
+      "SH Metal Commodities was established in Hamburg in 1873. For more than a century, the firm operated at every level of the non-ferrous metals trade — owning smelting assets, processing raw material, buying and selling physical metal. Relationships with producers, consumers, and intermediaries across Europe were built over decades and, in many cases, over generations.",
+      "By the late 2000s, the economics of German smelting had changed irreversibly. Energy costs rose. Globalisation shifted production to lower-cost jurisdictions. The financial crisis accelerated what was already underway. The company's smelting and processing assets were sold. Many firms in a similar position would have closed the book. Herr Wolf Rudiger Harms, Managing Director, chose a different path: to continue the business as what it had always been at its core — a trading house.",
+      "That decision stripped the company back to its essential strengths. Not fixed assets or production capacity, but something harder to replicate: deep knowledge of non-ferrous markets, trusted counterparty relationships built over 150 years, and the commercial judgement to source, price, and move metal across borders. Today, SH Metal Commodities trades copper, aluminium, and zinc as principal — committing its own capital, carrying its own risk.",
+      "We have no interest in being the largest firm in our market. We intend to remain among the most reliable. Every commitment we make is backed by our capital and our name. In this business, that is the only currency that compounds.",
     ],
-    pullQuote: "We trade with our name on every deal.",
+    pullQuote: "The assets changed. The knowledge didn't.",
   },
   tagline: "Metal. Markets. Trust.",
 };
