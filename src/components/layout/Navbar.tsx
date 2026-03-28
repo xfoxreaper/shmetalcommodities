@@ -50,8 +50,20 @@ export function Navbar() {
           navBg,
         ].join(' ')}
       >
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12 grid grid-cols-3 items-center" style={{ height: '88px' }}>
-          {/* Desktop nav — left */}
+        <div className="max-w-[1100px] mx-auto px-6 md:px-12 flex items-center justify-between" style={{ height: '88px' }}>
+          {/* Logo — left */}
+          <Link href="/" aria-label="SH Metal Commodities — Home">
+            <Image
+              src="/images/logo.png"
+              width={110}
+              height={140}
+              alt="SH Metal Commodities"
+              priority
+              style={{ width: '110px', height: 'auto' }}
+            />
+          </Link>
+
+          {/* Desktop nav — center */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map(({ key, href }) => {
               const isHome = href === '/';
@@ -79,37 +91,21 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Logo — center */}
-          <div className="flex justify-center">
-            <Link href="/" aria-label="SH Metal Commodities — Home">
-              <Image
-                src="/images/logo.png"
-                width={110}
-                height={140}
-                alt="SH Metal Commodities"
-                priority
-                style={{ width: '110px', height: 'auto' }}
-              />
-            </Link>
-          </div>
-
           {/* Desktop language switcher — right */}
-          <div className="hidden md:flex justify-end">
+          <div className="hidden md:block">
             <LanguageSwitcher variant="nav" />
           </div>
 
-          {/* Mobile hamburger — right col on mobile */}
-          <div className="flex justify-end md:hidden">
-            <button
-              className="text-ivory focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-              aria-label="Open navigation menu"
-              onClick={() => setIsMenuOpen(true)}
-            >
-              <Bars3Icon className="w-7 h-7" aria-hidden="true" />
-            </button>
-          </div>
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden text-ivory focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label="Open navigation menu"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <Bars3Icon className="w-7 h-7" aria-hidden="true" />
+          </button>
         </div>
       </header>
 
