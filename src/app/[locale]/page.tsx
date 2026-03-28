@@ -40,9 +40,9 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       {/* Hero — full viewport, extends behind transparent navbar */}
-      <div className="relative min-h-[100dvh] -mt-16 bg-navy flex items-center justify-center animate-fade-in">
+      <div className="relative min-h-[100dvh] -mt-20 bg-navy flex items-center justify-center animate-fade-in">
         <NoiseTexture opacity={0.06} />
-        <Container className="relative z-10 flex flex-col items-center text-center py-32 gap-8">
+        <Container className="relative z-10 flex flex-col items-center text-center py-20 gap-8">
           <Typography
             variant="display"
             className="text-ivory"
@@ -68,7 +68,7 @@ export default async function HomePage({ params }: Props) {
       </div>
 
       {/* Trust bar */}
-      <Section background="ivory">
+      <Section background="ivory" className="py-10 md:py-12">
         <Container>
           <div className="flex items-center justify-center gap-6">
             <GoldDivider width="60px" />

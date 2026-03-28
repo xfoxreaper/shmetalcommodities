@@ -30,8 +30,8 @@ export async function Footer() {
             <Link href="/" aria-label="SH Metal Commodities — Home">
               <Image
                 src="/images/logo.png"
-                width={48}
-                height={48}
+                width={72}
+                height={72}
                 alt="SH Metal Commodities"
               />
             </Link>

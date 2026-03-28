@@ -286,7 +286,7 @@ Status values: `TODO` | `WIP` | `DONE` | `BLOCKED`
 | T-802 | `npm run lint` — zero warnings | `DONE` | Fixed 2 ContactForm.tsx errors + 3 e2e unused var warnings [Solo-8] |
 | T-803 | `npx playwright test` — all green | `TODO` | Run manually: npx playwright test |
 | T-804 | Verify env vars in Vercel dashboard (RESEND_API_KEY, CONTACT_FORM_RECIPIENT) | `TODO` | Set manually in Vercel dashboard after deploy |
-| T-805 | Deploy to Vercel production | `DONE` | vercel.json created; deploy with: npx vercel --yes [Solo-8] |
+| T-805 | Deploy to Vercel production | `TODO` | vercel.json created; run: vercel login && vercel --yes [Solo-8] |
 | T-806 | Smoke test all 5 pages on production URL | `TODO` | Requires live URL after env vars set |
 | T-807 | Language switcher + RTL verified on production | `TODO` | Requires live URL after env vars set |
 | T-808 | Contact form tested end-to-end in production (real email received) | `TODO` | Requires RESEND_API_KEY + CONTACT_FORM_RECIPIENT set in Vercel |
@@ -313,5 +313,5 @@ Status values: `TODO` | `WIP` | `DONE` | `BLOCKED`
 | W6 Accessibility | 13 | 12 | 0 | 1 |
 | W7A E2E Tests | 7 | 6 | 0 | 0 |
 | W7B README | 9 | 0 | 0 | 0 |
-| W8 Deployment | 11 | 4 | 0 | 0 |
-| **Total** | **178** | **122** | **0** | **2** |
+| W8 Deployment | 11 | 3 | 0 | 0 |
+| **Total** | **178** | **121** | **0** | **2** |

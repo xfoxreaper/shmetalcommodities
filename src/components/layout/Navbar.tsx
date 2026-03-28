@@ -50,13 +50,13 @@ export function Navbar() {
           navBg,
         ].join(' ')}
       >
-        <div className="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-[1100px] mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" aria-label="SH Metal Commodities — Home">
             <Image
               src="/images/logo.png"
-              width={48}
-              height={48}
+              width={64}
+              height={64}
               alt="SH Metal Commodities"
               priority
             />
