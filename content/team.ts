@@ -16,7 +16,7 @@ export const team: TeamMember[] = [
   {
     id: "founder",
     initials: "WRH",
-    name: "Wolf Rudiger Harms",
+    name: "Herr Wolf Rudiger Harms",
     title: "Managing Director",
     bio: "A German entrepreneur with more than 30 years of experience in the international non-ferrous metals market. His professional activities focus on the sourcing, trading and commercial execution of metals transactions, particularly in the copper and nickel segments. His approach is characterised by practical experience, established industry relationships and transaction-oriented execution.",
     photoUrl: null,
