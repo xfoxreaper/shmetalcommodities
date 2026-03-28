@@ -4,7 +4,7 @@ import { Link } from '@/i18n/navigation';
 import { metals, tradingServices, principalModel } from '../../../../content/services';
 import { generatePageMetadata } from '@/lib/metadata';
 import { locales } from '@/lib/locales';
-import { PageHeader, Container, Section, MetalCard, Button, Typography, GoldDivider, NoiseTexture } from '@/components/ui';
+import { PageHeader, Container, Section, MetalCard, Button, Typography, GoldDivider } from '@/components/ui';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -43,28 +43,25 @@ export default async function ServicesPage({ params }: Props) {
         compact
       />
 
-      {/* The three metals — navy with noise */}
-      <Section background="navy" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
-        <div className="relative">
-          <NoiseTexture opacity={0.04} />
-          <Container className="relative z-10">
-            <div className="mb-10 flex items-center gap-6">
-              <GoldDivider width="40px" />
-              <Typography variant="label" className="text-ivory/60">
-                Markets We Trade
-              </Typography>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {metals.map((metal) => (
-                <MetalCard key={metal.id} {...metal} />
-              ))}
-            </div>
-          </Container>
-        </div>
+      {/* The three metals */}
+      <Section background="ivory" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+        <Container>
+          <div className="mb-10 flex items-center gap-6">
+            <GoldDivider width="40px" />
+            <Typography variant="label" className="text-navy/60">
+              Markets We Trade
+            </Typography>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {metals.map((metal) => (
+              <MetalCard key={metal.id} {...metal} />
+            ))}
+          </div>
+        </Container>
       </Section>
 
-      {/* How we trade — ivory */}
-      <Section background="ivory" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+      {/* How we trade */}
+      <Section background="ivory" style={{ paddingTop: '0px', paddingBottom: '60px' }}>
         <Container>
           <div className="mb-10 flex items-center gap-6">
             <GoldDivider width="40px" />
@@ -86,22 +83,10 @@ export default async function ServicesPage({ params }: Props) {
               </div>
             ))}
           </div>
-        </Container>
-      </Section>
 
-      {/* CTA — navy */}
-      <Section background="navy" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
-        <Container>
-          <div className="flex flex-col items-center text-center gap-6">
-            <Typography variant="h3" className="text-ivory">
-              Speak to Our Team
-            </Typography>
-            <GoldDivider width="40px" />
-            <Typography variant="body" className="text-ivory/70 max-w-xl">
-              Whether you are a producer seeking a reliable offtake partner or a consumer looking for a trusted supply relationship, we are open to enquiries.
-            </Typography>
+          <div className="mt-14 flex justify-center">
             <Link href="/contact" locale={locale}>
-              <Button variant="primary">{t('cta')}</Button>
+              <Button variant="secondary">{t('cta')}</Button>
             </Link>
           </div>
         </Container>

@@ -33,7 +33,7 @@ const noiseDataUri = `url("data:image/svg+xml,${encodeURIComponent(noiseOverlayS
 export function MetalCard({ name, grades, description, texture }: MetalCardProps) {
   return (
     <article
-      className="relative overflow-hidden text-warm-white p-8 min-h-[260px] flex flex-col justify-between"
+      className="relative overflow-hidden text-warm-white p-8 flex flex-col"
       style={textureStyles[texture]}
     >
       {/* CSS-only noise texture overlay for material feel */}
