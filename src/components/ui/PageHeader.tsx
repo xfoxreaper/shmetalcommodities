@@ -7,11 +7,12 @@ interface PageHeaderProps {
   title: ReactNode;
   subtitle?: ReactNode;
   locale?: string;
+  compact?: boolean;
 }
 
-export function PageHeader({ title, subtitle, locale }: PageHeaderProps) {
+export function PageHeader({ title, subtitle, locale, compact }: PageHeaderProps) {
   return (
-    <header className="bg-navy text-warm-white py-22 md:py-30">
+    <header className="bg-navy text-warm-white" style={compact ? { paddingTop: '60px', paddingBottom: '60px' } : { paddingTop: '88px', paddingBottom: '88px' }}>
       <Container>
         <Typography variant="h1" locale={locale} className="text-warm-white">
           {title}

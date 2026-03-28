@@ -40,14 +40,15 @@ export default async function ServicesPage({ params }: Props) {
         title={t('heading')}
         subtitle={principalModel}
         locale={locale}
+        compact
       />
 
       {/* The three metals — navy with noise */}
-      <Section background="navy">
+      <Section background="navy" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="relative">
           <NoiseTexture opacity={0.04} />
           <Container className="relative z-10">
-            <div className="mb-12 flex items-center gap-6">
+            <div className="mb-10 flex items-center gap-6">
               <GoldDivider width="40px" />
               <Typography variant="label" className="text-ivory/60">
                 Markets We Trade
@@ -63,9 +64,9 @@ export default async function ServicesPage({ params }: Props) {
       </Section>
 
       {/* How we trade — ivory */}
-      <Section background="ivory">
+      <Section background="ivory" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <Container>
-          <div className="mb-12 flex items-center gap-6">
+          <div className="mb-10 flex items-center gap-6">
             <GoldDivider width="40px" />
             <Typography variant="label" className="text-navy/60">
               How We Trade
@@ -89,7 +90,7 @@ export default async function ServicesPage({ params }: Props) {
       </Section>
 
       {/* CTA — navy */}
-      <Section background="navy">
+      <Section background="navy" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <Container>
           <div className="flex flex-col items-center text-center gap-6">
             <Typography variant="h3" className="text-ivory">
