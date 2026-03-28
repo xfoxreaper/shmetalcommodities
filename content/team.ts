@@ -15,10 +15,10 @@ export interface TeamMember {
 export const team: TeamMember[] = [
   {
     id: "founder",
-    initials: "SH",
-    name: "<!-- PLACEHOLDER: Founder Full Name -->",
-    title: "<!-- PLACEHOLDER: Managing Director -->",
-    bio: "<!-- PLACEHOLDER: 3-4 sentence professional bio. -->",
+    initials: "WRH",
+    name: "Wolf Rudiger Harms",
+    title: "Managing Director",
+    bio: "A German entrepreneur with more than 30 years of experience in the international non-ferrous metals market. His professional activities focus on the sourcing, trading and commercial execution of metals transactions, particularly in the copper and nickel segments. His approach is characterised by practical experience, established industry relationships and transaction-oriented execution.",
     photoUrl: null,
     linkedIn: null,
   },

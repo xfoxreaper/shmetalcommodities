@@ -11,11 +11,11 @@ export interface ContactConfig {
 
 export const contact: ContactConfig = {
   address: {
-    street: "<!-- PLACEHOLDER: Street address -->",
+    street: "Jungfernstieg 1",
     city: "Hamburg",
     country: "Germany",
-    postcode: "<!-- PLACEHOLDER: Postcode, e.g. 20095 -->",
+    postcode: "20354",
   },
-  phone: "<!-- PLACEHOLDER: +49 XXX XXX XXXX -->",
-  email: "<!-- PLACEHOLDER: info@shmetalcommodities.com -->",
+  phone: "+49 1939 1945",
+  email: "rudi@shcommodities.de",
 };
