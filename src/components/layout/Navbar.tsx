@@ -50,15 +50,16 @@ export function Navbar() {
           navBg,
         ].join(' ')}
       >
-        <div className="max-w-[1100px] mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between" style={{ height: '88px' }}>
           {/* Logo */}
           <Link href="/" aria-label="SH Metal Commodities — Home">
             <Image
               src="/images/logo.png"
-              width={64}
-              height={64}
+              width={80}
+              height={80}
               alt="SH Metal Commodities"
               priority
+              style={{ width: '80px', height: '80px' }}
             />
           </Link>
 

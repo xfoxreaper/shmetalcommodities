@@ -26,13 +26,14 @@ export async function Footer() {
         {/* 3-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Logo + descriptor */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 items-start md:items-start">
             <Link href="/" aria-label="SH Metal Commodities — Home">
               <Image
                 src="/images/logo.png"
-                width={72}
-                height={72}
+                width={80}
+                height={80}
                 alt="SH Metal Commodities"
+                style={{ width: '80px', height: '80px' }}
               />
             </Link>
             <p className="font-ui text-xs uppercase tracking-widest text-ivory/60">

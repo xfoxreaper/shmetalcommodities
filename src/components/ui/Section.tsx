@@ -19,17 +19,20 @@ export function Section({
   background = 'transparent',
   as: Tag = 'section',
   className = '',
+  style,
   ...props
 }: SectionProps) {
+  const defaultPadding = style?.paddingTop || style?.paddingBottom ? '' : 'py-18 md:py-26';
   return (
     <Tag
       className={[
-        'py-18 md:py-26',
+        defaultPadding,
         backgroundClasses[background],
         className,
       ]
         .filter(Boolean)
         .join(' ')}
+      style={style}
       {...props}
     >
       {children}
