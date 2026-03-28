@@ -56,10 +56,10 @@ export function Navbar() {
             <Image
               src="/images/logo.png"
               width={80}
-              height={80}
+              height={100}
               alt="SH Metal Commodities"
               priority
-              style={{ width: '80px', height: '80px' }}
+              style={{ width: '80px', height: 'auto' }}
             />
           </Link>
 

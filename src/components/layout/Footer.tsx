@@ -31,9 +31,9 @@ export async function Footer() {
               <Image
                 src="/images/logo.png"
                 width={80}
-                height={80}
+                height={100}
                 alt="SH Metal Commodities"
-                style={{ width: '80px', height: '80px' }}
+                style={{ width: '80px', height: 'auto' }}
               />
             </Link>
             <p className="font-ui text-xs uppercase tracking-widest text-ivory/60 text-center">
