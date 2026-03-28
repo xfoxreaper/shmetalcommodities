@@ -38,11 +38,12 @@ export default async function HomePage({ params }: Props) {
   const t = await getTranslations({ locale, namespace: 'home' });
 
   return (
-    <>
-      {/* Hero — full viewport, extends behind transparent navbar */}
-      <div className="relative bg-navy flex items-center justify-center animate-fade-in" style={{ marginTop: '-88px', minHeight: '70vh', paddingTop: '140px', paddingBottom: '80px' }}>
+    {/* Outer wrapper fills exactly one viewport — hero grows, trust bar pinned to bottom */}
+    <div style={{ marginTop: '-88px', minHeight: '100dvh', display: 'flex', flexDirection: 'column' }}>
+      {/* Hero */}
+      <div className="relative bg-navy animate-fade-in" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '140px', paddingBottom: '60px' }}>
         <NoiseTexture opacity={0.06} />
-        <Container className="relative z-10 flex flex-col items-center text-center gap-8" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
+        <Container className="relative z-10 flex flex-col items-center text-center gap-8">
           <Typography
             variant="display"
             className="text-ivory"
@@ -67,8 +68,8 @@ export default async function HomePage({ params }: Props) {
         </Container>
       </div>
 
-      {/* Trust bar */}
-      <Section background="ivory" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
+      {/* Trust bar — always flush at bottom of viewport */}
+      <Section background="ivory" style={{ paddingTop: '40px', paddingBottom: '40px', flexShrink: 0 }}>
         <Container>
           <div className="flex items-center justify-center gap-6">
             <GoldDivider width="60px" />
@@ -79,6 +80,6 @@ export default async function HomePage({ params }: Props) {
           </div>
         </Container>
       </Section>
-    </>
+    </div>
   );
 }

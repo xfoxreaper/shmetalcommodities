@@ -30,10 +30,10 @@ export async function Footer() {
             <Link href="/" aria-label="SH Metal Commodities — Home">
               <Image
                 src="/images/logo.png"
-                width={80}
-                height={100}
+                width={110}
+                height={140}
                 alt="SH Metal Commodities"
-                style={{ width: '80px', height: 'auto' }}
+                style={{ width: '110px', height: 'auto' }}
               />
             </Link>
             <p className="font-ui text-xs uppercase tracking-widest text-ivory/60 text-center">
