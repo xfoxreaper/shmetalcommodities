@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { services, brokerageModel } from '../../../../content/services';
+import { metals, tradingServices, principalModel } from '../../../../content/services';
 import { generatePageMetadata } from '@/lib/metadata';
 import { locales } from '@/lib/locales';
-import { PageHeader, Container, Section, MetalCard, Button, Typography } from '@/components/ui';
+import { PageHeader, Container, Section, MetalCard, Button, Typography, GoldDivider, NoiseTexture } from '@/components/ui';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -36,33 +36,71 @@ export default async function ServicesPage({ params }: Props) {
 
   return (
     <>
-      {/* T-341: Page header */}
-      <PageHeader title={t('heading')} locale={locale} />
+      <PageHeader
+        title={t('heading')}
+        subtitle={principalModel}
+        locale={locale}
+      />
 
-      {/* T-342 + T-343: Metal cards grid */}
-      <Section background="transparent">
+      {/* The three metals — navy with noise */}
+      <Section background="navy">
+        <div className="relative">
+          <NoiseTexture opacity={0.04} />
+          <Container className="relative z-10">
+            <div className="mb-12 flex items-center gap-6">
+              <GoldDivider width="40px" />
+              <Typography variant="label" className="text-ivory/60">
+                Markets We Trade
+              </Typography>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {metals.map((metal) => (
+                <MetalCard key={metal.id} {...metal} />
+              ))}
+            </div>
+          </Container>
+        </div>
+      </Section>
+
+      {/* How we trade — ivory */}
+      <Section background="ivory">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((metal) => (
-              /* PLACEHOLDER: metal description */
-              <MetalCard key={metal.id} {...metal} />
+          <div className="mb-12 flex items-center gap-6">
+            <GoldDivider width="40px" />
+            <Typography variant="label" className="text-navy/60">
+              How We Trade
+            </Typography>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {tradingServices.map((service) => (
+              <div key={service.id}>
+                <Typography variant="h3" className="text-navy mb-4">
+                  {service.name}
+                </Typography>
+                <div className="w-10 h-px bg-gold mb-6" aria-hidden="true" />
+                <Typography variant="body" className="text-charcoal">
+                  {service.description}
+                </Typography>
+              </div>
             ))}
           </div>
         </Container>
       </Section>
 
-      {/* T-344: Brokerage model section */}
-      <Section background="ivory">
+      {/* CTA — navy */}
+      <Section background="navy">
         <Container>
-          {/* PLACEHOLDER: brokerage model description */}
-          <div className="max-w-3xl mx-auto text-center">
-            <Typography variant="body">{brokerageModel}</Typography>
-          </div>
-
-          {/* T-345: CTA to contact page */}
-          <div className="mt-10 flex justify-center">
+          <div className="flex flex-col items-center text-center gap-6">
+            <Typography variant="h3" className="text-ivory">
+              Speak to Our Team
+            </Typography>
+            <GoldDivider width="40px" />
+            <Typography variant="body" className="text-ivory/70 max-w-xl">
+              Whether you are a producer seeking a reliable offtake partner or a consumer looking for a trusted supply relationship, we are open to enquiries.
+            </Typography>
             <Link href="/contact" locale={locale}>
-              <Button variant="secondary">{t('cta')}</Button>
+              <Button variant="primary">{t('cta')}</Button>
             </Link>
           </div>
         </Container>

@@ -5,6 +5,7 @@ type MetalTexture = 'copper' | 'aluminium' | 'zinc';
 
 interface MetalCardProps {
   name: string;
+  grades?: string;
   description: string;
   texture: MetalTexture;
   children?: ReactNode;
@@ -29,7 +30,7 @@ const textureStyles: Record<MetalTexture, React.CSSProperties> = {
 const noiseOverlaySvg = `<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='200' height='200' filter='url(#n)' opacity='0.35'/></svg>`;
 const noiseDataUri = `url("data:image/svg+xml,${encodeURIComponent(noiseOverlaySvg)}")`;
 
-export function MetalCard({ name, description, texture }: MetalCardProps) {
+export function MetalCard({ name, grades, description, texture }: MetalCardProps) {
   return (
     <article
       className="relative overflow-hidden text-warm-white p-8 min-h-[260px] flex flex-col justify-between"
@@ -47,9 +48,12 @@ export function MetalCard({ name, description, texture }: MetalCardProps) {
         }}
       />
       <div className="relative z-10">
-        <Typography variant="h2" className="text-warm-white mb-4">
+        <Typography variant="h2" className="text-warm-white mb-3">
           {name}
         </Typography>
+        {grades && (
+          <p className="font-ui text-xs uppercase tracking-widest text-gold/80 mb-4">{grades}</p>
+        )}
         <div className="w-12 h-px bg-gold mb-6" aria-hidden="true" />
         <Typography variant="body" className="text-warm-white/85">
           {description}
