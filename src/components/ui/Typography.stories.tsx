@@ -108,7 +108,7 @@ export const RTLLabel: Story = {
     backgrounds: { default: 'ivory' },
   },
   decorators: [
-    (Story) => (
+    (Story: React.ComponentType) => (
       <div dir="rtl">
         <Story />
       </div>

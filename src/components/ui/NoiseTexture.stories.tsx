@@ -16,7 +16,7 @@ type Story = StoryObj<typeof NoiseTexture>;
 export const OnNavy: Story = {
   name: 'Noise Overlay — Navy Background',
   decorators: [
-    (Story) => (
+    (Story: React.ComponentType) => (
       <div className="relative h-64 bg-navy flex items-center justify-center">
         <Story />
         <p className="relative z-10 font-display text-3xl text-warm-white tracking-widest">
@@ -33,7 +33,7 @@ export const OnNavy: Story = {
 export const LightOpacity: Story = {
   name: 'Subtle Noise (opacity 0.04)',
   decorators: [
-    (Story) => (
+    (Story: React.ComponentType) => (
       <div className="relative h-64 bg-navy flex items-center justify-center">
         <Story />
         <p className="relative z-10 font-display text-2xl text-warm-white">Subtle grain</p>
@@ -48,7 +48,7 @@ export const LightOpacity: Story = {
 export const HeavyOpacity: Story = {
   name: 'Strong Noise (opacity 0.12)',
   decorators: [
-    (Story) => (
+    (Story: React.ComponentType) => (
       <div className="relative h-64 bg-navy flex items-center justify-center">
         <Story />
         <p className="relative z-10 font-display text-2xl text-warm-white">Heavier grain</p>

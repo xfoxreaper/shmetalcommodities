@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { generatePageMetadata } from '@/lib/metadata';
@@ -75,6 +76,18 @@ export default async function ServicesPage({ params }: Props) {
           </div>
         </Container>
       </Section>
+
+      {/* Port logistics image divider */}
+      <div className="relative h-[250px] md:h-[350px]">
+        <Image
+          src="/images/port-logistics.jpg"
+          alt="Container port — metals logistics and global delivery"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-navy/40" />
+      </div>
 
       {/* How we trade */}
       <Section background="ivory" style={{ paddingTop: '0px', paddingBottom: '60px' }}>

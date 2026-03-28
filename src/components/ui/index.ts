@@ -13,3 +13,4 @@ export { FormField } from './FormField';
 export { FormError } from './FormError';
 export { FadeIn } from './FadeIn';
 export { BackToTop } from './BackToTop';
+export { WorldMap } from './WorldMap';

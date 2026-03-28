@@ -5,6 +5,8 @@
     "about": "من نحن",
     "services": "الأسواق",
     "team": "الفريق",
+    "insights": "رؤى",
+    "newsroom": "غرفة الأخبار",
     "contact": "اتصل بنا"
   },
   "home": {
@@ -42,6 +44,9 @@
         "description": "علاقات طويلة الأمد مع المنتجين والمستهلكين حول العالم، بُنيت على الأداء والتعامل العادل."
       }
     },
+    "globalPresence": "\u0627\u0644\u062a\u0648\u0627\u062c\u062f \u0627\u0644\u0639\u0627\u0644\u0645\u064a",
+    "latestInsights": "أحدث الرؤى",
+    "viewAllInsights": "عرض جميع الرؤى",
     "quoteAttribution": "المبدأ الذي يقف وراء كل صفقة في SH Metal Commodities",
     "readOurStory": "اقرأ قصتنا",
     "ctaHeading": "مستعد لمناقشة متطلباتك؟",
@@ -160,6 +165,24 @@
     "descriptor": "تجارة عالمية في المعادن غير الحديدية",
     "location": "هامبورغ، ألمانيا",
     "copyright": "© {year} SH Metal Commodities. جميع الحقوق محفوظة."
+  },
+  "insights": {
+    "heading": "رؤى السوق",
+    "readMore": "اقرأ المزيد",
+    "backToInsights": "العودة إلى الرؤى",
+    "allCategories": "الكل",
+    "meta": {
+      "title": "رؤى السوق",
+      "description": "تعليقات وتحليلات السوق من SH Metal Commodities حول النحاس والألومنيوم والزنك وأسواق المعادن غير الحديدية العالمية."
+    }
+  },
+  "newsroom": {
+    "heading": "غرفة الأخبار",
+    "backToNewsroom": "العودة إلى غرفة الأخبار",
+    "meta": {
+      "title": "غرفة الأخبار",
+      "description": "البيانات الصحفية والإعلانات من SH Metal Commodities."
+    }
   },
   "common": {
     "loading": "جار التحميل…",

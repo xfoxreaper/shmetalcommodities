@@ -14,6 +14,8 @@ const navLinks = [
   { key: 'about', href: '/about' },
   { key: 'services', href: '/services' },
   { key: 'team', href: '/team' },
+  { key: 'insights', href: '/insights' },
+  { key: 'newsroom', href: '/newsroom' },
   { key: 'contact', href: '/contact' },
 ] as const;
 
@@ -55,11 +57,11 @@ export function Navbar() {
           <Link href="/" aria-label="SH Metal Commodities — Home" className="shrink-0">
             <Image
               src="/images/logo.png"
-              width={110}
-              height={140}
+              width={280}
+              height={152}
               alt="SH Metal Commodities"
               priority
-              className="w-[80px] sm:w-[95px] md:w-[110px] h-auto"
+              className="w-[120px] sm:w-[140px] md:w-[160px] h-auto"
             />
           </Link>
 

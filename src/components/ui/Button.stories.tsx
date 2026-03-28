@@ -83,7 +83,7 @@ export const GhostOnNavy: Story = {
 export const RTLPrimary: Story = {
   name: 'Primary — RTL',
   decorators: [
-    (Story) => (
+    (Story: React.ComponentType) => (
       <div dir="rtl">
         <Story />
       </div>

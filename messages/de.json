@@ -5,6 +5,8 @@
     "about": "Über uns",
     "services": "Märkte",
     "team": "Team",
+    "insights": "Einblicke",
+    "newsroom": "Presse",
     "contact": "Kontakt"
   },
   "home": {
@@ -42,6 +44,9 @@
         "description": "Langjährige Beziehungen zu Produzenten und Verbrauchern weltweit, aufgebaut auf Leistung und fairem Handel."
       }
     },
+    "globalPresence": "Globale Pr\u00e4senz",
+    "latestInsights": "Aktuelle Einblicke",
+    "viewAllInsights": "Alle Einblicke ansehen",
     "quoteAttribution": "Das Prinzip hinter jeder Transaktion von SH Metal Commodities",
     "readOurStory": "Unsere Geschichte lesen",
     "ctaHeading": "Bereit, Ihre Anforderungen zu besprechen?",
@@ -160,6 +165,24 @@
     "descriptor": "Weltweiter Handel mit Nichteisenmetallen",
     "location": "Hamburg, Deutschland",
     "copyright": "© {year} SH Metal Commodities. Alle Rechte vorbehalten."
+  },
+  "insights": {
+    "heading": "Markteinblicke",
+    "readMore": "Weiterlesen",
+    "backToInsights": "Zurück zu Einblicke",
+    "allCategories": "Alle",
+    "meta": {
+      "title": "Markteinblicke",
+      "description": "Marktkommentare und Analysen von SH Metal Commodities zu Kupfer, Aluminium, Zink und den globalen Märkten für Nichteisenmetalle."
+    }
+  },
+  "newsroom": {
+    "heading": "Presse",
+    "backToNewsroom": "Zurück zur Presse",
+    "meta": {
+      "title": "Presse",
+      "description": "Pressemitteilungen und Ankündigungen von SH Metal Commodities."
+    }
   },
   "common": {
     "loading": "Laden…",

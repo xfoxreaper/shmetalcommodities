@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 const BASE_URL = 'https://shmetalcommodities.com';
 const locales = ['en', 'de', 'zh', 'ar'] as const;
-const pages = ['', '/about', '/services', '/team', '/contact'] as const;
+const pages = ['', '/about', '/services', '/insights', '/team', '/contact'] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

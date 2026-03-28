@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { generatePageMetadata } from '@/lib/metadata';
 import { locales } from '@/lib/locales';
 import { contact } from '../../../content/contact';
+import { blogPosts } from '../../../content/blog';
 import {
   Typography,
   Container,
@@ -12,6 +14,7 @@ import {
   NoiseTexture,
   MetalCard,
   FadeIn,
+  WorldMap,
 } from '@/components/ui';
 
 type Props = {
@@ -56,6 +59,14 @@ export default async function HomePage({ params }: Props) {
         className="relative bg-navy animate-fade-in flex flex-col items-center justify-center min-h-dvh"
         style={{ marginTop: '-88px', paddingTop: '120px', paddingBottom: '60px' }}
       >
+        <Image
+          src="/images/hero-bg.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover opacity-20"
+          sizes="100vw"
+        />
         {/* Subtle skyline silhouette */}
         <div
           aria-hidden="true"
@@ -224,6 +235,65 @@ export default async function HomePage({ params }: Props) {
               </FadeIn>
             ))}
           </div>
+        </Container>
+      </Section>
+
+      {/* ── Latest Insights teaser ── */}
+      <Section background="ivory" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+        <Container>
+          <FadeIn>
+            <div className="mb-10 flex items-center gap-6">
+              <GoldDivider width="40px" />
+              <Typography variant="label" className="text-navy/60">
+                {t('latestInsights')}
+              </Typography>
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blogPosts.slice(0, 3).map((post, i) => (
+              <FadeIn key={post.slug} delay={i * 150}>
+                <Link href={`/insights/${post.slug}`} className="group block">
+                  <article className="bg-warm-white p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <Typography variant="label" className="text-gold mb-3">
+                      {new Date(post.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}
+                    </Typography>
+                    <Typography variant="h3" className="text-navy mb-3 group-hover:text-gold transition-colors">
+                      {post.title}
+                    </Typography>
+                    <Typography variant="body" className="text-charcoal/70 line-clamp-3">
+                      {post.excerpt}
+                    </Typography>
+                  </article>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn>
+            <div className="mt-10 text-center">
+              <Link
+                href="/insights"
+                className="font-ui text-sm uppercase tracking-widest text-navy hover:text-gold transition-colors"
+              >
+                {t('viewAllInsights')} →
+              </Link>
+            </div>
+          </FadeIn>
+        </Container>
+      </Section>
+
+      {/* ── Global Presence (navy) ── */}
+      <Section background="navy" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+        <Container>
+          <FadeIn>
+            <div className="mb-8 flex items-center justify-center gap-6">
+              <GoldDivider width="40px" />
+              <Typography variant="label" className="text-ivory/60">
+                {t('globalPresence')}
+              </Typography>
+              <GoldDivider width="40px" />
+            </div>
+            <WorldMap />
+          </FadeIn>
         </Container>
       </Section>
 

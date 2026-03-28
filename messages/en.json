@@ -4,6 +4,8 @@
     "about": "About",
     "services": "Services",
     "team": "Team",
+    "insights": "Insights",
+    "newsroom": "Newsroom",
     "contact": "Contact"
   },
   "home": {
@@ -41,6 +43,9 @@
         "description": "Long-standing relationships with producers and consumers worldwide, built on performance and fair dealing."
       }
     },
+    "globalPresence": "Global Presence",
+    "latestInsights": "Latest Insights",
+    "viewAllInsights": "View All Insights",
     "quoteAttribution": "The principle behind every SH Metal Commodities transaction",
     "readOurStory": "Read Our Story",
     "ctaHeading": "Ready to discuss your requirements?",
@@ -159,6 +164,24 @@
     "descriptor": "Global Non-Ferrous Metal Trading",
     "location": "Hamburg, Germany",
     "copyright": "© {year} SH Metal Commodities. All rights reserved."
+  },
+  "insights": {
+    "heading": "Market Insights",
+    "readMore": "Read More",
+    "backToInsights": "Back to Insights",
+    "allCategories": "All",
+    "meta": {
+      "title": "Market Insights",
+      "description": "Market commentary and analysis from SH Metal Commodities on copper, aluminium, zinc, and global non-ferrous metal markets."
+    }
+  },
+  "newsroom": {
+    "heading": "Newsroom",
+    "backToNewsroom": "Back to Newsroom",
+    "meta": {
+      "title": "Newsroom",
+      "description": "Press releases and announcements from SH Metal Commodities."
+    }
   },
   "common": {
     "loading": "Loading…",

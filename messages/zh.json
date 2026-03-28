@@ -5,6 +5,8 @@
     "about": "关于我们",
     "services": "市场",
     "team": "团队",
+    "insights": "市场洞察",
+    "newsroom": "新闻中心",
     "contact": "联系我们"
   },
   "home": {
@@ -42,6 +44,9 @@
         "description": "与全球生产商和消费者建立的长期合作关系，以履约能力和公平交易为基石。"
       }
     },
+    "globalPresence": "\u5168\u7403\u5e03\u5c40",
+    "latestInsights": "最新洞察",
+    "viewAllInsights": "查看所有洞察",
     "quoteAttribution": "SH Metal Commodities每笔交易背后的信念",
     "readOurStory": "阅读我们的故事",
     "ctaHeading": "准备好讨论您的需求了吗？",
@@ -160,6 +165,24 @@
     "descriptor": "全球有色金属贸易",
     "location": "德国汉堡",
     "copyright": "© {year} SH Metal Commodities. 保留所有权利。"
+  },
+  "insights": {
+    "heading": "市场洞察",
+    "readMore": "阅读更多",
+    "backToInsights": "返回市场洞察",
+    "allCategories": "全部",
+    "meta": {
+      "title": "市场洞察",
+      "description": "SH Metal Commodities关于铜、铝、锌及全球有色金属市场的市场评论与分析。"
+    }
+  },
+  "newsroom": {
+    "heading": "新闻中心",
+    "backToNewsroom": "返回新闻中心",
+    "meta": {
+      "title": "新闻中心",
+      "description": "SH Metal Commodities 的新闻发布和公告。"
+    }
   },
   "common": {
     "loading": "加载中…",

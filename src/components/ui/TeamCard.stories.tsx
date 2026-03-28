@@ -39,7 +39,7 @@ export const WithLinkedIn: Story = {
 export const RTL: Story = {
   name: 'RTL (ar locale)',
   decorators: [
-    (Story) => (
+    (Story: React.ComponentType) => (
       <div dir="rtl">
         <Story />
       </div>

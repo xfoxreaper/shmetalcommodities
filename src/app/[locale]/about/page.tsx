@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { generatePageMetadata } from '@/lib/metadata';
+import { pressReleases } from '../../../../content/newsroom';
 import {
   Section,
   Container,
@@ -73,6 +75,18 @@ export default async function AboutPage({ params }: Props) {
         </Container>
       </Section>
 
+      {/* Hamburg image */}
+      <div className="relative h-[300px] md:h-[400px]">
+        <Image
+          src="/images/hamburg-city.jpg"
+          alt="Hamburg HafenCity — home of SH Metal Commodities since 1873"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-navy/30" />
+      </div>
+
       {/* Section 3: Pull Quote Band */}
       <section className="relative bg-navy py-20 md:py-28 overflow-hidden">
         <NoiseTexture opacity={0.06} />
@@ -107,6 +121,32 @@ export default async function AboutPage({ params }: Props) {
                     {stat.label}
                   </div>
                 </div>
+              ))}
+            </div>
+          </FadeIn>
+        </Container>
+      </Section>
+
+      {/* Latest from Our Newsroom teaser */}
+      <Section background="ivory" style={{ paddingTop: 0, paddingBottom: '40px' }}>
+        <Container>
+          <FadeIn>
+            <div className="mb-8">
+              <Typography variant="label" className="text-charcoal/60 mb-4 block">
+                Latest News
+              </Typography>
+              <GoldDivider />
+            </div>
+            <div className="space-y-6 max-w-3xl">
+              {pressReleases.slice(0, 2).map((release) => (
+                <Link key={release.slug} href={`/newsroom/${release.slug}`} className="block group">
+                  <Typography variant="label" className="text-gold mb-1">
+                    {new Date(release.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}
+                  </Typography>
+                  <Typography variant="h3" className="text-navy group-hover:text-gold transition-colors">
+                    {release.title}
+                  </Typography>
+                </Link>
               ))}
             </div>
           </FadeIn>

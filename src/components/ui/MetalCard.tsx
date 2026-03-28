@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Image from 'next/image';
 import { Typography } from './Typography';
 
 type MetalTexture = 'copper' | 'aluminium' | 'zinc';
@@ -35,6 +36,12 @@ const copperTextureSvg = `<svg xmlns='http://www.w3.org/2000/svg' width='120' he
 const aluminiumTextureSvg = `<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' fill='none'><g stroke='%23C0C8D0' stroke-width='0.3' opacity='0.5'><line x1='0' y1='8' x2='100' y2='8'/><line x1='0' y1='20' x2='100' y2='20'/><line x1='0' y1='32' x2='100' y2='32'/></g></svg>`;
 const zincTextureSvg = `<svg xmlns='http://www.w3.org/2000/svg' width='80' height='92' fill='none'><g stroke='%239098B0' stroke-width='0.4' opacity='0.35'><polygon points='40,2 74,22 74,62 40,82 6,62 6,22'/><line x1='40' y1='2' x2='40' y2='82'/><line x1='6' y1='22' x2='74' y2='62'/><line x1='74' y1='22' x2='6' y2='62'/></g></svg>`;
 
+const textureImages: Record<MetalTexture, string> = {
+  copper: '/images/copper-texture.jpg',
+  aluminium: '/images/aluminium-texture.jpg',
+  zinc: '/images/zinc-texture.jpg',
+};
+
 const metalTextureDataUris: Record<MetalTexture, string> = {
   copper: `url("data:image/svg+xml,${encodeURIComponent(copperTextureSvg)}")`,
   aluminium: `url("data:image/svg+xml,${encodeURIComponent(aluminiumTextureSvg)}")`,
@@ -47,6 +54,14 @@ export function MetalCard({ name, grades, description, texture }: MetalCardProps
       className="relative overflow-hidden text-warm-white p-6 sm:p-8 flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
       style={textureStyles[texture]}
     >
+      {/* Photo texture background */}
+      <Image
+        src={textureImages[texture]}
+        alt=""
+        fill
+        className="object-cover opacity-30 mix-blend-overlay"
+        sizes="(max-width: 768px) 100vw, 33vw"
+      />
       {/* CSS-only noise texture overlay for material feel */}
       <div
         aria-hidden="true"
