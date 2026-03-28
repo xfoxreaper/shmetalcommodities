@@ -79,6 +79,24 @@
         "description": "Wir priorisieren langfristige Geschäftsbeziehungen gegenüber kurzfristiger Marge. Vertrauen, einmal aufgebaut, wächst über Generationen."
       }
     },
+    "historyLabel": "Unsere Geschichte",
+    "timeline": {
+      "founded": {
+        "year": "1873",
+        "title": "Gegründet in Hamburg",
+        "description": "SH Metal Commodities wurde in Hamburg gegründet, einer der bedeutendsten Handelsstädte Europas. Von unseren Büros am Hafen aus begannen wir den Handel mit Nichteisenmetallen mit Geschäftspartnern auf dem gesamten Kontinent — eine Tradition, die seit über 150 Jahren ununterbrochen fortbesteht."
+      },
+      "hamburg": {
+        "year": "1920er",
+        "title": "Hamburg — Tor zur Welt",
+        "description": "Durch zwei Weltkriege und den Wiederaufbau Europas blieb der Hamburger Hafen das Tor für den Metallhandel auf dem Kontinent. SH Metal Commodities wuchs mit der Stadt und baute Beziehungen zu Hüttenwerken, Raffinerien und Industriekunden auf, die über Generationen Bestand haben sollten."
+      },
+      "dubai": {
+        "year": "1960er",
+        "title": "Expansion in den Nahen Osten",
+        "description": "Als sich die globalen Handelsrouten verschoben und neue Märkte entstanden, etablierte SH Metal Commodities Handelsbeziehungen im Nahen Osten. Dubais wachsende Hafeninfrastruktur bot eine natürliche Brücke zwischen europäischen Lieferanten und der sich rasch industrialisierenden Golfregion."
+      }
+    },
     "ctaButton": "Sprechen Sie mit unserem Team",
     "meta": {
       "title": "Über uns",

@@ -78,6 +78,24 @@
         "description": "We prioritise long-term counterparty relationships over short-term margin. Trust, once built, compounds over generations."
       }
     },
+    "historyLabel": "Our History",
+    "timeline": {
+      "founded": {
+        "year": "1873",
+        "title": "Founded in Hamburg",
+        "description": "SH Metal Commodities was established in Hamburg, one of Europe's foremost trading cities. From our offices on the waterfront, we began trading non-ferrous metals with counterparties across the continent — a tradition that has continued unbroken for over 150 years."
+      },
+      "hamburg": {
+        "year": "1920s",
+        "title": "Hamburg — Gateway to the World",
+        "description": "Through two world wars and the rebuilding of Europe, Hamburg's port remained the gateway for metal trade into the continent. SH Metal Commodities grew alongside the city, building relationships with smelters, refiners, and industrial consumers that would endure for generations."
+      },
+      "dubai": {
+        "year": "1960s",
+        "title": "Expansion to the Middle East",
+        "description": "As global trade routes shifted and new markets emerged, SH Metal Commodities established trading relationships in the Middle East. Dubai's growing port infrastructure offered a natural bridge between European suppliers and the rapidly industrialising Gulf region."
+      }
+    },
     "ctaButton": "Speak with Our Team",
     "meta": {
       "title": "About Us",

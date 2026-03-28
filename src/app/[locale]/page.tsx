@@ -63,7 +63,7 @@ export default async function HomePage({ params }: Props) {
     <>
       {/* ── Hero ── */}
       <div className="relative bg-navy animate-fade-in flex flex-col items-center justify-center min-h-dvh -mt-[var(--navbar-h)] pt-[120px] pb-[60px]">
-        <Image src="/images/hero-bg.jpg" alt="" fill priority className="object-cover opacity-20" sizes="100vw" />
+        <Image src="/images/hamburg-port.jpg" alt="" fill priority className="object-cover opacity-20" sizes="100vw" />
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none bg-[url('/images/hero-skyline.svg')] bg-bottom bg-no-repeat bg-cover opacity-40" />
         <NoiseTexture opacity={0.06} />
         <Container className="relative z-10 flex flex-col items-center text-center gap-8 flex-1 justify-center">

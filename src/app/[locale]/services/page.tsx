@@ -88,8 +88,8 @@ export default async function ServicesPage({ params }: Props) {
 
       {/* Port logistics image divider */}
       <ImageBand
-        src="/images/port-logistics.jpg"
-        alt="Container port — metals logistics and global delivery"
+        src="/images/hamburg-port.jpg"
+        alt="Historic Hamburg port — the foundation of our trading operations"
         overlayOpacity="bg-navy/40"
       />
 

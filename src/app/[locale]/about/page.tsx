@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { generatePageMetadata } from '@/lib/metadata';
@@ -79,16 +80,102 @@ export default async function AboutPage({ params }: Props) {
         </Container>
       </Section>
 
-      {/* Hamburg image */}
+      {/* Company office photograph */}
       <ImageBand
-        src="/images/hamburg-city.jpg"
-        alt="Hamburg HafenCity — home of SH Metal Commodities since 1873"
+        src="/images/history-office.jpg"
+        alt="The original SH Metal Commodities office, Hamburg, circa 1912"
         height="h-[300px] md:h-[400px]"
         overlayOpacity="bg-navy/30"
       />
+      <div className="bg-ivory text-center py-3">
+        <span className="font-ui text-[11px] uppercase tracking-widest text-charcoal/50">
+          The original SH Metal Commodities office, Hamburg — circa 1912
+        </span>
+      </div>
 
       {/* Section 3: Pull Quote Band */}
       <QuoteBand quote={t('pullQuote')} />
+
+      {/* Heritage Timeline */}
+      <Section background="navy">
+        <Container>
+          <SectionLabel align="center" variant="light">{t('historyLabel')}</SectionLabel>
+
+          <div className="space-y-16 md:space-y-24">
+            {/* 1873: Founded in Hamburg */}
+            <FadeIn>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src="/images/history-office.jpg"
+                    alt="The original SH Metal Commodities office, Hamburg, circa 1912"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div>
+                  <span className="font-display text-5xl md:text-6xl font-light text-gold">{t('timeline.founded.year')}</span>
+                  <Typography variant="h3" className="text-ivory mt-4 mb-4">
+                    {t('timeline.founded.title')}
+                  </Typography>
+                  <Typography variant="body" className="text-ivory/80">
+                    {t('timeline.founded.description')}
+                  </Typography>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* 1920s: Hamburg Port */}
+            <FadeIn>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div className="order-2 md:order-1">
+                  <span className="font-display text-5xl md:text-6xl font-light text-gold">{t('timeline.hamburg.year')}</span>
+                  <Typography variant="h3" className="text-ivory mt-4 mb-4">
+                    {t('timeline.hamburg.title')}
+                  </Typography>
+                  <Typography variant="body" className="text-ivory/80">
+                    {t('timeline.hamburg.description')}
+                  </Typography>
+                </div>
+                <div className="relative aspect-[16/10] overflow-hidden order-1 md:order-2">
+                  <Image
+                    src="/images/hamburg-port.jpg"
+                    alt="Hamburg port in the early twentieth century — the hub of European metal trade"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* 1960s: Dubai Expansion */}
+            <FadeIn>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src="/images/dubai-port.jpg"
+                    alt="Early Dubai port operations — SH Metal Commodities' expansion into Middle Eastern markets"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div>
+                  <span className="font-display text-5xl md:text-6xl font-light text-gold">{t('timeline.dubai.year')}</span>
+                  <Typography variant="h3" className="text-ivory mt-4 mb-4">
+                    {t('timeline.dubai.title')}
+                  </Typography>
+                  <Typography variant="body" className="text-ivory/80">
+                    {t('timeline.dubai.description')}
+                  </Typography>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </Container>
+      </Section>
 
       {/* Section 4: Key Figures */}
       <Section background="ivory">
