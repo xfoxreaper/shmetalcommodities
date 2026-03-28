@@ -1,0 +1,91 @@
+{
+  "// TODO": "professional translation needed — current strings are machine-translated placeholders",
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Märkte",
+    "team": "Team",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "tagline": "Metall. Märkte. Vertrauen.",
+    "subTagline": "Weltweiter Handel mit Nichteisenmetallen, mit Sitz in Hamburg.",
+    "cta": "Mehr erfahren",
+    "trustBar": "Hauptsitz in Hamburg, Deutschland",
+    "meta": {
+      "title": "SH Metal Commodities",
+      "description": "Weltweiter Handel mit Nichteisenmetallen — Kupfer, Aluminium, Zink. Hauptsitz in Hamburg, Deutschland."
+    }
+  },
+  "about": {
+    "heading": "Ein Handelshaus, das auf Beziehungen aufbaut",
+    "para1": "<!-- PLACEHOLDER -->",
+    "para2": "<!-- PLACEHOLDER -->",
+    "para3": "<!-- PLACEHOLDER -->",
+    "pullQuote": "Wir handeln mit unserem Namen bei jedem Geschäft.",
+    "credential": "Gegründet in Hamburg, Deutschland",
+    "meta": {
+      "title": "Über uns",
+      "description": "Erfahren Sie mehr über SH Metal Commodities — unsere Geschichte, Werte und Ansatz."
+    }
+  },
+  "services": {
+    "heading": "Unsere Märkte",
+    "copper": {
+      "name": "Kupfer",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "aluminium": {
+      "name": "Aluminium",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "zinc": {
+      "name": "Zink",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "brokerageModel": "<!-- PLACEHOLDER -->",
+    "cta": "Sprechen Sie mit unserem Team",
+    "meta": {
+      "title": "Unsere Märkte",
+      "description": "Wir handeln mit Kupfer, Aluminium und Zink auf weltweiten Märkten."
+    }
+  },
+  "team": {
+    "heading": "Die Menschen hinter SH Metal Commodities",
+    "meta": {
+      "title": "Unser Team",
+      "description": "Lernen Sie das Team hinter SH Metal Commodities kennen."
+    }
+  },
+  "contact": {
+    "heading": "Kontaktieren Sie uns",
+    "formLabels": {
+      "name": "Vollständiger Name",
+      "company": "Unternehmen (optional)",
+      "email": "E-Mail-Adresse",
+      "subject": "Betreff",
+      "message": "Nachricht"
+    },
+    "subjects": [
+      { "value": "general", "label": "Allgemeine Anfrage" },
+      { "value": "trading", "label": "Handel" },
+      { "value": "partnership", "label": "Partnerschaft" },
+      { "value": "other", "label": "Sonstiges" }
+    ],
+    "submit": "Anfrage senden",
+    "successMessage": "Vielen Dank für Ihre Anfrage. Wir werden uns in Kürze bei Ihnen melden.",
+    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "meta": {
+      "title": "Kontakt",
+      "description": "Nehmen Sie Kontakt mit SH Metal Commodities auf."
+    }
+  },
+  "footer": {
+    "descriptor": "Weltweiter Handel mit Nichteisenmetallen",
+    "copyright": "© {year} SH Metal Commodities. Alle Rechte vorbehalten."
+  },
+  "common": {
+    "loading": "Laden…",
+    "backToTop": "Zurück nach oben"
+  }
+}

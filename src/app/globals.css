@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand colours */
+  --color-navy: #0A1628;
+  --color-ivory: #F5F0E8;
+  --color-gold: #B89A5A;
+  --color-warm-white: #FAF8F4;
+  --color-charcoal: #1C1C1C;
+
+  /* Font families */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Lora', serif;
+  --font-ui: 'Josefin Sans', sans-serif;
+  --font-cjk: 'Noto Serif SC', 'Source Han Serif CN', serif;
+
+  /* Spacing additions for generous vertical rhythm */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-36: 9rem;
+}
+
+:root {
+  --background: var(--color-warm-white);
+  --foreground: var(--color-charcoal);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}

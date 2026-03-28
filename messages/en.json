@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "team": "Team",
+    "contact": "Contact"
+  },
+  "home": {
+    "tagline": "Metal. Markets. Trust.",
+    "subTagline": "Global non-ferrous metal trading, headquartered in Hamburg.",
+    "cta": "Learn More",
+    "trustBar": "Headquartered in Hamburg, Germany",
+    "meta": {
+      "title": "SH Metal Commodities",
+      "description": "Global non-ferrous metal trading — Copper, Aluminium, Zinc. Headquartered in Hamburg, Germany."
+    }
+  },
+  "about": {
+    "heading": "A Trading House Built on Relationships",
+    "para1": "<!-- PLACEHOLDER -->",
+    "para2": "<!-- PLACEHOLDER -->",
+    "para3": "<!-- PLACEHOLDER -->",
+    "pullQuote": "We trade with our name on every deal.",
+    "credential": "Established in Hamburg, Germany",
+    "meta": {
+      "title": "About Us",
+      "description": "Learn about SH Metal Commodities — our history, values, and approach to non-ferrous metal trading."
+    }
+  },
+  "services": {
+    "heading": "Our Markets",
+    "copper": {
+      "name": "Copper",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "aluminium": {
+      "name": "Aluminium",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "zinc": {
+      "name": "Zinc",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "brokerageModel": "<!-- PLACEHOLDER -->",
+    "cta": "Speak to Our Team",
+    "meta": {
+      "title": "Our Markets",
+      "description": "We trade copper, aluminium, and zinc across global markets."
+    }
+  },
+  "team": {
+    "heading": "The People Behind SH Metal Commodities",
+    "meta": {
+      "title": "Our Team",
+      "description": "Meet the team behind SH Metal Commodities."
+    }
+  },
+  "contact": {
+    "heading": "Get in Touch",
+    "formLabels": {
+      "name": "Full Name",
+      "company": "Company (optional)",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "subjects": [
+      { "value": "general", "label": "General Enquiry" },
+      { "value": "trading", "label": "Trading" },
+      { "value": "partnership", "label": "Partnership" },
+      { "value": "other", "label": "Other" }
+    ],
+    "submit": "Send Enquiry",
+    "successMessage": "Thank you for your enquiry. We will be in touch shortly.",
+    "errorMessage": "Something went wrong. Please try again or contact us directly.",
+    "meta": {
+      "title": "Contact",
+      "description": "Get in touch with SH Metal Commodities."
+    }
+  },
+  "footer": {
+    "descriptor": "Global Non-Ferrous Metal Trading",
+    "copyright": "© {year} SH Metal Commodities. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading…",
+    "backToTop": "Back to top"
+  }
+}

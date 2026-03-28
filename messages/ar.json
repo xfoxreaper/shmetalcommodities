@@ -1,0 +1,91 @@
+{
+  "// TODO": "يلزم ترجمة احترافية — النصوص الحالية عبارة عن ترجمة آلية. اتجاه النص: يمين لشمال (RTL).",
+  "nav": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "services": "الأسواق",
+    "team": "الفريق",
+    "contact": "اتصل بنا"
+  },
+  "home": {
+    "tagline": "المعادن. الأسواق. الثقة.",
+    "subTagline": "تجارة عالمية في المعادن غير الحديدية، مقرها هامبورغ، ألمانيا.",
+    "cta": "اعرف المزيد",
+    "trustBar": "المقر الرئيسي في هامبورغ، ألمانيا",
+    "meta": {
+      "title": "SH Metal Commodities",
+      "description": "تجارة عالمية في المعادن غير الحديدية — النحاس والألومنيوم والزنك. مقرها هامبورغ، ألمانيا."
+    }
+  },
+  "about": {
+    "heading": "شركة تجارية مبنية على العلاقات",
+    "para1": "<!-- PLACEHOLDER -->",
+    "para2": "<!-- PLACEHOLDER -->",
+    "para3": "<!-- PLACEHOLDER -->",
+    "pullQuote": "نتداول باسمنا في كل صفقة.",
+    "credential": "تأسست في هامبورغ، ألمانيا",
+    "meta": {
+      "title": "من نحن",
+      "description": "تعرف على SH Metal Commodities — تاريخنا وقيمنا ونهجنا في التجارة."
+    }
+  },
+  "services": {
+    "heading": "أسواقنا",
+    "copper": {
+      "name": "النحاس",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "aluminium": {
+      "name": "الألومنيوم",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "zinc": {
+      "name": "الزنك",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "brokerageModel": "<!-- PLACEHOLDER -->",
+    "cta": "تحدث إلى فريقنا",
+    "meta": {
+      "title": "أسواقنا",
+      "description": "نتداول في النحاس والألومنيوم والزنك عبر الأسواق العالمية."
+    }
+  },
+  "team": {
+    "heading": "الأشخاص وراء SH Metal Commodities",
+    "meta": {
+      "title": "فريقنا",
+      "description": "تعرف على الفريق وراء SH Metal Commodities."
+    }
+  },
+  "contact": {
+    "heading": "تواصل معنا",
+    "formLabels": {
+      "name": "الاسم الكامل",
+      "company": "الشركة (اختياري)",
+      "email": "عنوان البريد الإلكتروني",
+      "subject": "الموضوع",
+      "message": "الرسالة"
+    },
+    "subjects": [
+      { "value": "general", "label": "استفسار عام" },
+      { "value": "trading", "label": "تجارة" },
+      { "value": "partnership", "label": "شراكة" },
+      { "value": "other", "label": "أخرى" }
+    ],
+    "submit": "إرسال الاستفسار",
+    "successMessage": "شكراً لاستفسارك. سنتواصل معك قريباً.",
+    "errorMessage": "حدث خطأ ما. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.",
+    "meta": {
+      "title": "اتصل بنا",
+      "description": "تواصل مع SH Metal Commodities."
+    }
+  },
+  "footer": {
+    "descriptor": "تجارة عالمية في المعادن غير الحديدية",
+    "copyright": "© {year} SH Metal Commodities. جميع الحقوق محفوظة."
+  },
+  "common": {
+    "loading": "جار التحميل…",
+    "backToTop": "العودة إلى الأعلى"
+  }
+}

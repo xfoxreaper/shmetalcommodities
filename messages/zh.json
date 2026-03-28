@@ -1,0 +1,91 @@
+{
+  "// TODO": "需要专业翻译 — 当前字符串为机器翻译占位符。注意：中文页面使用 Noto Serif SC 字体。",
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "市场",
+    "team": "团队",
+    "contact": "联系我们"
+  },
+  "home": {
+    "tagline": "金属。市场。信任。",
+    "subTagline": "全球有色金属贸易，总部位于德国汉堡。",
+    "cta": "了解更多",
+    "trustBar": "总部位于德国汉堡",
+    "meta": {
+      "title": "SH Metal Commodities",
+      "description": "全球有色金属贸易 — 铜、铝、锌。总部位于德国汉堡。"
+    }
+  },
+  "about": {
+    "heading": "建立于信任之上的贸易公司",
+    "para1": "<!-- PLACEHOLDER -->",
+    "para2": "<!-- PLACEHOLDER -->",
+    "para3": "<!-- PLACEHOLDER -->",
+    "pullQuote": "我们以公司名义参与每一笔交易。",
+    "credential": "创立于德国汉堡",
+    "meta": {
+      "title": "关于我们",
+      "description": "了解 SH Metal Commodities — 我们的历史、价值观和贸易理念。"
+    }
+  },
+  "services": {
+    "heading": "我们的市场",
+    "copper": {
+      "name": "铜",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "aluminium": {
+      "name": "铝",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "zinc": {
+      "name": "锌",
+      "description": "<!-- PLACEHOLDER -->"
+    },
+    "brokerageModel": "<!-- PLACEHOLDER -->",
+    "cta": "联系我们的团队",
+    "meta": {
+      "title": "我们的市场",
+      "description": "我们在全球市场交易铜、铝和锌。"
+    }
+  },
+  "team": {
+    "heading": "SH Metal Commodities 背后的团队",
+    "meta": {
+      "title": "我们的团队",
+      "description": "认识 SH Metal Commodities 背后的团队。"
+    }
+  },
+  "contact": {
+    "heading": "联系我们",
+    "formLabels": {
+      "name": "全名",
+      "company": "公司（可选）",
+      "email": "电子邮件地址",
+      "subject": "主题",
+      "message": "留言"
+    },
+    "subjects": [
+      { "value": "general", "label": "一般咨询" },
+      { "value": "trading", "label": "贸易" },
+      { "value": "partnership", "label": "合作" },
+      { "value": "other", "label": "其他" }
+    ],
+    "submit": "发送咨询",
+    "successMessage": "感谢您的咨询。我们将尽快与您联系。",
+    "errorMessage": "出现错误，请重试或直接联系我们。",
+    "meta": {
+      "title": "联系我们",
+      "description": "联系 SH Metal Commodities。"
+    }
+  },
+  "footer": {
+    "descriptor": "全球有色金属贸易",
+    "copyright": "© {year} SH Metal Commodities. 保留所有权利。"
+  },
+  "common": {
+    "loading": "加载中…",
+    "backToTop": "返回顶部"
+  }
+}
