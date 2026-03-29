@@ -189,7 +189,7 @@ function RadarGrid() {
   );
 }
 
-/* ── Boat-shaped radar blip ── */
+/* ── Cargo ship radar blip ── */
 function BoatVessel({
   pathId,
   duration,
@@ -208,24 +208,53 @@ function BoatVessel({
 
   return (
     <g>
-      {/* Wake trail (elongated glow behind the boat) */}
-      <ellipse rx={8} ry={2} fill="#B89A5A" opacity={0.08} cx={-4} cy={0}>
-        <animateMotion {...motionProps}>
-          <mpath href={`#${pathId}`} />
-        </animateMotion>
-      </ellipse>
-      {/* Boat hull shape — pointed bow, wider stern */}
+      {/* V-shaped wake spreading behind the ship */}
       <path
-        d="M4,0 L-2,-2 L-3,0 L-2,2 Z"
-        fill="#B89A5A"
-        opacity={0.85}
+        d="M-5,0 L-14,-4 M-5,0 L-14,4"
+        fill="none"
+        stroke="#B89A5A"
+        strokeWidth={0.4}
+        opacity={0.12}
       >
         <animateMotion {...motionProps}>
           <mpath href={`#${pathId}`} />
         </animateMotion>
       </path>
-      {/* Bright center (bridge/cabin) */}
-      <circle r={0.6} fill="#F5F0E8" opacity={0.9}>
+      {/* Wake wash (fading trail) */}
+      <ellipse rx={10} ry={1.5} fill="#B89A5A" opacity={0.05} cx={-8} cy={0}>
+        <animateMotion {...motionProps}>
+          <mpath href={`#${pathId}`} />
+        </animateMotion>
+      </ellipse>
+      {/* Hull — cargo ship profile: sharp bow, parallel sides, flat stern */}
+      <path
+        d="M7,0 L4,-1.8 L-3,-2 L-5,-1.5 L-5,1.5 L-3,2 L4,1.8 Z"
+        fill="#B89A5A"
+        opacity={0.8}
+      >
+        <animateMotion {...motionProps}>
+          <mpath href={`#${pathId}`} />
+        </animateMotion>
+      </path>
+      {/* Bridge superstructure (raised block near stern) */}
+      <rect x={-4} y={-1} width={2.5} height={2} rx={0.3} fill="#D4BC82" opacity={0.7}>
+        <animateMotion {...motionProps}>
+          <mpath href={`#${pathId}`} />
+        </animateMotion>
+      </rect>
+      {/* Cargo hold (subtle line dividers on deck) */}
+      <line x1={0} y1={-1.2} x2={0} y2={1.2} stroke="#8C7340" strokeWidth={0.3} opacity={0.4}>
+        <animateMotion {...motionProps}>
+          <mpath href={`#${pathId}`} />
+        </animateMotion>
+      </line>
+      <line x1={2.5} y1={-1} x2={2.5} y2={1} stroke="#8C7340" strokeWidth={0.3} opacity={0.4}>
+        <animateMotion {...motionProps}>
+          <mpath href={`#${pathId}`} />
+        </animateMotion>
+      </line>
+      {/* Navigation light (bright dot at bow) */}
+      <circle r={0.5} cx={6} cy={0} fill="#F5F0E8" opacity={0.95}>
         <animateMotion {...motionProps}>
           <mpath href={`#${pathId}`} />
         </animateMotion>
