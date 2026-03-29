@@ -23,8 +23,8 @@
       "yearsLabel": "Years of Trading",
       "metals": "3",
       "metalsLabel": "Core Metals",
-      "reach": "Global",
-      "reachLabel": "Market Reach"
+      "reach": "Hamburg",
+      "reachLabel": "Headquarters"
     },
     "ourMarkets": "Our Markets",
     "exploreMarkets": "Explore Our Markets",
@@ -44,6 +44,7 @@
       }
     },
     "globalPresence": "Global Presence",
+    "globalPresenceSubtitle": "Trading from Hamburg across six continents — tracking live shipments from our principal trading desk.",
     "latestInsights": "Latest Insights",
     "viewAllInsights": "View All Insights",
     "quoteAttribution": "The principle behind every SH Metal Commodities transaction",
@@ -94,6 +95,16 @@
         "year": "1960s",
         "title": "Expansion to the Middle East",
         "description": "As global trade routes shifted and new markets emerged, SH Metal Commodities established trading relationships in the Middle East. Dubai's growing port infrastructure offered a natural bridge between European suppliers and the rapidly industrialising Gulf region."
+      },
+      "singapore": {
+        "year": "1997",
+        "title": "Opening the Asian Market",
+        "description": "SH Metal Commodities opened its Singapore office, establishing a direct presence in the heart of Asia's fastest-growing metals market. Singapore's position as a global trading hub and gateway to Southeast Asia provided the ideal platform for serving the region's rapidly expanding industrial base."
+      },
+      "restructuring": {
+        "year": "2008",
+        "title": "A New Chapter",
+        "description": "The company underwent a strategic restructuring, sharpening its focus on core non-ferrous metals and reinforcing the principal trading model that had defined its operations for over a century. This period of renewal ensured SH Metal Commodities entered its next era with a leaner structure, deeper market expertise, and an unbroken commitment to trading with its name on every deal."
       }
     },
     "ctaButton": "Speak with Our Team",
@@ -110,17 +121,17 @@
     "copper": {
       "name": "Copper",
       "grades": "Cathode · Rod · Scrap",
-      "description": "Copper is the principal conductor of the modern economy — present in every strand of electrical infrastructure, every electric motor, and every communications network. We trade cathode, rod, and scrap copper across European and global markets on both spot and term basis, working alongside smelters, fabricators, and industrial consumers of long standing."
+      "description": "Spot and term trading across European and global markets, working alongside smelters, fabricators, and industrial consumers of long standing."
     },
     "aluminium": {
       "name": "Aluminium",
       "grades": "Primary Ingot · Billets · T-Bars",
-      "description": "Aluminium's combination of lightness, strength, and conductivity has made it the structural material of our era — indispensable in transport, packaging, and construction. Our aluminium desk covers primary ingot, billets, and sheet, with positions traded within established LME parameters and against physical demand from our counterparty network."
+      "description": "Primary ingot, billets, and sheet traded within established LME parameters and against physical demand from our counterparty network."
     },
     "zinc": {
       "name": "Zinc",
       "grades": "SHG Zinc · Zinc Alloys",
-      "description": "Zinc underpins the longevity of steel infrastructure worldwide, through galvanising applications that extend the working life of bridges, ships, and buildings by decades. We trade SHG zinc and zinc alloys with a network of smelters and end-users built over generations of continuous presence in the market."
+      "description": "SHG zinc and zinc alloys supplied through a network of smelters and end-users built over generations of continuous market presence."
     },
     "priceRiskManagement": {
       "name": "Price Risk Management",

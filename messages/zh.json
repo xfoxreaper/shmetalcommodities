@@ -24,8 +24,8 @@
       "yearsLabel": "年贸易历史",
       "metals": "3",
       "metalsLabel": "核心金属",
-      "reach": "全球",
-      "reachLabel": "市场覆盖"
+      "reach": "汉堡",
+      "reachLabel": "总部"
     },
     "ourMarkets": "我们的市场",
     "exploreMarkets": "探索我们的市场",
@@ -45,6 +45,7 @@
       }
     },
     "globalPresence": "\u5168\u7403\u5e03\u5c40",
+    "globalPresenceSubtitle": "\u4ece\u6c49\u5821\u51fa\u53d1\uff0c\u8d38\u6613\u904d\u5e03\u516d\u5927\u6d32\u2014\u2014\u5b9e\u65f6\u8ddf\u8e2a\u6211\u4eec\u7684\u8d27\u8fd0\u52a8\u6001\u3002",
     "latestInsights": "最新洞察",
     "viewAllInsights": "查看所有洞察",
     "quoteAttribution": "SH Metal Commodities每笔交易背后的信念",
@@ -95,6 +96,16 @@
         "year": "1960年代",
         "title": "拓展中东市场",
         "description": "随着全球贸易路线的转变和新兴市场的崛起，SH Metal Commodities在中东建立了贸易合作关系。迪拜日益完善的港口基础设施为欧洲供应商与迅速工业化的海湾地区之间架起了天然桥梁。"
+      },
+      "singapore": {
+        "year": "1997",
+        "title": "开拓亚洲市场",
+        "description": "SH Metal Commodities在新加坡设立办事处，在亚洲增长最快的金属市场中心建立了直接业务。新加坡作为全球贸易枢纽和东南亚门户的地位，为服务该地区快速扩张的工业基础提供了理想平台。"
+      },
+      "restructuring": {
+        "year": "2008",
+        "title": "崭新篇章",
+        "description": "公司进行了战略性重组，进一步聚焦核心有色金属业务，强化了定义其百余年运营的自营贸易模式。这一革新时期确保SH Metal Commodities以更精简的架构、更深厚的市场专业知识，以及对每笔交易以公司名义负责的不变承诺，迈入新的时代。"
       }
     },
     "ctaButton": "联系我们的团队",
@@ -110,17 +121,17 @@
     "copper": {
       "name": "铜",
       "grades": "阴极铜 · 铜杆 · 废铜",
-      "description": "铜是现代经济的核心导体——遍布每条电力基础设施线路、每台电动机和每套通信网络。我们在欧洲及全球市场进行阴极铜、铜杆及废铜的即期和远期交易，长期与冶炼厂、加工商及工业客户保持稳固合作。"
+      "description": "在欧洲及全球市场进行即期和远期交易，长期与冶炼厂、加工商及工业客户保持稳固合作。"
     },
     "aluminium": {
       "name": "铝",
       "grades": "原铝锭 · 铝棒 · T型铝锭",
-      "description": "铝兼具轻量、强度与导电性，已成为当代不可或缺的结构材料——广泛应用于交通运输、包装及建筑领域。我们的铝业团队涵盖原铝锭、铝棒及铝板的交易，在既定的LME参数框架内运作，并依托合作伙伴网络满足实物需求。"
+      "description": "原铝锭、铝棒及铝板的交易，在既定的LME参数框架内运作，依托合作伙伴网络满足实物需求。"
     },
     "zinc": {
       "name": "锌",
       "grades": "高纯锌 · 锌合金",
-      "description": "锌通过热镀锌工艺延长桥梁、船舶和建筑物数十年的使用寿命，是全球钢铁基础设施耐久性的重要保障。我们与经过数代持续市场耕耘建立起来的冶炼厂及最终用户网络，交易SHG锌及锌合金。"
+      "description": "高纯锌及锌合金，通过经数代持续市场耕耘建立的冶炼厂及最终用户网络进行交易。"
     },
     "priceRiskManagement": {
       "name": "价格风险管理",

@@ -13,10 +13,8 @@ import {
   NoiseTexture,
   MetalCard,
   FadeIn,
-  Button,
   SectionLabel,
   InsightCard,
-  QuoteBand,
   CTASection,
   WorldMap,
 } from '@/components/ui';
@@ -49,57 +47,54 @@ export default async function HomePage({ params }: Props) {
   const tServices = await getTranslations({ locale, namespace: 'services' });
   const tAbout = await getTranslations({ locale, namespace: 'about' });
 
-  const metals = [
-    { id: 'copper', texture: 'copper' as const },
-    { id: 'aluminium', texture: 'aluminium' as const },
-    { id: 'zinc', texture: 'zinc' as const },
-  ];
+  const metals = ['copper', 'aluminium', 'zinc'];
 
   return (
     <>
-      {/* ── Hero ── */}
-      <div className="relative bg-navy animate-fade-in flex flex-col items-center min-h-[100svh] -mt-[var(--navbar-h)] pt-[var(--navbar-h)]">
+      {/* ── Unified Hero ── */}
+      <div className="relative bg-navy animate-fade-in flex flex-col h-[100svh] -mt-[var(--navbar-h)] pt-[var(--navbar-h)]">
         <Image src="/images/hamburg-port.jpg" alt="" fill priority className="object-cover opacity-20" sizes="100vw" />
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none bg-[url('/images/hero-skyline.svg')] bg-bottom bg-no-repeat bg-cover opacity-40" />
         <NoiseTexture opacity={0.06} />
-        <Container className="relative z-10 flex flex-col items-center text-center gap-6 flex-1 justify-center">
-          <Typography variant="label" className="text-gold tracking-[0.25em]">
-            {t('established')}
-          </Typography>
-          <Typography variant="display" className="text-ivory" locale={locale}>
-            {t('tagline')}
-          </Typography>
-          <Typography variant="body" className="text-ivory max-w-lg text-center opacity-90 [text-wrap:balance]">
-            {t('subTagline')}
-          </Typography>
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-            <Link href="/contact">
-              <Button variant="primary" className="bg-gold text-navy border-gold hover:bg-gold-light hover:text-navy px-8 py-3.5">
-                {t('ctaPrimary')}
-              </Button>
-            </Link>
-            <Link href="/about">
-              <button className="font-ui text-xs uppercase tracking-widest text-ivory/70 hover:text-ivory transition-colors px-4 py-2">
-                {t('ctaSecondary')} &rarr;
-              </button>
-            </Link>
+
+        {/* ── Main content ── */}
+        <Container className="relative z-10 flex flex-col justify-center flex-1 py-8 md:py-12">
+          <div className="max-w-3xl">
+            <Typography variant="label" className="text-gold tracking-[0.25em] mb-4">
+              {tAbout('credential')}
+            </Typography>
+            <Typography variant="display" className="text-ivory mb-6 md:mb-8" locale={locale}>
+              {tAbout('heading')}
+            </Typography>
+            <div className="space-y-4 text-ivory/80 font-body text-sm md:text-base leading-relaxed">
+              <p>{tAbout('para1')}</p>
+              <p>{tAbout('para2')}</p>
+              <p>{tAbout('para3')}</p>
+            </div>
           </div>
         </Container>
 
-        <div className="relative z-10 w-full border-t border-ivory/10 bg-navy/40 backdrop-blur-sm py-6">
-          <Container>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-              {[
-                { value: t('stats.founded'), label: t('stats.foundedLabel') },
-                { value: t('stats.years'), label: t('stats.yearsLabel') },
-                { value: t('stats.metals'), label: t('stats.metalsLabel') },
-                { value: t('stats.reach'), label: t('stats.reachLabel') },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="font-display text-3xl md:text-4xl text-ivory mb-1">{stat.value}</div>
-                  <div className="font-ui text-xs uppercase tracking-widest text-ivory/60">{stat.label}</div>
-                </div>
-              ))}
+        {/* ── Stats + Quote strip ── */}
+        <div className="relative z-10 w-full border-t border-ivory/10 bg-navy/40 backdrop-blur-sm">
+          <Container className="py-5 md:py-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 flex-1">
+                {[
+                  { value: t('stats.founded'), label: t('stats.foundedLabel') },
+                  { value: t('stats.years'), label: t('stats.yearsLabel') },
+                  { value: t('stats.metals'), label: t('stats.metalsLabel') },
+                  { value: t('stats.reach'), label: t('stats.reachLabel') },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center md:text-left">
+                    <div className="font-display text-2xl md:text-3xl text-ivory mb-0.5">{stat.value}</div>
+                    <div className="font-ui text-[10px] uppercase tracking-widest text-ivory/50">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="hidden md:block w-px h-10 bg-ivory/15" />
+              <p className="font-display text-sm md:text-base italic text-gold/80 text-center md:text-right md:max-w-[14rem] leading-snug">
+                {tAbout('pullQuote')}
+              </p>
             </div>
           </Container>
         </div>
@@ -114,12 +109,11 @@ export default async function HomePage({ params }: Props) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {metals.map((metal, i) => (
-              <FadeIn key={metal.id} delay={i * 150}>
+              <FadeIn key={metal} delay={i * 150}>
                 <MetalCard
-                  name={tServices(`${metal.id}.name`)}
-                  grades={tServices(`${metal.id}.grades`)}
-                  description={tServices(`${metal.id}.description`)}
-                  texture={metal.texture}
+                  name={tServices(`${metal}.name`)}
+                  grades={tServices(`${metal}.grades`)}
+                  description={tServices(`${metal}.description`)}
                 />
               </FadeIn>
             ))}
@@ -137,9 +131,6 @@ export default async function HomePage({ params }: Props) {
         </Container>
       </Section>
 
-      {/* ── Heritage Quote ── */}
-      <QuoteBand quote={tAbout('pullQuote')} attribution={t('quoteAttribution')} />
-
       {/* ── Latest Insights ── */}
       <Section background="ivory">
         <Container>
@@ -149,7 +140,7 @@ export default async function HomePage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.slice(0, 3).map((post, i) => (
               <FadeIn key={post.slug} delay={i * 150}>
-                <InsightCard slug={post.slug} title={post.title} date={post.date} excerpt={post.excerpt} />
+                <InsightCard slug={post.slug} title={post.title} date={post.date} excerpt={post.excerpt} imageUrl={post.imageUrl} />
               </FadeIn>
             ))}
           </div>
@@ -167,16 +158,23 @@ export default async function HomePage({ params }: Props) {
       </Section>
 
       {/* ── Global Presence ── */}
-      <Section background="navy">
-        <Container>
-          <FadeIn>
-            <SectionLabel align="center" variant="light">{t('globalPresence')}</SectionLabel>
-          </FadeIn>
+      <section className="relative bg-navy overflow-hidden">
+        {/* Map — full bleed, no container constraint */}
+        <div className="relative">
           <FadeIn>
             <WorldMap />
           </FadeIn>
-        </Container>
-      </Section>
+          {/* Overlay content on top of map */}
+          <div className="absolute inset-0 flex flex-col items-center justify-end pointer-events-none z-20 pb-10 md:pb-14">
+            <Typography variant="label" className="text-gold tracking-[0.25em] mb-3">
+              {t('globalPresence')}
+            </Typography>
+            <Typography variant="body" className="text-ivory/50 text-center text-sm max-w-md">
+              {t('globalPresenceSubtitle')}
+            </Typography>
+          </div>
+        </div>
+      </section>
 
       {/* ── Contact CTA ── */}
       <CTASection

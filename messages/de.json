@@ -24,8 +24,8 @@
       "yearsLabel": "Jahre im Handel",
       "metals": "3",
       "metalsLabel": "Kernmetalle",
-      "reach": "Global",
-      "reachLabel": "Marktreichweite"
+      "reach": "Hamburg",
+      "reachLabel": "Hauptsitz"
     },
     "ourMarkets": "Unsere Märkte",
     "exploreMarkets": "Unsere Märkte entdecken",
@@ -45,6 +45,7 @@
       }
     },
     "globalPresence": "Globale Pr\u00e4senz",
+    "globalPresenceSubtitle": "Handel von Hamburg \u00fcber sechs Kontinente \u2014 Live-Verfolgung unserer Lieferungen vom Handelsb\u00fcro.",
     "latestInsights": "Aktuelle Einblicke",
     "viewAllInsights": "Alle Einblicke ansehen",
     "quoteAttribution": "Das Prinzip hinter jeder Transaktion von SH Metal Commodities",
@@ -95,6 +96,16 @@
         "year": "1960er",
         "title": "Expansion in den Nahen Osten",
         "description": "Als sich die globalen Handelsrouten verschoben und neue Märkte entstanden, etablierte SH Metal Commodities Handelsbeziehungen im Nahen Osten. Dubais wachsende Hafeninfrastruktur bot eine natürliche Brücke zwischen europäischen Lieferanten und der sich rasch industrialisierenden Golfregion."
+      },
+      "singapore": {
+        "year": "1997",
+        "title": "Erschließung des asiatischen Marktes",
+        "description": "SH Metal Commodities eröffnete sein Büro in Singapur und etablierte eine direkte Präsenz im Herzen des am schnellsten wachsenden Metallmarktes Asiens. Singapurs Position als globales Handelszentrum und Tor zu Südostasien bot die ideale Plattform zur Bedienung der rasch expandierenden industriellen Basis der Region."
+      },
+      "restructuring": {
+        "year": "2008",
+        "title": "Ein neues Kapitel",
+        "description": "Das Unternehmen durchlief eine strategische Restrukturierung, schärfte seinen Fokus auf die Kernmetalle und stärkte das Eigenhandelsmodell, das den Betrieb seit über einem Jahrhundert geprägt hatte. Diese Phase der Erneuerung stellte sicher, dass SH Metal Commodities mit einer schlankeren Struktur, tieferer Marktexpertise und einem ungebrochenen Bekenntnis zum Handel mit seinem Namen auf jedem Geschäft in die nächste Ära eintrat."
       }
     },
     "ctaButton": "Sprechen Sie mit unserem Team",
@@ -110,17 +121,17 @@
     "copper": {
       "name": "Kupfer",
       "grades": "Kathode · Stab · Schrott",
-      "description": "Kupfer ist der wichtigste Leiter der modernen Wirtschaft — vorhanden in jeder Leitung der elektrischen Infrastruktur, jedem Elektromotor und jedem Kommunikationsnetz. Wir handeln Kathoden-, Stab- und Schrott-Kupfer auf europäischen und globalen Märkten sowohl auf Spot- als auch Terminbasis, in Zusammenarbeit mit langjährigen Schmelzbetrieben, Verarbeitern und Industriekunden."
+      "description": "Spot- und Terminhandel auf europäischen und globalen Märkten, in Zusammenarbeit mit langjährigen Schmelzbetrieben, Verarbeitern und Industriekunden."
     },
     "aluminium": {
       "name": "Aluminium",
       "grades": "Primärbarren · Bolzen · T-Barren",
-      "description": "Die Kombination aus Leichtigkeit, Festigkeit und Leitfähigkeit hat Aluminium zum Konstruktionswerkstoff unserer Zeit gemacht — unverzichtbar im Transportwesen, in der Verpackung und im Bauwesen. Unser Aluminium-Desk umfasst Primärbarren, Bolzen und Bleche, die innerhalb etablierter LME-Parameter und gegen physische Nachfrage aus unserem Kontrahentennetzwerk gehandelt werden."
+      "description": "Primärbarren, Bolzen und Bleche, gehandelt innerhalb etablierter LME-Parameter und gegen physische Nachfrage aus unserem Kontrahentennetzwerk."
     },
     "zinc": {
       "name": "Zink",
       "grades": "SHG-Zink · Zinklegierungen",
-      "description": "Zink unterstützt die Langlebigkeit der weltweiten Stahlinfrastruktur durch Feuerverzinkungsanwendungen, die die Nutzungsdauer von Brücken, Schiffen und Gebäuden um Jahrzehnte verlängern. Wir handeln SHG-Zink und Zinklegierungen mit einem Netzwerk aus Hüttenwerken und Endverbrauchern, das über Generationen kontinuierlicher Marktpräsenz aufgebaut wurde."
+      "description": "SHG-Zink und Zinklegierungen, gehandelt mit einem Netzwerk aus Hüttenwerken und Endverbrauchern, aufgebaut über Generationen kontinuierlicher Marktpräsenz."
     },
     "priceRiskManagement": {
       "name": "Preisrisikomanagement",

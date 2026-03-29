@@ -368,12 +368,15 @@ export function WorldMap() {
   const hamburgPx = proj ? project(locations[0].coordinates) : null;
 
   return (
-    <div className="w-full max-w-[1000px] mx-auto relative">
-      {/* Vignette overlay */}
+    <div className="w-full relative">
+      {/* Edge fade — blends map edges into the navy section seamlessly */}
       <div
-        className="absolute inset-0 pointer-events-none z-10 rounded"
+        className="absolute inset-0 pointer-events-none z-10"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 50%, rgba(6,13,24,0.7) 100%)',
+          background: `
+            linear-gradient(to bottom, var(--color-navy) 0%, transparent 12%, transparent 70%, var(--color-navy) 100%),
+            linear-gradient(to right, var(--color-navy) 0%, transparent 10%, transparent 90%, var(--color-navy) 100%)
+          `,
         }}
       />
 
@@ -384,8 +387,8 @@ export function WorldMap() {
         height={440}
         style={{ width: '100%', height: 'auto' }}
       >
-        {/* Ocean */}
-        <rect x={0} y={0} width={900} height={440} fill="#060D18" />
+        {/* Ocean — matches navy section bg so there's no visible boundary */}
+        <rect x={0} y={0} width={900} height={440} fill="#0A1628" />
 
         <RadarGrid />
 
