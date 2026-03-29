@@ -36,98 +36,147 @@ type ShippingRoute = {
   delays: number[];
 };
 
+/*
+  Shared waypoint segments for reuse across routes.
+  All coords are [longitude, latitude].
+
+  Key straits & passages with extra waypoints to prevent spline overshoot:
+  - Dover Strait: [1.4, 51.0]
+  - Ushant (tip of Brittany): [-5.3, 48.3]
+  - Cape Finisterre: [-9.5, 42.8] (well offshore)
+  - Cape St. Vincent: [-9.2, 36.8]
+  - Gibraltar: [-5.6, 35.9] entry, [-5.3, 36.0] mid, [-4.5, 36.1] exit
+  - Suez approach: [32.2, 31.5] Port Said, [32.5, 30.0] Suez
+  - Bab el-Mandeb: [43.4, 12.6]
+  - Strait of Hormuz: [56.4, 26.5]
+  - South of Sri Lanka: [80.5, 5.5]
+  - Malacca Strait: [98.0, 4.5] entry, [100.5, 2.5] mid, [103.8, 1.3] Singapore exit
+  - South China Sea: [107.0, 5.0] → [113.0, 12.0] → [117.0, 20.0]
+*/
+
+// Hamburg → Dover Strait (North Sea, staying in water off Netherlands)
+const hamburgToDover: [number, number][] = [
+  [10.0, 53.55], [8.0, 54.5], [5.5, 53.8], [3.5, 52.5], [1.8, 51.5], [1.4, 51.0],
+];
+
+// Dover → past Ushant → Bay of Biscay → off Cape Finisterre (staying well offshore)
+const doverToBiscay: [number, number][] = [
+  [0.5, 50.2], [-1.5, 49.5], [-5.3, 48.3], [-7.0, 46.5], [-9.0, 44.5], [-10.0, 42.5],
+];
+
+// Cape Finisterre → past Portugal → Gibraltar (offshore, not through land)
+const biscayToGibraltar: [number, number][] = [
+  [-10.0, 40.0], [-9.5, 37.5], [-7.0, 36.5], [-5.6, 35.9], [-5.3, 36.0], [-4.5, 36.1],
+];
+
+// Gibraltar → central Med → east Med → Port Said (staying in open water)
+const gibraltarToSuez: [number, number][] = [
+  [-2.0, 36.3], [1.0, 37.0], [5.0, 37.5], [9.0, 37.0], [13.0, 36.0],
+  [17.0, 34.5], [21.0, 34.0], [25.0, 34.5], [28.5, 33.5], [31.0, 32.0],
+  [32.2, 31.5],
+];
+
+// Suez Canal → Red Sea → Bab el-Mandeb (tight waypoints through canal)
+const suezToRedSea: [number, number][] = [
+  [32.3, 31.0], [32.5, 30.0], [32.8, 29.0], [33.5, 27.5], [35.0, 25.0],
+  [37.0, 22.0], [39.5, 18.0], [41.5, 15.0], [43.4, 12.6],
+];
+
+// Red Sea exit → Gulf of Aden → around Arabian Peninsula → Strait of Hormuz → Dubai
+const redSeaToDubai: [number, number][] = [
+  [45.0, 12.0], [48.5, 12.5], [52.0, 16.0], [56.0, 21.0],
+  [56.4, 26.5], [55.5, 25.5], [55.27, 25.2],
+];
+
+// Red Sea exit → Indian Ocean → south of Sri Lanka → Malacca → Singapore → SCS → Shanghai
+const redSeaToShanghai: [number, number][] = [
+  [46.0, 11.5], [50.0, 10.0], [55.0, 9.0], [60.0, 10.0], [66.0, 10.0],
+  [72.0, 8.0], [76.5, 6.5], [80.5, 5.5], [85.0, 4.0], [90.0, 3.0],
+  // Malacca Strait (tight, many waypoints to hug the channel)
+  [95.0, 4.0], [97.0, 3.5], [98.5, 3.0], [100.0, 2.5], [101.5, 2.0], [103.8, 1.3],
+  // Singapore → South China Sea → East China Sea
+  [105.5, 2.0], [107.5, 5.0], [110.0, 8.0], [113.0, 12.0], [116.0, 17.0],
+  [118.5, 22.0], [120.5, 27.0], [121.47, 31.23],
+];
+
+// Dover → south of Ireland → open North Atlantic → New York
+const doverToNewYork: [number, number][] = [
+  [0.0, 50.0], [-3.0, 49.5], [-6.0, 49.0], [-8.0, 48.5],
+  // Pass south of Ireland (Fastnet), staying well offshore
+  [-10.5, 50.0], [-12.0, 51.5], [-15.0, 52.0],
+  // Open Atlantic
+  [-22.0, 51.0], [-30.0, 49.0], [-40.0, 46.0], [-50.0, 44.0],
+  [-60.0, 42.5], [-67.0, 41.5], [-71.0, 40.8], [-74.01, 40.71],
+];
+
 const shippingRoutes: ShippingRoute[] = [
-  // Hamburg → London (North Sea, down the English coast)
+  // Hamburg → London (Elbe → North Sea → Thames)
   {
     id: 'hamburg-london',
     waypoints: [
-      [10.0, 53.55], [8.5, 54.0], [6.0, 54.5], [3.5, 53.5], [1.5, 52.0], [-0.13, 51.51],
+      [10.0, 53.55], [8.0, 54.3], [5.5, 53.5], [3.0, 52.5], [1.5, 51.8], [0.5, 51.5], [-0.13, 51.51],
     ],
     vesselCount: 2, durations: [8, 10], delays: [0, 5],
   },
-  // Hamburg → Rotterdam (short North Sea hop)
+  // Hamburg → Rotterdam (Elbe → North Sea → Hook of Holland)
   {
     id: 'hamburg-rotterdam',
     waypoints: [
-      [10.0, 53.55], [8.0, 54.0], [6.0, 54.2], [4.8, 53.0], [4.48, 51.92],
+      [10.0, 53.55], [7.5, 54.3], [5.0, 53.5], [4.0, 52.5], [4.48, 51.92],
     ],
     vesselCount: 2, durations: [6, 8], delays: [0, 4],
   },
-  // Hamburg → Dubai (North Sea → Channel → Bay of Biscay → Gibraltar → Med → Suez → Red Sea → Arabian Sea)
+  // Hamburg → Dubai (North Sea → Channel → Biscay → Gibraltar → Med → Suez → Red Sea → Persian Gulf)
   {
     id: 'hamburg-dubai',
     waypoints: [
-      [10.0, 53.55], [6.0, 54.0], [2.0, 51.0], [-4.0, 48.5], [-9.0, 43.0],
-      [-6.0, 36.0], [-1.0, 36.0], [5.0, 37.0], [10.0, 36.5],
-      [18.0, 34.0], [26.0, 34.0], [30.0, 32.0], [32.5, 30.0],
-      [33.0, 28.0], [34.5, 26.5], [38.0, 22.0], [42.0, 16.0],
-      [45.0, 13.0], [50.0, 18.0], [55.27, 25.2],
+      ...hamburgToDover, ...doverToBiscay, ...biscayToGibraltar,
+      ...gibraltarToSuez, ...suezToRedSea, ...redSeaToDubai,
     ],
-    vesselCount: 3, durations: [22, 25, 28], delays: [0, 7, 15],
+    vesselCount: 3, durations: [28, 32, 36], delays: [0, 9, 20],
   },
-  // Hamburg → Shanghai (via Suez → Indian Ocean → Malacca Strait → South China Sea)
+  // Hamburg → Shanghai (same as Dubai to Red Sea, then Indian Ocean → Malacca → SCS)
   {
     id: 'hamburg-shanghai',
     waypoints: [
-      [10.0, 53.55], [6.0, 54.0], [2.0, 51.0], [-4.0, 48.5], [-9.0, 43.0],
-      [-6.0, 36.0], [-1.0, 36.0], [5.0, 37.0], [10.0, 36.5],
-      [18.0, 34.0], [26.0, 34.0], [30.0, 32.0], [32.5, 30.0],
-      [33.0, 28.0], [34.5, 26.5], [38.0, 22.0], [42.0, 16.0],
-      [48.0, 12.0], [55.0, 12.0], [62.0, 14.0], [70.0, 12.0],
-      [78.0, 8.0], [85.0, 5.0], [95.0, 3.0], [100.0, 2.0],
-      [104.0, 1.5], [108.0, 5.0], [112.0, 10.0], [115.0, 16.0],
-      [118.0, 22.0], [121.47, 31.23],
+      ...hamburgToDover, ...doverToBiscay, ...biscayToGibraltar,
+      ...gibraltarToSuez, ...suezToRedSea, ...redSeaToShanghai,
     ],
-    vesselCount: 3, durations: [32, 36, 40], delays: [0, 10, 22],
+    vesselCount: 3, durations: [38, 42, 48], delays: [0, 14, 28],
   },
-  // Hamburg → New York (North Sea → Atlantic crossing)
+  // Hamburg → New York (North Sea → Channel → south of Ireland → Atlantic)
   {
     id: 'hamburg-newyork',
-    waypoints: [
-      [10.0, 53.55], [6.0, 54.0], [2.0, 51.0], [-5.0, 50.0],
-      [-10.0, 50.0], [-18.0, 50.0], [-28.0, 48.0], [-38.0, 46.0],
-      [-48.0, 44.0], [-58.0, 42.5], [-65.0, 41.5], [-70.0, 41.0],
-      [-74.01, 40.71],
-    ],
-    vesselCount: 2, durations: [18, 22], delays: [0, 10],
+    waypoints: [...hamburgToDover, ...doverToNewYork],
+    vesselCount: 2, durations: [20, 24], delays: [0, 12],
   },
-  // Return: Dubai → Hamburg
+  // Return: Dubai → Hamburg (reverse)
   {
     id: 'dubai-hamburg',
     waypoints: [
-      [55.27, 25.2], [50.0, 18.0], [45.0, 13.0], [42.0, 16.0],
-      [38.0, 22.0], [34.5, 26.5], [33.0, 28.0], [32.5, 30.0],
-      [30.0, 32.0], [26.0, 34.0], [18.0, 34.0], [10.0, 36.5],
-      [5.0, 37.0], [-1.0, 36.0], [-6.0, 36.0], [-9.0, 43.0],
-      [-4.0, 48.5], [2.0, 51.0], [6.0, 54.0], [10.0, 53.55],
+      ...redSeaToDubai.slice().reverse(), ...suezToRedSea.slice().reverse(),
+      ...gibraltarToSuez.slice().reverse(), ...biscayToGibraltar.slice().reverse(),
+      ...doverToBiscay.slice().reverse(), ...hamburgToDover.slice().reverse(),
     ],
-    vesselCount: 2, durations: [24, 27], delays: [3, 14],
+    vesselCount: 2, durations: [30, 34], delays: [4, 18],
   },
-  // Return: Shanghai → Hamburg
+  // Return: Shanghai → Hamburg (reverse)
   {
     id: 'shanghai-hamburg',
     waypoints: [
-      [121.47, 31.23], [118.0, 22.0], [115.0, 16.0], [112.0, 10.0],
-      [108.0, 5.0], [104.0, 1.5], [100.0, 2.0], [95.0, 3.0],
-      [85.0, 5.0], [78.0, 8.0], [70.0, 12.0], [62.0, 14.0],
-      [55.0, 12.0], [48.0, 12.0], [42.0, 16.0], [38.0, 22.0],
-      [34.5, 26.5], [33.0, 28.0], [32.5, 30.0], [30.0, 32.0],
-      [26.0, 34.0], [18.0, 34.0], [10.0, 36.5], [5.0, 37.0],
-      [-1.0, 36.0], [-6.0, 36.0], [-9.0, 43.0], [-4.0, 48.5],
-      [2.0, 51.0], [6.0, 54.0], [10.0, 53.55],
+      ...redSeaToShanghai.slice().reverse(), ...suezToRedSea.slice().reverse(),
+      ...gibraltarToSuez.slice().reverse(), ...biscayToGibraltar.slice().reverse(),
+      ...doverToBiscay.slice().reverse(), ...hamburgToDover.slice().reverse(),
     ],
-    vesselCount: 2, durations: [34, 38], delays: [5, 20],
+    vesselCount: 2, durations: [40, 46], delays: [6, 24],
   },
-  // Return: New York → Hamburg
+  // Return: New York → Hamburg (reverse)
   {
     id: 'newyork-hamburg',
     waypoints: [
-      [-74.01, 40.71], [-70.0, 41.0], [-65.0, 41.5], [-58.0, 42.5],
-      [-48.0, 44.0], [-38.0, 46.0], [-28.0, 48.0], [-18.0, 50.0],
-      [-10.0, 50.0], [-5.0, 50.0], [2.0, 51.0], [6.0, 54.0],
-      [10.0, 53.55],
+      ...doverToNewYork.slice().reverse(), ...hamburgToDover.slice().reverse(),
     ],
-    vesselCount: 1, durations: [20], delays: [8],
+    vesselCount: 1, durations: [22], delays: [8],
   },
 ];
 
