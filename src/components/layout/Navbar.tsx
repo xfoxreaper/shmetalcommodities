@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import { useTranslations } from 'next-intl';
@@ -14,46 +14,24 @@ export function Navbar() {
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const isHomePage = pathname === '/';
-
-  useEffect(() => {
-    if (!isHomePage) return;
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage]);
-
-  const navBg = !isHomePage || isScrolled
-    ? 'bg-navy shadow-md'
-    : 'bg-transparent';
 
   return (
     <>
-      <header
-        className={[
-          'fixed top-0 inset-x-0 z-40 transition-[background-color,box-shadow] duration-200',
-          navBg,
-        ].join(' ')}
-      >
+      <header className="fixed top-0 inset-x-0 z-40 bg-navy shadow-md overflow-visible">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 flex items-center justify-between overflow-visible h-[var(--navbar-h)]">
-          {/* Logo — left */}
-          <Link href="/" aria-label="SH Metal Commodities — Home" className="shrink-0">
-            <Image
-              src="/images/logo.png"
-              width={280}
-              height={152}
-              alt="SH Metal Commodities"
-              priority
-              className="w-[100px] sm:w-[110px] md:w-[120px] h-auto"
-            />
+          {/* Logo — left, medallion style */}
+          <Link href="/" aria-label="SH Metal Commodities — Home" className="shrink-0 relative z-50">
+            <div className="relative z-50 bg-navy ring-1 ring-gold/25 rounded-lg p-1 shadow-lg">
+              <Image
+                src="/images/logo.png"
+                width={280}
+                height={152}
+                alt="SH Metal Commodities"
+                priority
+                className="w-[130px] sm:w-[140px] md:w-[160px] h-auto"
+              />
+            </div>
           </Link>
 
           {/* Desktop nav — center */}

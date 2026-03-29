@@ -15,7 +15,6 @@ import {
   FadeIn,
   Button,
   SectionLabel,
-  StatsBar,
   InsightCard,
   QuoteBand,
   CTASection,
@@ -58,7 +57,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       {/* ── Hero ── */}
-      <div className="relative bg-navy animate-fade-in flex flex-col items-center justify-center min-h-[90vh] -mt-[var(--navbar-h)] pt-[120px] pb-[60px]">
+      <div className="relative bg-navy animate-fade-in flex flex-col items-center min-h-[100svh] -mt-[var(--navbar-h)] pt-[var(--navbar-h)]">
         <Image src="/images/hamburg-port.jpg" alt="" fill priority className="object-cover opacity-20" sizes="100vw" />
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none bg-[url('/images/hero-skyline.svg')] bg-bottom bg-no-repeat bg-cover opacity-40" />
         <NoiseTexture opacity={0.06} />
@@ -86,26 +85,24 @@ export default async function HomePage({ params }: Props) {
           </div>
         </Container>
 
-        <div className="relative z-10 pb-6 animate-bounce" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-ivory/50">
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
+        <div className="relative z-10 w-full border-t border-ivory/10 bg-navy/40 backdrop-blur-sm py-6">
+          <Container>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+              {[
+                { value: t('stats.founded'), label: t('stats.foundedLabel') },
+                { value: t('stats.years'), label: t('stats.yearsLabel') },
+                { value: t('stats.metals'), label: t('stats.metalsLabel') },
+                { value: t('stats.reach'), label: t('stats.reachLabel') },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="font-display text-3xl md:text-4xl text-ivory mb-1">{stat.value}</div>
+                  <div className="font-ui text-xs uppercase tracking-widest text-ivory/60">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </Container>
         </div>
       </div>
-
-      {/* ── Stats ── */}
-      <Section background="ivory" padding="compact">
-        <Container>
-          <FadeIn>
-            <StatsBar stats={[
-              { value: t('stats.founded'), label: t('stats.foundedLabel') },
-              { value: t('stats.years'), label: t('stats.yearsLabel') },
-              { value: t('stats.metals'), label: t('stats.metalsLabel') },
-              { value: t('stats.reach'), label: t('stats.reachLabel') },
-            ]} />
-          </FadeIn>
-        </Container>
-      </Section>
 
       {/* ── Our Metals ── */}
       <Section background="navy" padding="large">
