@@ -48,8 +48,20 @@ declare module 'react-simple-maps' {
     children?: ReactNode;
   }
 
+  interface LineProps {
+    from: [number, number];
+    to: [number, number];
+    stroke?: string;
+    strokeWidth?: number;
+    strokeOpacity?: number;
+    strokeLinecap?: string;
+    strokeDasharray?: string;
+    fill?: string;
+  }
+
   export const ComposableMap: ComponentType<ComposableMapProps>;
   export const Geographies: ComponentType<GeographiesProps>;
   export const Geography: ComponentType<GeographyProps>;
   export const Marker: ComponentType<MarkerProps>;
+  export const Line: ComponentType<LineProps>;
 }

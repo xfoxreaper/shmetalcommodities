@@ -11,7 +11,7 @@ export async function Footer() {
   const t = await getTranslations();
   const locale = await getLocale();
   const year = new Date().getFullYear();
-  const copyright = t('footer.copyright').replace('{year}', String(year));
+  const copyright = t('footer.copyright', { year });
 
   return (
     <footer className="bg-navy text-warm-white">

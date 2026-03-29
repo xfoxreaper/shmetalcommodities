@@ -18,6 +18,7 @@ import {
   InsightCard,
   QuoteBand,
   CTASection,
+  WorldMap,
 } from '@/components/ui';
 
 type Props = {
@@ -166,28 +167,13 @@ export default async function HomePage({ params }: Props) {
       </Section>
 
       {/* ── Global Presence ── */}
-      <Section background="navy" padding="compact">
+      <Section background="navy">
         <Container>
           <FadeIn>
-            <div className="text-center">
-              <Typography variant="label" className="text-gold mb-8 block">
-                {t('globalPresence')}
-              </Typography>
-              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-                {['Hamburg', 'London', 'Rotterdam', 'Dubai', 'Shanghai', 'New York'].map((city, i) => (
-                  <span key={city} className="flex items-center gap-2.5">
-                    <span className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-gold' : 'bg-gold/50'}`} />
-                    <span className={`font-ui text-xs uppercase tracking-widest ${i === 0 ? 'text-gold' : 'text-ivory/70'}`}>
-                      {city}
-                    </span>
-                  </span>
-                ))}
-              </div>
-              {/* Hamburg HQ callout */}
-              <p className="mt-6 font-ui text-[11px] tracking-wider text-ivory/40">
-                Headquarters: Hamburg, Germany
-              </p>
-            </div>
+            <SectionLabel align="center" variant="light">{t('globalPresence')}</SectionLabel>
+          </FadeIn>
+          <FadeIn>
+            <WorldMap />
           </FadeIn>
         </Container>
       </Section>
